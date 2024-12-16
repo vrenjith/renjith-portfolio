@@ -2,6 +2,11 @@ import { motion } from "framer-motion";
 import { Terminal, Server, Cloud } from "lucide-react";
 
 export const HeroSection = () => {
+  const scrollToBlogs = () => {
+    const blogsSection = document.getElementById('blogs');
+    blogsSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -50,12 +55,12 @@ export const HeroSection = () => {
             >
               Get in touch
             </a>
-            <a
-              href="#projects"
+            <button
+              onClick={scrollToBlogs}
               className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors"
             >
-              View Projects
-            </a>
+              View Blogs
+            </button>
           </motion.div>
         </div>
       </div>
