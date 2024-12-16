@@ -12,6 +12,11 @@ export const HeroSection = () => {
     projectsSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -54,12 +59,12 @@ export const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex justify-center gap-4"
           >
-            <a
-              href="#contact"
+            <button
+              onClick={scrollToContact}
               className="px-6 py-3 rounded-lg bg-accent text-white font-medium hover:bg-accent/90 transition-colors"
             >
               Get in touch
-            </a>
+            </button>
             <button
               onClick={scrollToProjects}
               className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors"
