@@ -7,6 +7,11 @@ export const HeroSection = () => {
     blogsSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById('projects');
+    projectsSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -55,6 +60,12 @@ export const HeroSection = () => {
             >
               Get in touch
             </a>
+            <button
+              onClick={scrollToProjects}
+              className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors"
+            >
+              View Projects
+            </button>
             <button
               onClick={scrollToBlogs}
               className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors"
