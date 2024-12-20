@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { BlogsSection } from "@/components/BlogsSection";
+import { ContactSection } from "@/components/ContactSection";
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
       <ExperienceSection />
       <ProjectsSection />
       <BlogsSection />
+      <ContactSection />
     </motion.div>
   );
 };
