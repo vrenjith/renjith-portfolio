@@ -3,30 +3,45 @@ import { Briefcase } from "lucide-react";
 
 const experiences = [
   {
-    title: "Senior DevOps Architect",
-    company: "Tech Solutions Inc.",
-    period: "2020 - Present",
-    description: "Led cloud infrastructure transformation and implemented CI/CD pipelines",
+    title: "Principal Cloud Architect",
+    company: "Persistent Systems",
+    period: "2021 - Present",
+    description: "Leading cloud architecture and DevOps transformation initiatives for enterprise clients. Specializing in Kubernetes, GitOps, and cloud-native solutions.",
+    highlights: [
+      "Architected and implemented cloud-native solutions for Fortune 500 clients",
+      "Led FedRAMP authorization initiatives for government cloud services",
+      "Established DevSecOps practices and security frameworks"
+    ]
   },
   {
-    title: "Cloud Infrastructure Engineer",
-    company: "Digital Innovations Co.",
-    period: "2018 - 2020",
-    description: "Managed multi-cloud environments and automated deployment processes",
+    title: "Lead DevOps Architect",
+    company: "Atos Syntel",
+    period: "2018 - 2021",
+    description: "Spearheaded DevOps transformation and cloud migration projects for major financial institutions.",
+    highlights: [
+      "Designed and implemented CI/CD pipelines for complex enterprise applications",
+      "Led cloud migration strategies and implementation",
+      "Established DevOps best practices and governance frameworks"
+    ]
   },
   {
-    title: "Systems Engineer",
-    company: "Global Systems Ltd.",
-    period: "2016 - 2018",
-    description: "Developed and maintained infrastructure automation solutions",
-  },
+    title: "Senior Solutions Architect",
+    company: "Tech Mahindra",
+    period: "2015 - 2018",
+    description: "Architected and delivered cloud solutions for telecom and enterprise clients.",
+    highlights: [
+      "Developed cloud-native architectures for large-scale applications",
+      "Implemented infrastructure automation and configuration management",
+      "Led technical teams in delivering complex cloud solutions"
+    ]
+  }
 ];
 
 export const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-24 bg-gray-50">
+    <section id="experience" className="py-24 bg-background/50">
       <div className="section-container">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -39,8 +54,8 @@ export const ExperienceSection = () => {
               <span className="text-sm font-medium">Experience</span>
             </div>
             <h2 className="text-4xl font-bold mb-4">Professional Journey</h2>
-            <p className="text-gray-600">
-              A track record of successful infrastructure transformations and DevOps implementations
+            <p className="text-gray-400">
+              Over 15 years of experience in cloud architecture and DevOps transformation
             </p>
           </motion.div>
 
@@ -59,9 +74,14 @@ export const ExperienceSection = () => {
                     <h3 className="text-xl font-semibold">{exp.title}</h3>
                     <p className="text-accent">{exp.company}</p>
                   </div>
-                  <span className="text-sm text-gray-500 mt-2 sm:mt-0">{exp.period}</span>
+                  <span className="text-sm text-gray-400 mt-2 sm:mt-0">{exp.period}</span>
                 </div>
-                <p className="text-gray-600">{exp.description}</p>
+                <p className="text-gray-300 mb-4">{exp.description}</p>
+                <ul className="list-disc list-inside space-y-2 text-gray-400">
+                  {exp.highlights.map((highlight, idx) => (
+                    <li key={idx}>{highlight}</li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
