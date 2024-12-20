@@ -25,12 +25,12 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         accent: {
-          DEFAULT: "#10B981",
+          DEFAULT: "#2563eb", // Changed to a deeper blue
           foreground: "#ffffff",
         },
         glass: {
-          DEFAULT: "rgba(255, 255, 255, 0.1)",
-          dark: "rgba(0, 0, 0, 0.1)",
+          DEFAULT: "rgba(255, 255, 255, 0.08)", // More subtle glass effect
+          dark: "rgba(0, 0, 0, 0.15)",
         },
       },
       keyframes: {

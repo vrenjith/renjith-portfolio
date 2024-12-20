@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { HeroSection } from "@/components/HeroSection";
+import { WorkHistorySection } from "@/components/WorkHistorySection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { BlogsSection } from "@/components/BlogsSection";
@@ -13,7 +14,7 @@ const Index = () => {
       transition={{ duration: 0.5 }}
     >
       <HeroSection />
-      <ExperienceSection />
+      <WorkHistorySection />
       <ProjectsSection />
       <BlogsSection />
       <ContactSection />

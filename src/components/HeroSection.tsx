@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { Terminal, Server, Cloud } from "lucide-react";
+import { Terminal, Code, Cloud } from "lucide-react";
 
 export const HeroSection = () => {
-  const scrollToBlogs = () => {
-    const blogsSection = document.getElementById('blogs');
-    blogsSection?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const scrollToProjects = () => {
@@ -12,9 +12,9 @@ export const HeroSection = () => {
     projectsSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToBlogs = () => {
+    const blogsSection = document.getElementById('blogs');
+    blogsSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -31,8 +31,8 @@ export const HeroSection = () => {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center px-4 py-2 rounded-full glass mb-8"
           >
-            <Terminal className="w-4 h-4 mr-2" />
-            <span className="text-sm font-medium">DevOps Architect</span>
+            <Code className="w-4 h-4 mr-2" />
+            <span className="text-sm font-medium">From Developer to DevOps Architect</span>
           </motion.div>
           
           <motion.h1
@@ -41,23 +41,24 @@ export const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-5xl sm:text-6xl font-bold mb-6"
           >
-            Transforming Infrastructure Into Innovation
+            Bridging Development and Operations
           </motion.h1>
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-lg text-gray-600 mb-8"
+            className="text-lg text-gray-400 mb-8"
           >
-            Specializing in cloud architecture, automation, and scalable infrastructure solutions
+            Two decades of evolution: From C/C++ system programming to cloud-native architecture,
+            specializing in DevOps transformation and enterprise cloud solutions
           </motion.p>
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex justify-center gap-4"
+            className="flex flex-wrap justify-center gap-4"
           >
             <button
               onClick={scrollToContact}
