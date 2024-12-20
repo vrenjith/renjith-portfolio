@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { Book, Clock, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const BlogsSection = () => {
   const blogs = [
     {
+      id: "gitops-argocd",
       title: "Implementing GitOps with ArgoCD",
       description: "A comprehensive guide to implementing GitOps practices using ArgoCD for Kubernetes deployments.",
       date: "March 15, 2024",
@@ -12,6 +15,7 @@ export const BlogsSection = () => {
       tags: ["GitOps", "Kubernetes", "ArgoCD"]
     },
     {
+      id: "zero-trust-kubernetes",
       title: "Zero-Trust Security in Kubernetes",
       description: "Implementing zero-trust security model in Kubernetes environments using service mesh and policy enforcement.",
       date: "March 10, 2024",
@@ -65,7 +69,7 @@ export const BlogsSection = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogs.map((blog, index) => (
+          {blogs.slice(0, 6).map((blog, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -73,41 +77,58 @@ export const BlogsSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full hover:shadow-lg transition-shadow group cursor-pointer bg-glass">
-                <CardHeader>
-                  <CardTitle className="group-hover:text-accent transition-colors">
-                    {blog.title}
-                  </CardTitle>
-                  <div className="flex items-center gap-4 text-sm text-gray-400">
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      {blog.readTime}
-                    </span>
-                    <span>{blog.date}</span>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base mb-4 text-gray-300">
-                    {blog.description}
-                  </CardDescription>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {blog.tags.map((tag, tagIndex) => (
-                      <span
-                        key={tagIndex}
-                        className="px-3 py-1 rounded-full text-sm bg-accent/10 text-accent"
-                      >
-                        {tag}
+              <Link to={`/blog/${blog.id}`}>
+                <Card className="h-full hover:shadow-lg transition-shadow group cursor-pointer bg-glass">
+                  <CardHeader>
+                    <CardTitle className="group-hover:text-accent transition-colors">
+                      {blog.title}
+                    </CardTitle>
+                    <div className="flex items-center gap-4 text-sm text-gray-400">
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-4 h-4" />
+                        {blog.readTime}
                       </span>
-                    ))}
-                  </div>
-                  <div className="flex items-center text-accent font-medium group-hover:gap-2 transition-all">
-                    Read More <ArrowRight className="w-4 h-4 ml-1" />
-                  </div>
-                </CardContent>
-              </Card>
+                      <span>{blog.date}</span>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-base mb-4 text-gray-300">
+                      {blog.description}
+                    </CardDescription>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {blog.tags.map((tag, tagIndex) => (
+                        <span
+                          key={tagIndex}
+                          className="px-3 py-1 rounded-full text-sm bg-accent/10 text-accent"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex items-center text-accent font-medium group-hover:gap-2 transition-all">
+                      Read More <ArrowRight className="w-4 h-4 ml-1" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mt-12"
+        >
+          <Link to="/blogs">
+            <Button variant="outline" size="lg" className="group">
+              View All Blog Posts
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
