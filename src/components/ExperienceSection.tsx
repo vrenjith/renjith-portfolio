@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { Briefcase } from "lucide-react";
+import { Briefcase, Building } from "lucide-react";
 
 const experiences = [
   {
     title: "Principal Cloud Architect",
     company: "Persistent Systems",
+    companyLogo: "https://example.com/persistent-logo.png", // Replace with actual logo URL
     period: "2021 - Present",
     description: "Leading cloud architecture and DevOps transformation initiatives for enterprise clients. Specializing in Kubernetes, GitOps, and cloud-native solutions.",
     highlights: [
@@ -16,6 +17,7 @@ const experiences = [
   {
     title: "Lead DevOps Architect",
     company: "Atos Syntel",
+    companyLogo: "https://example.com/atos-logo.png", // Replace with actual logo URL
     period: "2018 - 2021",
     description: "Spearheaded DevOps transformation and cloud migration projects for major financial institutions.",
     highlights: [
@@ -27,6 +29,7 @@ const experiences = [
   {
     title: "Senior Solutions Architect",
     company: "Tech Mahindra",
+    companyLogo: "https://example.com/techmahindra-logo.png", // Replace with actual logo URL
     period: "2015 - 2018",
     description: "Architected and delivered cloud solutions for telecom and enterprise clients.",
     highlights: [
@@ -70,9 +73,21 @@ export const ExperienceSection = () => {
                 className="glass rounded-xl p-6"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold">{exp.title}</h3>
-                    <p className="text-accent">{exp.company}</p>
+                  <div className="flex items-center">
+                    {exp.companyLogo && (
+                      <img 
+                        src={exp.companyLogo} 
+                        alt={`${exp.company} logo`} 
+                        className="w-12 h-12 mr-4 rounded-full object-cover"
+                      />
+                    )}
+                    <div>
+                      <h3 className="text-xl font-semibold">{exp.title}</h3>
+                      <div className="flex items-center text-accent">
+                        <Building className="w-4 h-4 mr-2" />
+                        <p>{exp.company}</p>
+                      </div>
+                    </div>
                   </div>
                   <span className="text-sm text-gray-400 mt-2 sm:mt-0">{exp.period}</span>
                 </div>

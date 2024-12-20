@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Terminal, Code, Cloud } from "lucide-react";
+import { Terminal, Code, Cloud, ArrowDown } from "lucide-react";
 
 export const HeroSection = () => {
   const scrollToContact = () => {
@@ -15,6 +15,11 @@ export const HeroSection = () => {
   const scrollToBlogs = () => {
     const blogsSection = document.getElementById('blogs');
     blogsSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToExperience = () => {
+    const experienceSection = document.getElementById('experience');
+    experienceSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -68,7 +73,7 @@ export const HeroSection = () => {
             </button>
             <button
               onClick={scrollToProjects}
-              className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors"
+              className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors flex items-center"
             >
               View Projects
             </button>
@@ -77,6 +82,13 @@ export const HeroSection = () => {
               className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors"
             >
               View Blogs
+            </button>
+            <button
+              onClick={scrollToExperience}
+              className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors flex items-center"
+            >
+              <ArrowDown className="w-4 h-4 mr-2" />
+              View Experience
             </button>
           </motion.div>
         </div>
