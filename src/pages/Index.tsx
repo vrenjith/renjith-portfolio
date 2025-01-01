@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { HeroSection } from "@/components/HeroSection";
 import { WorkHistorySection } from "@/components/WorkHistorySection";
-import { ExperienceSection } from "@/components/ExperienceSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { BlogsSection } from "@/components/BlogsSection";
 import { ContactSection } from "@/components/ContactSection";
+import { GoToTopButton } from "@/components/GoToTopButton";
 
 const Index = () => {
   return (
@@ -18,6 +18,7 @@ const Index = () => {
       <ProjectsSection />
       <BlogsSection />
       <ContactSection />
+      <GoToTopButton />
     </motion.div>
   );
 };

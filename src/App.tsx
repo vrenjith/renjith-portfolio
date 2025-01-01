@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import ProjectDetail from "./pages/ProjectDetail";
 import BlogDetail from "./pages/BlogDetail";
 import AllBlogs from "./pages/AllBlogs";
+import AllProjects from "./pages/AllProjects";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/project/:id" element={<ProjectDetail />} />
           <Route path="/blog/:id" element={<BlogDetail />} />
           <Route path="/blogs" element={<AllBlogs />} />
+          <Route path="/projects" element={<AllProjects />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

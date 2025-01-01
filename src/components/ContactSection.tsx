@@ -16,12 +16,10 @@ export const ContactSection = () => {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      // In a real implementation, this would send to a backend service
-      // For now, we'll use mailto as a fallback
       const mailtoLink = `mailto:v.renjith@gmail.com?subject=Contact from ${data.name}&body=${data.message}%0D%0A%0D%0AFrom: ${data.email}`;
       window.location.href = mailtoLink;
-      toast.success("Email client opened! Please send the email to complete.");
       reset();
+      toast.success("Email client opened! Please send the email to complete.");
     } catch (error) {
       toast.error("Failed to send message. Please try again.");
     } finally {
