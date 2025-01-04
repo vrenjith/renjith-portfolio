@@ -36,7 +36,7 @@ export const HeroSection = () => {
       {/* Profile Image */}
       <div className="absolute top-8 left-8 z-10">
         <img 
-          src="/placeholder.svg" 
+          src="placeholder.svg" 
           alt="Renjith Pillai" 
           className="w-24 h-24 rounded-full border-2 border-accent/20"
         />
