@@ -19,9 +19,7 @@ export const HeroSection = () => {
 
   const scrollToExperience = () => {
     const experienceSection = document.getElementById('experience');
-    if (experienceSection) {
-      experienceSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    experienceSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
