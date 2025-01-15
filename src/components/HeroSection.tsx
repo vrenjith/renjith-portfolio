@@ -29,7 +29,7 @@ export const HeroSection = () => {
       </div>
       
       {/* Background Name */}
-      <div className="fixed -left-32 top-1/2 -translate-y-1/2 -rotate-90 text-[15vh] font-bold text-black/5 whitespace-nowrap pointer-events-none select-none z-0">
+      <div className="fixed -left-32 top-1/2 -translate-y-1/2 -rotate-90 text-[12vh] font-bold text-black/10 whitespace-nowrap pointer-events-none select-none z-0">
         Renjith Pillai
       </div>
 
@@ -50,15 +50,15 @@ export const HeroSection = () => {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center px-4 py-2 rounded-full glass mb-8"
           >
-            <User className="w-4 h-4 mr-2" />
-            <span className="text-sm font-medium">DevOps Leadership & Platform Engineering</span>
+            <User className="w-4 h-4 mr-2 text-gray-700" />
+            <span className="text-sm font-medium text-gray-700">DevOps Leadership & Platform Engineering</span>
           </motion.div>
           
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-5xl sm:text-6xl font-bold mb-6"
+            className="text-5xl sm:text-6xl font-bold mb-6 text-gray-900"
           >
             Building High-Performance DevOps Teams & Platforms
           </motion.h1>
@@ -67,7 +67,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-lg text-gray-400 mb-8"
+            className="text-lg text-gray-600 mb-8"
           >
             Transforming organizations through DevOps excellence, mentoring teams, and architecting 
             comprehensive platforms that integrate modern cloud-native technologies
@@ -88,21 +88,21 @@ export const HeroSection = () => {
             </button>
             <button
               onClick={scrollToProjects}
-              className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors flex items-center"
+              className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors flex items-center text-gray-700"
             >
               <LayoutGrid className="w-4 h-4 mr-2" />
               View Projects
             </button>
             <button
               onClick={scrollToBlogs}
-              className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors flex items-center"
+              className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors flex items-center text-gray-700"
             >
               <BookOpen className="w-4 h-4 mr-2" />
               View Blogs
             </button>
             <button
               onClick={scrollToExperience}
-              className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors flex items-center"
+              className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors flex items-center text-gray-700"
             >
               <User className="w-4 h-4 mr-2" />
               View Experience
