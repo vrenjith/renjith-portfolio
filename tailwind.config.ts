@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -25,12 +24,12 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         accent: {
-          DEFAULT: "#2563eb", // Changed to a deeper blue
+          DEFAULT: "#2563eb",
           foreground: "#ffffff",
         },
         glass: {
-          DEFAULT: "rgba(255, 255, 255, 0.08)", // More subtle glass effect
-          dark: "rgba(0, 0, 0, 0.15)",
+          DEFAULT: "rgba(255, 255, 255, 0.9)",
+          dark: "rgba(0, 0, 0, 0.05)",
         },
       },
       keyframes: {
@@ -62,5 +61,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;

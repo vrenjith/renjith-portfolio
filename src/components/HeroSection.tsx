@@ -19,7 +19,9 @@ export const HeroSection = () => {
 
   const scrollToExperience = () => {
     const experienceSection = document.getElementById('experience');
-    experienceSection?.scrollIntoView({ behavior: 'smooth' });
+    if (experienceSection) {
+      experienceSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -29,7 +31,7 @@ export const HeroSection = () => {
       </div>
       
       {/* Background Name */}
-      <div className="fixed -left-20 top-1/2 -translate-y-1/2 -rotate-90 text-[20vh] font-bold text-white/5 whitespace-nowrap pointer-events-none select-none z-0">
+      <div className="fixed -left-32 top-1/2 -translate-y-1/2 -rotate-90 text-[15vh] font-bold text-black/5 whitespace-nowrap pointer-events-none select-none z-0">
         Renjith Pillai
       </div>
 

@@ -8,6 +8,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 import BlogDetail from "./pages/BlogDetail";
 import AllBlogs from "./pages/AllBlogs";
 import AllProjects from "./pages/AllProjects";
+import EnterpriseDevOpsPlatform from "./components/project-details/EnterpriseDevOpsPlatform";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
+          <Route path="/project/enterprise-devops-platform" element={<EnterpriseDevOpsPlatform />} />
           <Route path="/blog/:id" element={<BlogDetail />} />
           <Route path="/blogs" element={<AllBlogs />} />
           <Route path="/projects" element={<AllProjects />} />
