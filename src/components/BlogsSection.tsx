@@ -7,48 +7,52 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 export const BlogsSection = () => {
   const blogs = [
     {
-      id: "gitops-argocd",
-      title: "Implementing GitOps with ArgoCD",
-      description: "A comprehensive guide to implementing GitOps practices using ArgoCD for Kubernetes deployments.",
+      id: "building-devops-teams",
+      title: "Building and Scaling High-Performance DevOps Teams",
+      description: "Strategies for mentoring, growing, and leading successful DevOps teams through transformation and cultural change.",
+      date: "March 20, 2024",
+      readTime: "10 min read",
+      tags: ["Leadership", "Team Building", "DevOps Culture"]
+    },
+    {
+      id: "integrated-devops-platform",
+      title: "Architecting an Enterprise DevOps Platform",
+      description: "Comprehensive guide to building an integrated DevOps platform with Kubernetes, Terraform, Jenkins, and monitoring solutions.",
       date: "March 15, 2024",
-      readTime: "8 min read",
-      tags: ["GitOps", "Kubernetes", "ArgoCD"]
+      readTime: "15 min read",
+      tags: ["Platform Engineering", "Architecture", "Integration"]
     },
     {
-      id: "zero-trust-kubernetes",
-      title: "Zero-Trust Security in Kubernetes",
-      description: "Implementing zero-trust security model in Kubernetes environments using service mesh and policy enforcement.",
+      id: "container-orchestration",
+      title: "Container Orchestration: From Docker to Kubernetes",
+      description: "Evolution from basic containerization to advanced orchestration with Kubernetes, Helm, and service mesh with Istio.",
       date: "March 10, 2024",
-      readTime: "10 min read",
-      tags: ["Security", "Kubernetes", "Service Mesh"]
-    },
-    {
-      title: "Cloud-Native Architecture Patterns",
-      description: "Essential patterns for building resilient and scalable cloud-native applications.",
-      date: "March 5, 2024",
       readTime: "12 min read",
-      tags: ["Cloud-Native", "Architecture", "Patterns"]
+      tags: ["Kubernetes", "Docker", "Istio"]
     },
     {
-      title: "Infrastructure as Code Best Practices",
-      description: "Best practices for managing infrastructure as code using modern tools and techniques.",
+      id: "infrastructure-automation",
+      title: "Infrastructure Automation at Scale",
+      description: "Implementing infrastructure as code using Terraform, Packer, and Consul for multi-cloud environments.",
+      date: "March 5, 2024",
+      readTime: "8 min read",
+      tags: ["IaC", "Terraform", "Multi-Cloud"]
+    },
+    {
+      id: "observability-monitoring",
+      title: "Advanced Observability in Cloud-Native Systems",
+      description: "Implementing comprehensive monitoring using Splunk, Grafana, InfluxDB, and cloud-native logging solutions.",
       date: "February 28, 2024",
-      readTime: "9 min read",
-      tags: ["IaC", "DevOps", "Terraform"]
-    },
-    {
-      title: "Kubernetes Security Hardening",
-      description: "Advanced techniques for hardening Kubernetes clusters in production environments.",
-      date: "February 20, 2024",
-      readTime: "11 min read",
-      tags: ["Security", "Kubernetes", "DevSecOps"]
-    },
-    {
-      title: "Multi-Cloud Strategy Implementation",
-      description: "Strategies and patterns for implementing effective multi-cloud architectures.",
-      date: "February 15, 2024",
       readTime: "10 min read",
-      tags: ["Multi-Cloud", "Architecture", "Strategy"]
+      tags: ["Monitoring", "Observability", "DevOps"]
+    },
+    {
+      id: "devops-mentorship",
+      title: "DevOps Mentorship: Growing the Next Generation",
+      description: "Effective strategies for mentoring junior DevOps engineers and building strong, collaborative teams.",
+      date: "February 20, 2024",
+      readTime: "8 min read",
+      tags: ["Mentorship", "Leadership", "Team Growth"]
     }
   ];
 

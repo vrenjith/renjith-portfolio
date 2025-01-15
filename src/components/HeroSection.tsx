@@ -29,14 +29,14 @@ export const HeroSection = () => {
       </div>
       
       {/* Background Name */}
-      <div className="fixed left-8 top-1/2 -translate-y-1/2 -rotate-90 text-[20vh] font-bold text-white/5 whitespace-nowrap pointer-events-none select-none z-0">
+      <div className="fixed -left-20 top-1/2 -translate-y-1/2 -rotate-90 text-[20vh] font-bold text-white/5 whitespace-nowrap pointer-events-none select-none z-0">
         Renjith Pillai
       </div>
 
       {/* Profile Image */}
       <div className="absolute top-8 left-8 z-10">
         <img 
-          src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+          src="https://lh3.googleusercontent.com/pw/AP1GczPVTbtDzvmUpqhcZz-jSFpgxdiAUOTfoGUdZXHRt5Xuz06jO4Uo-89Z3vmY1n_sF_mqi5e5D9M1Z5aO5rGQ3oJEUGX6hHJ8s2alyVjLsKVhCsrJ3ckpHGQleAM_ZopsGle8HJni1n9jTYYIDu4CapnN2g=w2070-h1552-s-no-gm"
           alt="Renjith Pillai" 
           className="w-24 h-24 rounded-full border-2 border-accent/20 object-cover"
         />
@@ -51,7 +51,7 @@ export const HeroSection = () => {
             className="inline-flex items-center px-4 py-2 rounded-full glass mb-8"
           >
             <User className="w-4 h-4 mr-2" />
-            <span className="text-sm font-medium">From System Programming to DevOps Architect</span>
+            <span className="text-sm font-medium">DevOps Leadership & Platform Engineering</span>
           </motion.div>
           
           <motion.h1
@@ -60,7 +60,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-5xl sm:text-6xl font-bold mb-6"
           >
-            Bridging Development and Operations
+            Building High-Performance DevOps Teams & Platforms
           </motion.h1>
           
           <motion.p
@@ -69,8 +69,8 @@ export const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-lg text-gray-400 mb-8"
           >
-            Two decades of evolution: From system programming to cloud-native architecture,
-            specializing in DevOps transformation and enterprise cloud solutions
+            Transforming organizations through DevOps excellence, mentoring teams, and architecting 
+            comprehensive platforms that integrate modern cloud-native technologies
           </motion.p>
           
           <motion.div

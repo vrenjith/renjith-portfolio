@@ -1,51 +1,51 @@
 import { motion } from "framer-motion";
-import { Github, Cloud, Shield, Target, ChartBar, ArrowRight } from "lucide-react";
+import { Github, Cloud, Shield, Target, ChartBar, Users, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const ProjectsSection = () => {
   const projects = [
     {
-      id: "gitops-delivery",
-      title: "GitOps Based Delivery",
-      description: "Implemented enterprise-scale GitOps delivery pipeline using ArgoCD and Flux, achieving 99.9% deployment reliability and 70% faster recovery times.",
-      icon: <Github className="w-6 h-6 text-accent" />,
-      tags: ["GitOps", "ArgoCD", "Kubernetes"]
-    },
-    {
-      id: "infrastructure-as-data",
-      title: "Infrastructure-as-Data using CrossPlane",
-      description: "Pioneered Infrastructure-as-Data approach using CrossPlane, enabling self-service infrastructure provisioning across multiple cloud providers.",
+      id: "enterprise-devops-platform",
+      title: "Enterprise DevOps Platform",
+      description: "Led the architecture and implementation of a comprehensive DevOps platform integrating Jenkins, Kubernetes, Terraform, and advanced monitoring solutions, serving 500+ developers.",
       icon: <Cloud className="w-6 h-6 text-accent" />,
-      tags: ["CrossPlane", "Multi-Cloud", "IaC"]
+      tags: ["Platform Engineering", "Leadership", "Integration"]
     },
     {
-      id: "kubernetes-security",
-      title: "Securing Kubernetes - Separation of Concerns",
-      description: "Designed and implemented comprehensive Kubernetes security architecture focusing on workload isolation and least privilege access.",
-      icon: <Shield className="w-6 h-6 text-accent" />,
-      tags: ["Security", "Kubernetes", "Zero-Trust"]
+      id: "team-transformation",
+      title: "DevOps Team Transformation",
+      description: "Mentored and grew a team of 25 DevOps engineers, implementing structured training programs and career development paths while delivering critical infrastructure projects.",
+      icon: <Users className="w-6 h-6 text-accent" />,
+      tags: ["Leadership", "Mentoring", "Team Building"]
     },
     {
-      id: "multi-target-delivery",
-      title: "Multi Target Delivery Model",
-      description: "Developed a sophisticated multi-target delivery framework supporting simultaneous deployments across various environments and cloud providers.",
+      id: "cloud-native-migration",
+      title: "Cloud-Native Migration Strategy",
+      description: "Architected and led the migration of legacy systems to cloud-native infrastructure using Kubernetes, Istio, and modern observability tools.",
+      icon: <Cloud className="w-6 h-6 text-accent" />,
+      tags: ["Architecture", "Cloud-Native", "Strategy"]
+    },
+    {
+      id: "automation-framework",
+      title: "Enterprise Automation Framework",
+      description: "Designed and implemented a comprehensive automation framework using Terraform, Ansible, and custom tools, reducing deployment time by 70%.",
       icon: <Target className="w-6 h-6 text-accent" />,
-      tags: ["CI/CD", "Multi-Cloud", "Automation"]
+      tags: ["Automation", "IaC", "DevOps"]
     },
     {
-      id: "fedramp-security",
-      title: "Securing for FedRAMP (US Gov)",
-      description: "Led FedRAMP authorization initiative, implementing security controls and compliance measures for government cloud services.",
+      id: "security-compliance",
+      title: "Security & Compliance Framework",
+      description: "Established security best practices and compliance frameworks for cloud-native infrastructure, ensuring regulatory compliance while maintaining agility.",
       icon: <Shield className="w-6 h-6 text-accent" />,
-      tags: ["FedRAMP", "Compliance", "Security"]
+      tags: ["Security", "Compliance", "Best Practices"]
     },
     {
-      id: "roi-cloud-agnostic",
-      title: "RoI, Cloud Agnostism and Time-to-market",
-      description: "Optimized cloud infrastructure costs while maintaining platform agnosticism, resulting in 40% cost reduction and improved time-to-market.",
+      id: "observability-platform",
+      title: "Enterprise Observability Platform",
+      description: "Led the implementation of a comprehensive observability platform using Splunk, Grafana, and custom dashboards, improving incident response time by 60%.",
       icon: <ChartBar className="w-6 h-6 text-accent" />,
-      tags: ["ROI", "Cloud-Native", "Optimization"]
+      tags: ["Monitoring", "Observability", "Platform"]
     }
   ];
 
