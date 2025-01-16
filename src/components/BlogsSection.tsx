@@ -67,7 +67,7 @@ export const BlogsSection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold mb-4">Technical Blog</h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Sharing insights and experiences from the world of DevOps and cloud architecture
           </p>
         </motion.div>
@@ -87,7 +87,7 @@ export const BlogsSection = () => {
                     <CardTitle className="group-hover:text-accent transition-colors">
                       {blog.title}
                     </CardTitle>
-                    <div className="flex items-center gap-4 text-sm text-gray-400">
+                    <div className="flex items-center gap-4 text-sm text-gray-600">
                       <span className="flex items-center gap-1">
                         <Clock className="w-4 h-4" />
                         {blog.readTime}
@@ -96,7 +96,7 @@ export const BlogsSection = () => {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-base mb-4 text-gray-300">
+                    <CardDescription className="text-base mb-4 text-gray-700">
                       {blog.description}
                     </CardDescription>
                     <div className="flex flex-wrap gap-2 mb-4">

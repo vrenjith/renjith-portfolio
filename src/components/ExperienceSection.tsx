@@ -82,17 +82,17 @@ export const ExperienceSection = () => {
                       />
                     )}
                     <div>
-                      <h3 className="text-xl font-semibold">{exp.title}</h3>
+                      <h3 className="text-xl font-semibold text-gray-900">{exp.title}</h3>
                       <div className="flex items-center text-accent">
                         <Building className="w-4 h-4 mr-2" />
                         <p>{exp.company}</p>
                       </div>
                     </div>
                   </div>
-                  <span className="text-sm text-gray-400 mt-2 sm:mt-0">{exp.period}</span>
+                  <span className="text-sm text-gray-600 mt-2 sm:mt-0">{exp.period}</span>
                 </div>
-                <p className="text-gray-300 mb-4">{exp.description}</p>
-                <ul className="list-disc list-inside space-y-2 text-gray-400">
+                <p className="text-gray-700 mb-4">{exp.description}</p>
+                <ul className="list-disc list-inside space-y-2 text-gray-700">
                   {exp.highlights.map((highlight, idx) => (
                     <li key={idx}>{highlight}</li>
                   ))}

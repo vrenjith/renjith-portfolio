@@ -80,13 +80,6 @@ export const HeroSection = () => {
             className="flex flex-wrap justify-center gap-4"
           >
             <button
-              onClick={scrollToContact}
-              className="px-6 py-3 rounded-lg bg-accent text-white font-medium hover:bg-accent/90 transition-colors flex items-center"
-            >
-              <Send className="w-4 h-4 mr-2" />
-              Get in touch
-            </button>
-            <button
               onClick={scrollToProjects}
               className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors flex items-center text-gray-700"
             >
@@ -106,6 +99,13 @@ export const HeroSection = () => {
             >
               <User className="w-4 h-4 mr-2" />
               View Experience
+            </button>
+            <button
+              onClick={scrollToContact}
+              className="px-6 py-3 rounded-lg bg-accent text-white font-medium hover:bg-accent/90 transition-colors flex items-center"
+            >
+              <Send className="w-4 h-4 mr-2" />
+              Get in touch
             </button>
           </motion.div>
         </div>

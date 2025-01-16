@@ -60,7 +60,7 @@ export const ProjectsSection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Showcasing my expertise in DevOps architecture through real-world implementations
           </p>
         </motion.div>
@@ -85,7 +85,7 @@ export const ProjectsSection = () => {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-base mb-4 text-gray-300">
+                    <CardDescription className="text-base mb-4 text-gray-700">
                       {project.description}
                     </CardDescription>
                     <div className="flex flex-wrap gap-2 mb-4">
