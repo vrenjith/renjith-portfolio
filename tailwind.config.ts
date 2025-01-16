@@ -28,7 +28,7 @@ export default {
           foreground: "#ffffff",
         },
         glass: {
-          DEFAULT: "rgba(255, 255, 255, 0.9)",
+          DEFAULT: "rgba(255, 255, 255, 0.95)",
           dark: "rgba(0, 0, 0, 0.05)",
         },
       },
@@ -58,6 +58,31 @@ export default {
       },
       fontFamily: {
         sans: ["Inter var", "sans-serif"],
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#334155',
+            h1: {
+              color: '#1e293b',
+            },
+            h2: {
+              color: '#1e293b',
+            },
+            h3: {
+              color: '#1e293b',
+            },
+            strong: {
+              color: '#1e293b',
+            },
+            a: {
+              color: '#2563eb',
+              '&:hover': {
+                color: '#1d4ed8',
+              },
+            },
+          },
+        },
       },
     },
   },

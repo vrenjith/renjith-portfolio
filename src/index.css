@@ -5,7 +5,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 220 33% 98%;
     --foreground: 222 47% 11%;
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
@@ -22,10 +22,12 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Cpath d='M50 0h50v50H50zM0 50h50v50H0z'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
   }
 
   .glass {
-    @apply backdrop-blur-md bg-glass/80 border border-black/5 shadow-sm;
+    @apply backdrop-blur-md bg-white/90 border border-black/5 shadow-sm;
   }
 
   .section-container {
@@ -47,4 +49,18 @@
   .stagger-delay > *:nth-child(3) { animation-delay: 0.3s; }
   .stagger-delay > *:nth-child(4) { animation-delay: 0.4s; }
   .stagger-delay > *:nth-child(5) { animation-delay: 0.5s; }
+
+  /* Improved text contrast for different sections */
+  .prose {
+    @apply prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 
+           prose-ul:text-gray-700 prose-li:text-gray-700;
+  }
+
+  .card-description {
+    @apply text-gray-700;
+  }
+
+  .section-description {
+    @apply text-gray-600;
+  }
 }
