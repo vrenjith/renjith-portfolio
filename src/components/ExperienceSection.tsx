@@ -57,7 +57,7 @@ export const ExperienceSection = () => {
               <span className="text-sm font-medium">Experience</span>
             </div>
             <h2 className="text-4xl font-bold mb-4">Professional Journey</h2>
-            <p className="text-gray-400">
+            <p className="text-gray-700">
               Over 15 years of experience in cloud architecture and DevOps transformation
             </p>
           </motion.div>
@@ -89,10 +89,10 @@ export const ExperienceSection = () => {
                       </div>
                     </div>
                   </div>
-                  <span className="text-sm text-gray-600 mt-2 sm:mt-0">{exp.period}</span>
+                  <span className="text-gray-700 mt-2 sm:mt-0">{exp.period}</span>
                 </div>
-                <p className="text-gray-700 mb-4">{exp.description}</p>
-                <ul className="list-disc list-inside space-y-2 text-gray-700">
+                <p className="text-gray-800 mb-4">{exp.description}</p>
+                <ul className="list-disc list-inside space-y-2 text-gray-800">
                   {exp.highlights.map((highlight, idx) => (
                     <li key={idx}>{highlight}</li>
                   ))}
