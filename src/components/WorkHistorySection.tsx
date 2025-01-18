@@ -86,7 +86,7 @@ export const WorkHistorySection = () => {
                             <span className="text-sm font-medium">Career Evolution</span>
                         </div>
                         <h2 className="text-4xl font-bold mb-4">From Code to Cloud</h2>
-                        <p className="text-gray-400">
+                        <p className="text-gray-700">
                             A journey from system programming to cloud architecture, spanning over two decades
                         </p>
                     </motion.div>
@@ -113,12 +113,12 @@ export const WorkHistorySection = () => {
                                         </div>
                                         <p className="text-accent">{work.company}</p>
                                     </div>
-                                    <span className="text-sm text-gray-400 mt-2 lg:mt-0">{work.period}</span>
+                                    <span className="text-sm text-gray-700 mt-2 lg:mt-0">{work.period}</span>
                                 </div>
                                 <p className="text-gray-700 mb-6">{work.description}</p>
                                 <div className="space-y-4">
                                     <h4 className="text-lg font-semibold">Key Achievements:</h4>
-                                    <ul className="list-disc list-inside space-y-2 text-gray-400">
+                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
                                         {work.highlights.map((highlight, idx) => (
                                             <li key={idx}>{highlight}</li>
                                         ))}
