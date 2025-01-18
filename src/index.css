@@ -52,15 +52,15 @@
 
   /* Improved text contrast for different sections */
   .prose {
-    @apply prose-headings:text-teal-900 prose-p:text-teal-800 prose-strong:text-teal-900 
-           prose-ul:text-teal-800 prose-li:text-teal-800;
+    @apply prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:text-gray-900 
+           prose-ul:text-gray-800 prose-li:text-gray-800;
   }
 
   .card-description {
-    @apply text-teal-800;
+    @apply text-gray-800;
   }
 
   .section-description {
-    @apply text-teal-700;
+    @apply text-gray-700;
   }
 }

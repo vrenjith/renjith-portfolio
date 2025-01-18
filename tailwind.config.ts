@@ -62,18 +62,18 @@ export default {
       typography: {
         DEFAULT: {
           css: {
-            color: '#2A454B',
+            color: '#374151',
             h1: {
-              color: '#1B3238',
+              color: '#111827',
             },
             h2: {
-              color: '#1B3238',
+              color: '#111827',
             },
             h3: {
-              color: '#1B3238',
+              color: '#111827',
             },
             strong: {
-              color: '#1B3238',
+              color: '#111827',
             },
             a: {
               color: '#4DB6AC',
