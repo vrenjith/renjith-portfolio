@@ -150,7 +150,7 @@ Drawing from experience implementing multi-cloud strategies, we'll explore pract
       >
         <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
         
-        <div className="flex items-center gap-4 text-sm text-gray-400 mb-6">
+        <div className="flex items-center gap-4 text-sm text-gray-700 mb-6">
           <span className="flex items-center gap-1">
             <Clock className="w-4 h-4" />
             {blog.readTime}
@@ -171,7 +171,7 @@ Drawing from experience implementing multi-cloud strategies, we'll explore pract
         
         <div className="prose prose-invert max-w-none">
           {blog.content.split('\n\n').map((paragraph, index) => (
-            <p key={index} className="mb-4 text-gray-300">
+            <p key={index} className="mb-4 text-gray-700">
               {paragraph}
             </p>
           ))}

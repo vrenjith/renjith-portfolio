@@ -174,7 +174,7 @@ Technologies Used:
         
         <div className="prose prose-invert max-w-none">
           {project.description.split('\n\n').map((paragraph, index) => (
-            <p key={index} className="mb-4 text-gray-300">
+            <p key={index} className="mb-4 text-gray-700">
               {paragraph}
             </p>
           ))}

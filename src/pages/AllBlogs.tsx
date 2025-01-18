@@ -71,7 +71,7 @@ const AllBlogs = () => {
         className="mb-12"
       >
         <h1 className="text-4xl font-bold mb-4">All Blog Posts</h1>
-        <p className="text-lg text-gray-400">
+        <p className="text-lg text-gray-700">
           Explore my journey from development to DevOps architecture through detailed technical articles
         </p>
       </motion.div>
@@ -90,7 +90,7 @@ const AllBlogs = () => {
                   <CardTitle className="group-hover:text-accent transition-colors">
                     {blog.title}
                   </CardTitle>
-                  <div className="flex items-center gap-4 text-sm text-gray-400">
+                  <div className="flex items-center gap-4 text-sm text-gray-700">
                     <span className="flex items-center gap-1">
                       <Clock className="w-4 h-4" />
                       {blog.readTime}
@@ -99,7 +99,7 @@ const AllBlogs = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base mb-4 text-gray-300">
+                  <CardDescription className="text-base mb-4 text-gray-700">
                     {blog.description}
                   </CardDescription>
                   <div className="flex flex-wrap gap-2 mb-4">
