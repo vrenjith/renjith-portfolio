@@ -24,11 +24,11 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         accent: {
-          DEFAULT: "#2563eb",
+          DEFAULT: "#4DB6AC",
           foreground: "#ffffff",
         },
         glass: {
-          DEFAULT: "rgba(255, 255, 255, 0.95)",
+          DEFAULT: "rgba(255, 255, 255, 0.9)",
           dark: "rgba(0, 0, 0, 0.05)",
         },
       },
@@ -62,23 +62,23 @@ export default {
       typography: {
         DEFAULT: {
           css: {
-            color: '#334155',
+            color: '#2A454B',
             h1: {
-              color: '#1e293b',
+              color: '#1B3238',
             },
             h2: {
-              color: '#1e293b',
+              color: '#1B3238',
             },
             h3: {
-              color: '#1e293b',
+              color: '#1B3238',
             },
             strong: {
-              color: '#1e293b',
+              color: '#1B3238',
             },
             a: {
-              color: '#2563eb',
+              color: '#4DB6AC',
               '&:hover': {
-                color: '#1d4ed8',
+                color: '#3B958C',
               },
             },
           },
