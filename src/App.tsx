@@ -9,6 +9,7 @@ import BlogDetail from "./pages/BlogDetail";
 import ExperienceDetail from "./pages/ExperienceDetail";
 import AllBlogs from "./pages/AllBlogs";
 import AllProjects from "./pages/AllProjects";
+import AllExperiences from "./pages/AllExperiences";
 import EnterpriseDevOpsPlatform from "./components/project-details/EnterpriseDevOpsPlatform";
 
 const queryClient = new QueryClient({
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/experience/:id" element={<ExperienceDetail />} />
           <Route path="/blogs" element={<AllBlogs />} />
           <Route path="/projects" element={<AllProjects />} />
+          <Route path="/experiences" element={<AllExperiences />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
