@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Github, Cloud, Shield, Target, ChartBar, Users, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { projects } from "@/data/projects";
 
 const iconMap = {
@@ -24,13 +25,19 @@ export const ProjectsSection = () => {
                     className="text-center mb-12"
                 >
                     <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
                         Showcasing my expertise in DevOps architecture through real-world implementations
                     </p>
+                    <Link to="/projects">
+                        <Button variant="outline" className="group">
+                            View All Projects
+                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                    </Link>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {projects.map((project, index) => {
+                    {projects.slice(0, 6).map((project, index) => {
                         const Icon = iconMap[project.icon as keyof typeof iconMap];
                         return (
                             <motion.div

@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Briefcase, Building } from "lucide-react";
+import { Briefcase, Building, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { experiences } from "@/data/experiences";
+import { Button } from "@/components/ui/button";
 
 export const ExperienceSection = () => {
     return (
@@ -20,13 +21,19 @@ export const ExperienceSection = () => {
                             <span className="text-sm font-medium">Experience</span>
                         </div>
                         <h2 className="text-4xl font-bold mb-4">Professional Journey</h2>
-                        <p className="text-gray-700">
+                        <p className="text-gray-700 mb-8">
                             Over 15 years of experience in cloud architecture and DevOps transformation
                         </p>
+                        <Link to="/experiences">
+                            <Button variant="outline" className="group">
+                                View All Experience
+                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                        </Link>
                     </motion.div>
 
-                    <div className="space-y-8">
-                        {experiences.map((exp, index) => (
+                    <div className="grid grid-cols-1 gap-6">
+                        {experiences.slice(0, 3).map((exp, index) => (
                             <Link key={index} to={`/experience/${exp.id}`}>
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
@@ -41,7 +48,7 @@ export const ExperienceSection = () => {
                                                 <img
                                                     src={exp.companyLogo}
                                                     alt={`${exp.company} logo`}
-                                                    className="w-12 h-12 mr-4 rounded-full object-cover"
+                                                    className="w-12 h-12 mr-4 rounded-full object-cover bg-white p-1"
                                                 />
                                             )}
                                             <div>
