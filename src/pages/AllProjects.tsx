@@ -2,47 +2,9 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { projects } from "@/data/projects";
 
 const AllProjects = () => {
-    const projects = [
-        {
-            id: "gitops-delivery",
-            title: "GitOps Based Delivery",
-            description: "Implemented enterprise-scale GitOps delivery pipeline using ArgoCD and Flux.",
-            tags: ["GitOps", "ArgoCD", "Kubernetes"]
-        },
-        {
-            id: "infrastructure-as-data",
-            title: "Infrastructure-as-Data using CrossPlane",
-            description: "Pioneered Infrastructure-as-Data approach using CrossPlane, enabling self-service infrastructure provisioning across multiple cloud providers.",
-            tags: ["CrossPlane", "Multi-Cloud", "IaC"]
-        },
-        {
-            id: "kubernetes-security",
-            title: "Securing Kubernetes - Separation of Concerns",
-            description: "Designed and implemented comprehensive Kubernetes security architecture focusing on workload isolation and least privilege access.",
-            tags: ["Security", "Kubernetes", "Zero-Trust"]
-        },
-        {
-            id: "multi-target-delivery",
-            title: "Multi Target Delivery Model",
-            description: "Developed a sophisticated multi-target delivery framework supporting simultaneous deployments across various environments and cloud providers.",
-            tags: ["CI/CD", "Multi-Cloud", "Automation"]
-        },
-        {
-            id: "fedramp-security",
-            title: "Securing for FedRAMP (US Gov)",
-            description: "Led FedRAMP authorization initiative, implementing security controls and compliance measures for government cloud services.",
-            tags: ["FedRAMP", "Compliance", "Security"]
-        },
-        {
-            id: "roi-cloud-agnostic",
-            title: "RoI, Cloud Agnostism and Time-to-market",
-            description: "Optimized cloud infrastructure costs while maintaining platform agnosticism, resulting in 40% cost reduction and improved time-to-market.",
-            tags: ["ROI", "Cloud-Native", "Optimization"]
-        }
-    ];
-
     return (
         <div className="container mx-auto px-4 py-8">
             <Link to="/">
