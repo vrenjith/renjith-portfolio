@@ -8,6 +8,7 @@ const experiences = [
         companyLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/910px-SAP_2011_logo.svg.png",
         period: "2013 - Present",
         description: "Led the design and development of a next-generation DevOps platform at SAP Ariba, focusing on containerization, automation, and cloud-agnostic solutions. Specializing in HashiCorp products, Kubernetes, GitOps, and cloud-native solutions.",
+        technologies: ["Kubernetes", "Docker", "Terraform", "Jenkins", "AWS", "GCP", "GitOps", "Istio", "HashiCorp Stack", "Prometheus", "Grafana"],
         highlights: [
             "Institutional in envisioning, architecting, and implementing cloud-native DevOps solutions for microservices",
             "Cloud agnostic architecture design and implementation for multi-cloud environments",
@@ -20,15 +21,15 @@ const experiences = [
             "Defined and implemented DevOps best practices across the entire spectrum, including development environments, microservices architecture, IaaS/PaaS usage, automated tooling, continuous deployment pipelines, and team training",
             "Fostered collaboration and knowledge sharing across cross-functional teams while maintaining DevOps ownership",
             "Partnered with other companies to co-design and develop solutions that benefit both parties in the DevOps space"
-
         ]
     },
     {
         title: "Lead DevOps Architect",
         company: "Atos Syntel",
-        companyLogo: "https://example.com/atos-logo.png", // Replace with actual logo URL
+        companyLogo: "https://example.com/atos-logo.png",
         period: "2018 - 2021",
         description: "Spearheaded DevOps transformation and cloud migration projects for major financial institutions.",
+        technologies: ["AWS", "Azure", "Jenkins", "Ansible", "Docker", "Kubernetes", "Terraform", "Python", "Shell Scripting"],
         highlights: [
             "Designed and implemented CI/CD pipelines for complex enterprise applications",
             "Led cloud migration strategies and implementation",
@@ -38,9 +39,10 @@ const experiences = [
     {
         title: "Senior Solutions Architect",
         company: "Tech Mahindra",
-        companyLogo: "https://example.com/techmahindra-logo.png", // Replace with actual logo URL
+        companyLogo: "https://example.com/techmahindra-logo.png",
         period: "2015 - 2018",
         description: "Architected and delivered cloud solutions for telecom and enterprise clients.",
+        technologies: ["AWS", "OpenStack", "Docker", "Chef", "Puppet", "Jenkins", "Python", "Java"],
         highlights: [
             "Developed cloud-native architectures for large-scale applications",
             "Implemented infrastructure automation and configuration management",
@@ -101,6 +103,16 @@ export const ExperienceSection = () => {
                                     <span className="text-gray-700 mt-2 sm:mt-0">{exp.period}</span>
                                 </div>
                                 <p className="text-gray-800 mb-4">{exp.description}</p>
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                    {exp.technologies.map((tech, techIndex) => (
+                                        <span
+                                            key={techIndex}
+                                            className="px-3 py-1 rounded-full text-sm bg-accent/10 text-accent"
+                                        >
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
                                 <ul className="list-disc list-inside space-y-2 text-gray-800">
                                     {exp.highlights.map((highlight, idx) => (
                                         <li key={idx}>{highlight}</li>
