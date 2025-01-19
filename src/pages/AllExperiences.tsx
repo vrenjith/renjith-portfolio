@@ -1,11 +1,18 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Building } from "lucide-react";
+import { ArrowLeft, Building } from "lucide-react";
 import { experiences } from "@/data/experiences";
+import { Button } from "@/components/ui/button";
 
 const AllExperiences = () => {
     return (
         <div className="container mx-auto px-4 py-16">
+            <Link to="/">
+                <Button variant="ghost" className="mb-6">
+                    <ArrowLeft className="mr-2 h-4 w-4" /> Back to Home
+                </Button>
+            </Link>
+
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
