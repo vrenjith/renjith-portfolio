@@ -5,7 +5,7 @@ const experiences = [
     {
         title: "DevOps Platform Development and Architecture",
         company: "SAP Ariba",
-        companyLogo: "https://upload.wikimedia.org/wikipedia/en/7/70/SAP_Ariba_logo.png",
+        companyLogo: "https://en.m.wikipedia.org/wiki/File:SAP_2011_logo.svg",
         period: "2013 - Present",
         description: "Led the design and development of a next-generation DevOps platform at SAP Ariba, focusing on containerization, automation, and cloud-agnostic solutions. Specializing in HashiCorp products, Kubernetes, GitOps, and cloud-native solutions.",
         highlights: [
