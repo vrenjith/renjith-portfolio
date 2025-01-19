@@ -10,14 +10,21 @@ import AllBlogs from "./pages/AllBlogs";
 import AllProjects from "./pages/AllProjects";
 import EnterpriseDevOpsPlatform from "./components/project-details/EnterpriseDevOpsPlatform";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
