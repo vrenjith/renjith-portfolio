@@ -51,11 +51,11 @@ export const experiences = [
         ]
     },
     {
-        id: "tech-mahindra",
+        id: "nokia-siemens",
         title: "Senior Solutions Architect",
-        company: "Tech Mahindra",
-        companyLogo: "https://example.com/techmahindra-logo.png",
-        period: "2015 - 2018",
+        company: "Nokia Siemens Networks Pvt. Ltd.",
+        companyLogo: "https://upload.wikimedia.org/wikipedia/commons/3/31/LicerioZamorasNSN.png",
+        period: "2009 - 2012",
         location: "Bangalore, India",
         about: "Tech Mahindra is a leading provider of digital transformation, consulting, and business re-engineering solutions. The company focuses on delivering innovative technology solutions across various industries.",
         description: "Architected and delivered cloud solutions for telecom and enterprise clients.",
