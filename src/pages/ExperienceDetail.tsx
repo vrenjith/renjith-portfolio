@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Building, Calendar } from "lucide-react";
+import { ArrowLeft, Building, Calendar, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { experiences } from "@/data/experiences";
 
@@ -55,8 +55,17 @@ const ExperienceDetail = () => {
                                     <Calendar className="w-4 h-4" />
                                     {experience.period}
                                 </span>
+                                <span className="flex items-center gap-2">
+                                    <MapPin className="w-4 h-4" />
+                                    {experience.location}
+                                </span>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="mb-6">
+                        <h2 className="text-xl font-semibold mb-3">About {experience.company}</h2>
+                        <p className="text-gray-700">{experience.about}</p>
                     </div>
 
                     <p className="text-lg text-gray-700 mb-6">{experience.description}</p>

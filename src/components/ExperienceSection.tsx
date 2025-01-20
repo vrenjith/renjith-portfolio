@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Briefcase, Building, ArrowRight } from "lucide-react";
+import { Briefcase, Building, ArrowRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { experiences } from "@/data/experiences";
 import { Button } from "@/components/ui/button";
@@ -55,9 +55,15 @@ export const ExperienceSection = () => {
                                             )}
                                             <div>
                                                 <h3 className="text-xl font-semibold text-gray-900">{exp.title}</h3>
-                                                <div className="flex items-center text-accent">
-                                                    <Building className="w-4 h-4 mr-2" />
-                                                    <p>{exp.company}</p>
+                                                <div className="flex items-center gap-4">
+                                                    <span className="flex items-center text-accent">
+                                                        <Building className="w-4 h-4 mr-2" />
+                                                        <p>{exp.company}</p>
+                                                    </span>
+                                                    <span className="flex items-center text-gray-600">
+                                                        <MapPin className="w-4 h-4 mr-2" />
+                                                        <p>{exp.location}</p>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>

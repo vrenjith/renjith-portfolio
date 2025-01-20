@@ -5,6 +5,8 @@ export const experiences = [
         company: "SAP Ariba",
         companyLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/910px-SAP_2011_logo.svg.png",
         period: "2013 - Present",
+        location: "Palo Alto, USA",
+        about: "SAP Ariba is a leading provider of cloud-based procurement and supply chain solutions. The platform enables businesses to connect and collaborate with their trading partners through the Ariba Network, streamlining procurement processes and supplier management.",
         description: "Led the design and development of a next-generation DevOps platform at SAP Ariba, focusing on containerization, automation, and cloud-agnostic solutions. Specializing in HashiCorp products, Kubernetes, GitOps, and cloud-native solutions.",
         technologies: ["Kubernetes", "Docker", "Terraform", "Jenkins", "AWS", "GCP", "GitOps", "Istio", "HashiCorp Stack", "Prometheus", "Grafana"],
         highlights: [
@@ -28,6 +30,8 @@ export const experiences = [
         company: "Atos Syntel",
         companyLogo: "https://example.com/atos-logo.png",
         period: "2018 - 2021",
+        location: "London, UK",
+        about: "Atos Syntel is a global leader in digital transformation, providing end-to-end IT services and solutions. The company specializes in helping enterprises navigate their digital journey through innovative technology solutions.",
         description: "Spearheaded DevOps transformation and cloud migration projects for major financial institutions.",
         technologies: ["AWS", "Azure", "Jenkins", "Ansible", "Docker", "Kubernetes", "Terraform", "Python", "Shell Scripting"],
         highlights: [
@@ -42,6 +46,8 @@ export const experiences = [
         company: "Tech Mahindra",
         companyLogo: "https://example.com/techmahindra-logo.png",
         period: "2015 - 2018",
+        location: "Bangalore, India",
+        about: "Tech Mahindra is a leading provider of digital transformation, consulting, and business re-engineering solutions. The company focuses on delivering innovative technology solutions across various industries.",
         description: "Architected and delivered cloud solutions for telecom and enterprise clients.",
         technologies: ["AWS", "OpenStack", "Docker", "Chef", "Puppet", "Jenkins", "Python", "Java"],
         highlights: [
