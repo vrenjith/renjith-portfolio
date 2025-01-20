@@ -37,11 +37,13 @@ const ExperienceDetail = () => {
             >
                 <div className="glass rounded-xl p-8 mb-8">
                     <div className="flex items-center gap-4 mb-6">
-                        <img
-                            src={experience.companyLogo}
-                            alt={`${experience.company} logo`}
-                            className="w-16 h-16 rounded-full object-contain"
-                        />
+                        <div className="w-16 h-16 rounded-full bg-white p-1 flex items-center justify-center overflow-hidden">
+                            <img
+                                src={experience.companyLogo}
+                                alt={`${experience.company} logo`}
+                                className="w-full h-full object-contain"
+                            />
+                        </div>
                         <div>
                             <h1 className="text-3xl font-bold mb-2">{experience.title}</h1>
                             <div className="flex items-center gap-4 text-gray-600">
