@@ -37,11 +37,13 @@ const AllExperiences = () => {
                             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
                                 <div className="flex items-center">
                                     {exp.companyLogo && (
-                                        <img
-                                            src={exp.companyLogo}
-                                            alt={`${exp.company} logo`}
-                                            className="w-12 h-12 mr-4 rounded-full object-cover bg-white p-1"
-                                        />
+                                        <div className="w-12 h-12 mr-4 rounded-full bg-white p-1 flex items-center justify-center overflow-hidden">
+                                            <img
+                                                src={exp.companyLogo}
+                                                alt={`${exp.company} logo`}
+                                                className="w-full h-full object-contain"
+                                            />
+                                        </div>
                                     )}
                                     <div>
                                         <h3 className="text-xl font-semibold text-gray-900">{exp.title}</h3>
