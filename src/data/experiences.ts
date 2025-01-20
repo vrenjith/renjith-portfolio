@@ -18,7 +18,8 @@ export const experiences = [
             "Built a scalable and production-ready platform that seamlessly operates across private, public, and hybrid cloud environments (AWS, GCP, and internal cloud)",
             "Defined and implemented DevOps best practices across the entire spectrum, including development environments, microservices architecture, IaaS/PaaS usage, automated tooling, continuous deployment pipelines, and team training",
             "Fostered collaboration and knowledge sharing across cross-functional teams while maintaining DevOps ownership",
-            "Partnered with other companies to co-design and develop solutions that benefit both parties in the DevOps space"
+            "Partnered with other companies to co-design and develop solutions that benefit both parties in the DevOps space",
+            "Building cross time-zone teams to work seamlessly with high level of collaboration without losing the DevOps ownership model."
         ]
     },
     {
