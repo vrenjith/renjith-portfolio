@@ -1,5 +1,14 @@
-export const projects = {
-    "enterprise-devops-platform": {
+export type Project = {
+    id: string;
+    title: string;
+    description: string;
+    icon: string;
+    tags: string[];
+    content: string;
+};
+
+export const projects: Project[] = [
+    {
         id: "enterprise-devops-platform",
         title: "Enterprise DevOps Platform",
         description: "Led the architecture and implementation of a comprehensive DevOps platform integrating Jenkins, Kubernetes, Terraform, and advanced monitoring solutions, serving 500+ developers.",
@@ -26,7 +35,7 @@ Technologies Used:
 • Jenkins for CI pipeline
 • Custom operators built using the Operator SDK`
     },
-    "team-transformation": {
+    {
         id: "team-transformation",
         title: "DevOps Team Transformation",
         description: "Mentored and grew a team of 25 DevOps engineers, implementing structured training programs and career development paths while delivering critical infrastructure projects.",
@@ -50,7 +59,7 @@ Technologies Used:
 • Vulnerability scanners
 • Documentation tools`
     },
-    "cloud-native-migration": {
+    {
         id: "cloud-native-migration",
         title: "Cloud-Native Migration Strategy",
         description: "Architected and led the migration of legacy systems to cloud-native infrastructure using Kubernetes, Istio, and modern observability tools.",
@@ -74,7 +83,7 @@ Technologies Used:
 • Cloud-native technologies
 • Infrastructure automation`
     },
-    "automation-framework": {
+    {
         id: "automation-framework",
         title: "Enterprise Automation Framework",
         description: "Designed and implemented a comprehensive automation framework using Terraform, Ansible, and custom tools, reducing deployment time by 70%.",
@@ -99,7 +108,7 @@ Technologies Used:
 • Custom controllers for specific use cases
 • Monitoring and logging solutions`
     },
-    "security-compliance": {
+    {
         id: "security-compliance",
         title: "Security & Compliance Framework",
         description: "Established security best practices and compliance frameworks for cloud-native infrastructure, ensuring regulatory compliance while maintaining agility.",
@@ -124,7 +133,7 @@ Technologies Used:
 • Container scanning tools
 • Security monitoring solutions`
     },
-    "observability-platform": {
+    {
         id: "observability-platform",
         title: "Enterprise Observability Platform",
         description: "Led the implementation of a comprehensive observability platform using Splunk, Grafana, and custom dashboards, improving incident response time by 60%.",
@@ -148,4 +157,4 @@ Technologies Used:
 • Monitoring and logging
 • Testing frameworks`
     }
-};
+];
