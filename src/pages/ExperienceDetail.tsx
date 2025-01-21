@@ -85,15 +85,25 @@ const ExperienceDetail = () => {
                     </div>
 
                     <div>
-                        <h2 className="text-xl font-semibold mb-3">Key Achievements</h2>
-                        <ul className="space-y-3">
-                            {experience.highlights.map((highlight, index) => (
-                                <li key={index} className="flex items-start">
-                                    <span className="w-2 h-2 mt-2 mr-3 rounded-full bg-accent flex-shrink-0" />
-                                    <span className="text-gray-700">{highlight}</span>
-                                </li>
+                        <h2 className="text-xl font-semibold mb-4">Positions & Achievements</h2>
+                        <div className="space-y-6">
+                            {experience.positions.map((position, index) => (
+                                <div key={index} className="glass p-6 rounded-lg">
+                                    <div className="flex justify-between items-center mb-4">
+                                        <h3 className="text-lg font-semibold text-accent">{position.title}</h3>
+                                        <span className="text-gray-600">{position.period}</span>
+                                    </div>
+                                    <ul className="space-y-3">
+                                        {position.highlights.map((highlight, hIndex) => (
+                                            <li key={hIndex} className="flex items-start">
+                                                <span className="w-2 h-2 mt-2 mr-3 rounded-full bg-accent flex-shrink-0" />
+                                                <span className="text-gray-700">{highlight}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     </div>
                 </div>
             </motion.div>
