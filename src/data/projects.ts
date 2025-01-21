@@ -18,7 +18,6 @@ export const projects: Project[] = [
 A comprehensive DevOps platform integrating modern tools and practices to streamline development, deployment, and operations across the enterprise. This platform serves 500+ developers and handles thousands of deployments monthly.
 
 <h2>Technology Stack</h2>
-
 <h3>Infrastructure & Provisioning</h3>
 • Vagrant for local development environments
 • Docker for containerization
@@ -26,23 +25,19 @@ A comprehensive DevOps platform integrating modern tools and practices to stream
 • Terraform for infrastructure as code
 • AWS & GCP for cloud infrastructure
 • Bare-metal infrastructure for specific workloads
-
 <h3>Service Discovery & Networking</h3>
 • Consul for service discovery and configuration
 • Nomad for workload orchestration
 • Nginx for load balancing and routing
 • Flannel for container networking
-
 <h3>Container Orchestration<h3>
 • Kubernetes/Nomad for container orchestration
 • Helm for package management
 • Istio for service mesh capabilities
-
 <h3>CI/CD Pipeline</h3>
 • GitHub for source control
 • Jenkins for continuous integration
 • Artifactory for artifact management
-
 <h3>Monitoring & Observability</h3>
 • Splunk for log aggregation and analysis
 • Google Cloud Logging for cloud-native logging
