@@ -7,7 +7,8 @@ import { blogs } from "@/data/blogs";
 const BlogDetail = () => {
   const { id } = useParams();
   
-  const blog = blogs[id as keyof typeof blogs];
+  // Find the blog by id
+  const blog = Object.values(blogs).find(blog => blog.id === id);
 
   if (!blog) {
     return <div>Blog post not found</div>;

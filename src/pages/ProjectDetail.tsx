@@ -7,7 +7,8 @@ import { projects } from "@/data/projects";
 const ProjectDetail = () => {
   const { id } = useParams();
   
-  const project = projects[id as keyof typeof projects];
+  // Find the project by id
+  const project = Object.values(projects).find(project => project.id === id);
 
   if (!project) {
     return <div>Project not found</div>;
