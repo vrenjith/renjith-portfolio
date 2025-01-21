@@ -1,5 +1,15 @@
-export const blogs = {
-    "building-devops-teams": {
+export type Blog = {
+    id: string;
+    title: string;
+    description: string;
+    date: string;
+    readTime: string;
+    tags: string[];
+    content: string;
+};
+
+export const blogs: Blog[] = [
+    {
         id: "building-devops-teams",
         title: "Building and Scaling High-Performance DevOps Teams",
         description: "Strategies for mentoring, growing, and leading successful DevOps teams through transformation and cultural change.",
@@ -21,7 +31,7 @@ Key Implementation Steps:
 Best Practices and Lessons Learned:
 Through implementing GitOps in various enterprise environments, I've learned valuable lessons about maintaining consistency, handling drift, and ensuring security. This article shares these insights and provides practical guidance for teams adopting GitOps.`
     },
-    "integrated-devops-platform": {
+    {
         id: "integrated-devops-platform",
         title: "Architecting an Enterprise DevOps Platform",
         description: "Comprehensive guide to building an integrated DevOps platform with Kubernetes, Terraform, Jenkins, and monitoring solutions.",
@@ -43,7 +53,7 @@ Implementation Guide:
 Real-world Examples:
 Drawing from my experience in securing large-scale Kubernetes deployments, I'll share practical examples and common pitfalls to avoid.`
     },
-    "container-orchestration": {
+    {
         id: "container-orchestration",
         title: "Container Orchestration: From Docker to Kubernetes",
         description: "Evolution from basic containerization to advanced orchestration with Kubernetes, Helm, and service mesh with Istio.",
@@ -65,7 +75,7 @@ Key Patterns:
 Implementation Strategies:
 Based on real-world experience implementing these patterns at scale, we'll explore practical approaches and lessons learned.`
     },
-    "infrastructure-automation": {
+    {
         id: "infrastructure-automation",
         title: "Infrastructure Automation at Scale",
         description: "Implementing infrastructure as code using Terraform, Packer, and Consul for multi-cloud environments.",
@@ -87,7 +97,7 @@ Key Practices:
 Real-world Implementation:
 Drawing from experience implementing IaC in various organizations, we'll explore practical examples and common challenges.`
     },
-    "observability-monitoring": {
+    {
         id: "observability-monitoring",
         title: "Advanced Observability in Cloud-Native Systems",
         description: "Implementing comprehensive monitoring using Splunk, Grafana, InfluxDB, and cloud-native logging solutions.",
@@ -109,7 +119,7 @@ Key Areas:
 Implementation Guide:
 Based on experience securing production Kubernetes clusters, we'll explore practical hardening techniques and best practices.`
     },
-    "devops-mentorship": {
+    {
         id: "devops-mentorship",
         title: "DevOps Mentorship: Growing the Next Generation",
         description: "Effective strategies for mentoring junior DevOps engineers and building strong, collaborative teams.",
@@ -131,4 +141,4 @@ Key Considerations:
 Implementation Approach:
 Drawing from experience implementing multi-cloud strategies, we'll explore practical approaches and lessons learned.`
     }
-};
+];
