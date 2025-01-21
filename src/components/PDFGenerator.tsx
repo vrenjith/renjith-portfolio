@@ -48,6 +48,10 @@ const styles = StyleSheet.create({
     borderBottom: '1 solid #eaeaea',
     paddingBottom: 10,
   },
+  detailSection: {
+    marginTop: 10,
+    paddingLeft: 15,
+  },
 });
 
 const PDFDocument = () => (
@@ -74,6 +78,25 @@ const PDFDocument = () => (
                 <Text key={techIndex} style={styles.tag}>{tech}</Text>
               ))}
             </View>
+            {exp.positions && (
+              <View style={styles.detailSection}>
+                <Text style={styles.subtitle}>Positions & Achievements</Text>
+                {exp.positions.map((position, posIndex) => (
+                  <View key={posIndex} style={styles.itemContainer}>
+                    <Text style={[styles.text, { fontWeight: 'bold' }]}>{position.title} - {position.period}</Text>
+                    {position.highlights.map((highlight, hIndex) => (
+                      <Text key={hIndex} style={styles.text}>• {highlight}</Text>
+                    ))}
+                  </View>
+                ))}
+              </View>
+            )}
+            {exp.about && (
+              <View style={styles.detailSection}>
+                <Text style={styles.subtitle}>About {exp.company}</Text>
+                <Text style={styles.text}>{exp.about}</Text>
+              </View>
+            )}
           </View>
         ))}
       </View>
@@ -89,6 +112,14 @@ const PDFDocument = () => (
                 <Text key={tagIndex} style={styles.tag}>{tag}</Text>
               ))}
             </View>
+            {project.content && (
+              <View style={styles.detailSection}>
+                <Text style={styles.subtitle}>Detailed Overview</Text>
+                {project.content.split('\n\n').map((paragraph, pIndex) => (
+                  <Text key={pIndex} style={styles.text}>{paragraph}</Text>
+                ))}
+              </View>
+            )}
           </View>
         ))}
       </View>
@@ -105,6 +136,14 @@ const PDFDocument = () => (
                 <Text key={tagIndex} style={styles.tag}>{tag}</Text>
               ))}
             </View>
+            {blog.content && (
+              <View style={styles.detailSection}>
+                <Text style={styles.subtitle}>Full Article</Text>
+                {blog.content.split('\n\n').map((paragraph, pIndex) => (
+                  <Text key={pIndex} style={styles.text}>{paragraph}</Text>
+                ))}
+              </View>
+            )}
           </View>
         ))}
       </View>
@@ -115,7 +154,7 @@ const PDFDocument = () => (
 export const PDFGenerator = () => (
   <PDFDownloadLink document={<PDFDocument />} fileName="portfolio.pdf">
     {({ loading }) => (
-      <Button variant="outline" disabled={loading}>
+      <Button variant="outline" disabled={loading} className="bg-accent/10 hover:bg-accent/20">
         <FileDown className="w-4 h-4 mr-2" />
         {loading ? "Generating PDF..." : "Download PDF"}
       </Button>

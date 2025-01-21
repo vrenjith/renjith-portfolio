@@ -24,15 +24,9 @@ export const ExperienceSection = () => {
                         <p className="text-gray-700 mb-8">
                             Over 24 years of experience in application development, cloud architecture and DevOps transformation
                         </p>
-                        <Link to="/experiences">
-                            <Button variant="outline" className="group">
-                                View All Experience
-                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                            </Button>
-                        </Link>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 gap-6">
+                    <div className="grid grid-cols-1 gap-6 mb-12">
                         {experiences.slice(0, 3).map((exp, index) => (
                             <Link key={index} to={`/experience/${exp.id}`}>
                                 <motion.div
@@ -89,6 +83,21 @@ export const ExperienceSection = () => {
                             </Link>
                         ))}
                     </div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                        className="text-center"
+                    >
+                        <Link to="/experiences">
+                            <Button variant="outline" size="lg" className="bg-accent/10 hover:bg-accent/20 group">
+                                View All Experience
+                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                        </Link>
+                    </motion.div>
                 </div>
             </div>
         </section>

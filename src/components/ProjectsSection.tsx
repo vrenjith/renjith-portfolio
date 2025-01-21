@@ -25,18 +25,12 @@ export const ProjectsSection = () => {
                     className="text-center mb-12"
                 >
                     <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                         Showcasing my expertise in DevOps architecture through real-world implementations
                     </p>
-                    <Link to="/projects">
-                        <Button variant="outline" className="group">
-                            View All Projects
-                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                    </Link>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                     {projects.slice(0, 6).map((project, index) => {
                         const Icon = iconMap[project.icon as keyof typeof iconMap];
                         return (
@@ -81,6 +75,21 @@ export const ProjectsSection = () => {
                         );
                     })}
                 </div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="text-center"
+                >
+                    <Link to="/projects">
+                        <Button variant="outline" size="lg" className="bg-accent/10 hover:bg-accent/20 group">
+                            View All Projects
+                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                    </Link>
+                </motion.div>
             </div>
         </section>
     );
