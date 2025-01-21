@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Send, BookOpen, LayoutGrid, User } from "lucide-react";
+import { PDFGenerator } from "./PDFGenerator";
 
 export const HeroSection = () => {
   const scrollToContact = () => {
@@ -107,6 +108,7 @@ export const HeroSection = () => {
               <Send className="w-4 h-4 mr-2" />
               Get in touch
             </button>
+            <PDFGenerator />
           </motion.div>
         </div>
       </div>
