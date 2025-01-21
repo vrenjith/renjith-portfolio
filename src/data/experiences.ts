@@ -115,7 +115,7 @@ export const experiences = [
         period: "2006 - 2009",
         location: "Bangalore, India",
         about: "Nokia Siemen's Telco Service Platform forms the base OEM platform for a variety of network elements of NSN including HLR and IMS. It is based on Solaris Cluster Nodes, Distributed Oracle as the key OEM components. It is based on Sun and Fujistu-Siemens hardware. It exposes interfaces towards the application and effectively isolates the system complexity from the application design",
-        description: "As a Technical Architect, led the integration of a high-availability platform based on Solaris, Sun Cluster, and Sun Storage. I established a new team in Bangalore, mentoring and coaching a team of 30+ members. I championed Scrum methodology within NSN, empowering teams through continuous inspection and adaptation",
+        description: "Led the integration of a high-availability platform based on Solaris, Sun Cluster, and Sun Storage. Established a new team in Bangalore, mentored and coached a team of 30+ members. Championed Scrum methodology within NSN, empowering teams through continuous inspection and adaptation",
         technologies: ["C", "Linux", "C++", "Perl", "WireShark", "SCTP", "IPTables", "Valgrind", "Python"],
         positions: [
             {
@@ -129,6 +129,50 @@ export const experiences = [
                     "Brought in the concept and practices of Scrum based product development and was the pioneers in NSN on this front.",
                     "Devised methods in truly empowered the teams with continuously inspecting and adapting the practices. ",
                     "",
+                ]
+            }
+        ]
+    },
+    {
+        id: "siemens",
+        title: "Various Leadership and Engineering Positions",
+        company: "Siemens",
+        companyLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Siemens_AG_logo.svg/2560px-Siemens_AG_logo.svg.png",
+        period: "2003 - 2006",
+        location: "Bangalore, India",
+        about: "Siemen's Switch Commander was the single network management solution from Siemens for managing all the network elements supported by Siemens in the Core Telecom Network. It was based on a distributed design spanning across multiple machines for load sharing and effectively segregated each function of FCAPS, yet centralized administration and management.",
+        description: "Established software architecture guidelines and developed common cross-product services. Participated in technical reviews, feature evaluations, and system engineering activities. Played a critical role in resolving complex faults during system testing. Prior to that, as a Core Team member, contributed to the development of Switch Commander, defining high-level analysis, providing design guidelines, and ensuring software stability. Contributions were recognized with a Director's Award for the SCR 11.1 release.",
+        technologies: ["C", "Linux", "C++", "Perl", "WireShark", "SCTP", "IPTables", "Valgrind", "Python"],
+        positions: [
+            {
+                title: "Technical Leader",
+                period: "2004 - 2006",
+                highlights: [
+                    "Establish Software Architecture Guidelines, mechanisms and patterns used to develop software architecture",
+                    "Designed an developed common cross-product services such as concurrency, distribution, error handling, logging, tracing, state handling and security mechanisms",
+                    "Develop design and programming guidelines ",
+                    "Participation in the pre-analysis, analysis and design technical hearing of features/change requests ",
+                    "Prepare and agree overall Interface Descriptions ",
+                    "Participate in reviews of Feature Specifications and Design Specifications",
+                    "Evaluate Feature requests/Change Requests and provide technical statements ",
+                    "Interface to System engineering",
+                    "Represented SC Base for workshop in Portugal for Mobile Number Portability application",
+                    "Feature proposals were suggested /pre-analysis as part of the CDA activities",
+                    "Played a significant role on the most difficult faults in the system during stability, performance and reliability testing for the software."
+                ]
+            },
+            {
+                title: "Core Team Member",
+                period: "2003 - 2004",
+                highlights: [
+                    "Member of the Core Team - Base and Alarming parts (F, C and S functions of FCAPS in Network Management) of Switch commander ",
+                    "Core competence for pre-analysis and to cover the requirements for features during the development phase",
+                    "Define the high level analysis of the software and present to the teams",
+                    "Provide Design, Coding, Testing Guidelines, Performance and Load model for the software from past learning",
+                    "Crisis Handling and ensuring the Bring up of the Software in an integrated domain.",
+                    "Be the driving force on stability issues within the project from start until the release on the base of load and stress tests",
+                    "",
+                    "Significant contribution in release known as SCR 11.1 and achieved the Director’s award for the same"
                 ]
             }
         ]
