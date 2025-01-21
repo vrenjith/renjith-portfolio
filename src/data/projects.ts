@@ -19,50 +19,63 @@ A comprehensive DevOps platform integrating modern tools and practices to stream
 
 <h2>Technology Stack</h2>
 <h3>Infrastructure & Provisioning</h3>
-• Vagrant for local development environments
-• Docker for containerization
-• Packer for image building
-• Terraform for infrastructure as code
-• AWS & GCP for cloud infrastructure
-• Bare-metal infrastructure for specific workloads
+<ul>
+    <li>Vagrant for local development environments</li>
+    <li>Docker for containerization</li>
+    <li>Packer for image building</li>
+    <li>Terraform for infrastructure as code</li>
+    <li>AWS & GCP for cloud infrastructure</li>
+    <li>Bare-metal infrastructure for specific workloads</li>
+</ul>
 <h3>Service Discovery & Networking</h3>
-• Consul for service discovery and configuration
-• Nomad for workload orchestration
-• Nginx for load balancing and routing
-• Flannel for container networking
+<ul>
+    <li>Consul for service discovery and configuration</li>
+    <li>Nomad for workload orchestration</li>
+    <li>Nginx for load balancing and routing</li>
+    <li>Flannel for container networking</li>
+</ul>
 <h3>Container Orchestration<h3>
-• Kubernetes/Nomad for container orchestration
-• Helm for package management
-• Istio for service mesh capabilities
+<ul>
+    <li>Kubernetes/Nomad for container orchestration</li>
+    <li>Helm for package management</li>
+    <li>Istio for service mesh capabilities</li>
+</ul>
 <h3>CI/CD Pipeline</h3>
-• GitHub for source control
-• Jenkins for continuous integration
-• Artifactory for artifact management
+<ul>
+    <li>GitHub for source control</li>
+    <li>Jenkins for continuous integration</li>
+    <li>Artifactory for artifact management</li>
+</ul>
 <h3>Monitoring & Observability</h3>
-• Splunk for log aggregation and analysis
-• Google Cloud Logging for cloud-native logging
-• InfluxDB for time-series metrics
-• Grafana for metrics visualization
-• Dynatrace for application performance monitoring
+<ul>
+    <li>Splunk for log aggregation and analysis</li>
+    <li>Google Cloud Logging for cloud-native logging</li>
+    <li>InfluxDB for time-series metrics</li>
+    <li>Grafana for metrics visualization</li>
+    <li>Dynatrace for application performance monitoring</li>
+</ul>
 
 <h2>Architecture Overview</h2>
 The platform is built on a microservices architecture, leveraging HashiCorp Nomad and Kubernetes for container orchestration and Istio/Consul for service mesh capabilities. Infrastructure is provisioned using Terraform across multiple cloud providers and internal-cloud environments, with Consul providing service discovery and configuration management.
 
- 
 <h2>Key Features</h2>
-• Automated infrastructure provisioning across multiple cloud providers
-• Containerized application deployment with Kubernetes
-• Service mesh for enhanced security and observability
-• Comprehensive monitoring and logging solution
-• Automated CI/CD pipelines with Jenkins and GitHub
-• Centralized artifact management with Artifactory
+<ul>
+    <li>Automated infrastructure provisioning across multiple cloud providers</li>
+    <li>Containerized application deployment with Kubernetes</li>
+    <li>Service mesh for enhanced security and observability</li>
+    <li>Comprehensive monitoring and logging solution</li>
+    <li>Automated CI/CD pipelines with Jenkins and GitHub</li>
+    <li>Centralized artifact management with Artifactory</li>
+</ul>
 
 <h2>Results & Impact</h2>
-• 70% reduction in deployment time
-• 99.9% deployment success rate
-• 60% reduction in incident response time
-• 40% reduction in infrastructure costs
-• Improved developer productivity and satisfaction
+<ul>
+    <li>70% reduction in deployment time</li>
+    <li>99.9% deployment success rate</li>
+    <li>60% reduction in incident response time</li>
+    <li>40% reduction in infrastructure costs</li>
+    <li>Improved developer productivity and satisfaction</li>
+</ul>
 `
     },
     {

@@ -42,9 +42,11 @@ const ProjectDetail = () => {
 
                 <div className="prose prose-invert max-w-none">
                     {project.content.split('\n\n').map((paragraph, index) => (
-                        <p key={index} className="mb-4 text-gray-700">
-                            <div dangerouslySetInnerHTML={{ __html: paragraph }} />
-                        </p>
+                        <div className="mb-8">
+                            <p key={index} className="mb-4 text-gray-700">
+                                <div dangerouslySetInnerHTML={{ __html: paragraph }} />
+                            </p>
+                        </div>
                     ))}
                 </div>
             </motion.div>
