@@ -22,7 +22,7 @@ export const ExperienceSection = () => {
                         </div>
                         <h2 className="text-4xl font-bold mb-4">Professional Journey</h2>
                         <p className="text-gray-700 mb-8">
-                            Over 15 years of experience in cloud architecture and DevOps transformation
+                            Over 24 years of experience in application development, cloud architecture and DevOps transformation
                         </p>
                         <Link to="/experiences">
                             <Button variant="outline" className="group">
