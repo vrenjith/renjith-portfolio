@@ -69,8 +69,8 @@ export const experiences = [
         companyLogo: "https://www.nokia.com/sites/default/files/2023-02/nokia-refreshed-logo-1_1.jpg?height=64&width=128",
         period: "2009 - 2012",
         location: "Bangalore, India",
-        about: "Femto Gateway serves as an aggregator for the miniature 3G cells deployed at home and enterprise environments over standardized interfaces. It acts as an RNC towards the core network over Iu interface. The connection between the 3G cells and the Femto Gateway is via nternet and the Femto Gateway facilitates a secure connection between the 3G cells and the gateway.",
-        description: "Led Agile transformation for 7 scrum teams, managing product backlog and facilitating sprint planning. Also, designed and developed a custom Continuous Integration platform for rapid development and validation of Femto Gateway features.",
+        about: "Nokia's Femto Gateway serves as an aggregator for the miniature 3G cells deployed at home and enterprise environments over standardized interfaces. It acts as an RNC towards the core network over Iu interface. The connection between the 3G cells and the Femto Gateway is via nternet and the Femto Gateway facilitates a secure connection between the 3G cells and the gateway.",
+        description: "Held diverse leadership, engineering, and technical development roles. Led Agile transformation for 7 scrum teams, managing product backlog and facilitating sprint planning. Also, designed and developed a custom Continuous Integration platform for rapid development and validation of Femto Gateway features. As Performance Architect, was responsible for Linux system capacity and performance specifications, including kernel debugging and adaptation for efficient SCTP packet handling, and developed the System Stats tool for performance analysis.",
         technologies: ["AWS", "OpenStack", "Docker", "Chef", "Puppet", "Jenkins", "Python", "Java"],
         positions: [
             {
