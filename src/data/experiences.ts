@@ -71,7 +71,7 @@ export const experiences = [
         location: "Bangalore, India",
         about: "Nokia's Femto Gateway serves as an aggregator for the miniature 3G cells deployed at home and enterprise environments over standardized interfaces. It acts as an RNC towards the core network over Iu interface. The connection between the 3G cells and the Femto Gateway is via nternet and the Femto Gateway facilitates a secure connection between the 3G cells and the gateway.",
         description: "Held diverse leadership, engineering, and technical development roles. Led Agile transformation for 7 scrum teams, managing product backlog and facilitating sprint planning. Also, designed and developed a custom Continuous Integration platform for rapid development and validation of Femto Gateway features. As Performance Architect, was responsible for Linux system capacity and performance specifications, including kernel debugging and adaptation for efficient SCTP packet handling, and developed the System Stats tool for performance analysis.",
-        technologies: ["AWS", "OpenStack", "Docker", "Chef", "Puppet", "Jenkins", "Python", "Java"],
+        technologies: ["C", "Linux", "C++", "Perl", "WireShark", "SCTP", "IPTables", "Valgrind", "Python"],
         positions: [
             {
                 title: "Product Owner",
@@ -86,11 +86,24 @@ export const experiences = [
                 ]
             },
             {
-                title: "Solutions Architect",
+                title: "Architect - Continuous Integration System",
+                period: "2010 - 2012",
+                highlights: [
+                    "Developed an entirely new Continuous integration platform based on Perl to aid the rapid development and validation of features in Femto Gateway. This was needed due to the unique requirements of hardware and environment required for testing of Femto Gateway.",
+                    "Layered design with multiple parallel executions and as well a result aggregation from the distributed systems",
+                    "Automatic build qualification built into the framework based on the test results. ",
+                    "A complete desktop solution was developed to aid the developers."
+                ]
+            },
+            {
+                title: "Performance Architect",
                 period: "2009 - 2010",
                 highlights: [
-                    "Led technical teams in delivering complex cloud solutions",
-                    "Designed and implemented automated deployment pipelines"
+                    "Linux System Capacity and Performance Specification",
+                    "Linux System Performance Tuning",
+                    "Linux Kernel debugging and adaptation for efficient SCTP packet handling",
+                    "Developed the System Stats tool to analyze and plot charts about the difference machine characteristics of Linux systems for performance runs",
+                    "Agile development and Scrum transformation in Femto Gateway was envisaged as a key success story with NSN and was part of many forums demonstrating the same. Many projects gained experience and motivation from the success of this project. Agile Presentation in NSN agile days was conducted based on Femto Gateway transformation"
                 ]
             }
         ]
