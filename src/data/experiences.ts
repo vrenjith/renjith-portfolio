@@ -183,7 +183,8 @@ export const experiences = [
         companyLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Siemens_AG_logo.svg/2560px-Siemens_AG_logo.svg.png",
         period: "2000 - 2003",
         location: "Bangalore, India",
-        about: "Siemen's Performance Data Collector (PDC) performs the ‘P’ functionality in the FCAPS. It collects and transforms the performance data from the various core network elements and supported both and mobile and wired network elements. The transformation is done to standardized xml as well as proprietary Siemens formats for the post-processing applications to pick up these files for analysis.",
+        about: "Siemen's Performance Data Collector (PDC) performs the ‘P’ functionality in the FCAPS. It collects and transforms the performance data from the various core network elements and supported both and mobile and wired network elements. The transformation is done to standardized xml as well as proprietary Siemens formats for the post-processing applications to pick up these files for analysis",
+        description: "Contributed to the analysis, design, coding, and testing of two versions of the PDC software. Led the installation task force for network management applications and authored high availability guidelines. As a member of the Central Design Authority (CDA), was responsible for the Product Data Collector (PDC). Also, served as a mentor for all components in PDC and was a member of the System Availability and Reliability (SAR) team. Acted as the Oracle support contact for the entire product unit",
         technologies: ["C++", "Windows", "COM", "InstallShield", "Oracle"],
         positions: [
             {
