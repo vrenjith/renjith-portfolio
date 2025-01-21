@@ -116,7 +116,7 @@ export const experiences = [
         location: "Bangalore, India",
         about: "Nokia Siemen's Telco Service Platform forms the base OEM platform for a variety of network elements of NSN including HLR and IMS. It is based on Solaris Cluster Nodes, Distributed Oracle as the key OEM components. It is based on Sun and Fujistu-Siemens hardware. It exposes interfaces towards the application and effectively isolates the system complexity from the application design",
         description: "Led the integration of a high-availability platform based on Solaris, Sun Cluster, and Sun Storage. Established a new team in Bangalore, mentored and coached a team of 30+ members. Championed Scrum methodology within NSN, empowering teams through continuous inspection and adaptation",
-        technologies: ["C", "Linux", "C++", "Perl", "WireShark", "SCTP", "IPTables", "Valgrind", "Python"],
+        technologies: ["C", "Sun Solaris", "Sun Fire", "Sun SPARC", "Veritas", "Blade Servers"],
         positions: [
             {
                 title: "Technical Architect",
@@ -127,22 +127,21 @@ export const experiences = [
                     "In depth understanding of Operating System internals was big plus in establishing this project in Bangalore.",
                     "Directly guiding and technical coaching the sub-project with the team of 30 people and responsible for schedule, quality and overall conception & effort estimation of the sub-project. ",
                     "Brought in the concept and practices of Scrum based product development and was the pioneers in NSN on this front.",
-                    "Devised methods in truly empowered the teams with continuously inspecting and adapting the practices. ",
-                    "",
+                    "Devised methods in truly empowered the teams with continuously inspecting and adapting the practices. "
                 ]
             }
         ]
     },
     {
         id: "siemens",
-        title: "Various Leadership and Engineering Positions",
+        title: "Various Technical Positions",
         company: "Siemens",
         companyLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Siemens_AG_logo.svg/2560px-Siemens_AG_logo.svg.png",
         period: "2003 - 2006",
         location: "Bangalore, India",
         about: "Siemen's Switch Commander was the single network management solution from Siemens for managing all the network elements supported by Siemens in the Core Telecom Network. It was based on a distributed design spanning across multiple machines for load sharing and effectively segregated each function of FCAPS, yet centralized administration and management.",
         description: "Established software architecture guidelines and developed common cross-product services. Participated in technical reviews, feature evaluations, and system engineering activities. Played a critical role in resolving complex faults during system testing. Prior to that, as a Core Team member, contributed to the development of Switch Commander, defining high-level analysis, providing design guidelines, and ensuring software stability.",
-        technologies: ["C", "Linux", "C++", "Perl", "WireShark", "SCTP", "IPTables", "Valgrind", "Python"],
+        technologies: ["C++", "Windows", "Perl", "Oracle", "COM", "CORBA"],
         positions: [
             {
                 title: "Technical Leader",
@@ -185,7 +184,7 @@ export const experiences = [
         period: "2000 - 2003",
         location: "Bangalore, India",
         about: "Siemen's Performance Data Collector (PDC) performs the ‘P’ functionality in the FCAPS. It collects and transforms the performance data from the various core network elements and supported both and mobile and wired network elements. The transformation is done to standardized xml as well as proprietary Siemens formats for the post-processing applications to pick up these files for analysis.",
-        technologies: ["C", "Linux", "C++", "Perl", "WireShark", "SCTP", "IPTables", "Valgrind", "Python"],
+        technologies: ["C++", "Windows", "COM", "InstallShield", "Oracle"],
         positions: [
             {
                 title: "Software Engineer",
