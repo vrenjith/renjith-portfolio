@@ -141,7 +141,7 @@ export const experiences = [
         period: "2003 - 2006",
         location: "Bangalore, India",
         about: "Siemen's Switch Commander was the single network management solution from Siemens for managing all the network elements supported by Siemens in the Core Telecom Network. It was based on a distributed design spanning across multiple machines for load sharing and effectively segregated each function of FCAPS, yet centralized administration and management.",
-        description: "Established software architecture guidelines and developed common cross-product services. Participated in technical reviews, feature evaluations, and system engineering activities. Played a critical role in resolving complex faults during system testing. Prior to that, as a Core Team member, contributed to the development of Switch Commander, defining high-level analysis, providing design guidelines, and ensuring software stability. Contributions were recognized with a Director's Award for the SCR 11.1 release.",
+        description: "Established software architecture guidelines and developed common cross-product services. Participated in technical reviews, feature evaluations, and system engineering activities. Played a critical role in resolving complex faults during system testing. Prior to that, as a Core Team member, contributed to the development of Switch Commander, defining high-level analysis, providing design guidelines, and ensuring software stability.",
         technologies: ["C", "Linux", "C++", "Perl", "WireShark", "SCTP", "IPTables", "Valgrind", "Python"],
         positions: [
             {
@@ -173,6 +173,31 @@ export const experiences = [
                     "Be the driving force on stability issues within the project from start until the release on the base of load and stress tests",
                     "",
                     "Significant contribution in release known as SCR 11.1 and achieved the Director’s award for the same"
+                ]
+            }
+        ]
+    },
+    {
+        id: "siemens",
+        title: "Software Engineering Roles",
+        company: "Siemens",
+        companyLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Siemens_AG_logo.svg/2560px-Siemens_AG_logo.svg.png",
+        period: "2000 - 2003",
+        location: "Bangalore, India",
+        about: "Siemen's Performance Data Collector (PDC) performs the ‘P’ functionality in the FCAPS. It collects and transforms the performance data from the various core network elements and supported both and mobile and wired network elements. The transformation is done to standardized xml as well as proprietary Siemens formats for the post-processing applications to pick up these files for analysis.",
+        technologies: ["C", "Linux", "C++", "Perl", "WireShark", "SCTP", "IPTables", "Valgrind", "Python"],
+        positions: [
+            {
+                title: "Software Engineer",
+                period: "2000 - 2003",
+                highlights: [
+                    "As part of a team of 6, contributed to the analysis, design, coding and testing of two versions of this software",
+                    "Installation Taskforce member for network management applications and author for the high availability guidelines",
+                    "“Central Design Authority” (CDA) Member, Center of Competence (CoC) Responsible for PDC ",
+                    "Mentor for all components in PDC Member of the System Availability and Reliability (SAR) team ",
+                    "Oracle support-contact for whole product unit",
+                    "Significant contributions for the Cloning feature in SCR10.2, breakthrough achievement with respect to HAL replacement in Windows which enabled one click deployment of images with all pre-requisites on to any type of hardware.",
+                    "Awarded Star Performer twice in the company for two consecutive years"
                 ]
             }
         ]
