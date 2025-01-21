@@ -11,29 +11,58 @@ export const projects: Project[] = [
     {
         id: "enterprise-devops-platform",
         title: "Enterprise DevOps Platform",
-        description: "Led the architecture and implementation of a comprehensive DevOps platform integrating Jenkins, Kubernetes, Terraform, and advanced monitoring solutions, serving 500+ developers.",
+        description: "A comprehensive DevOps platform integrating modern tools and practices to streamline development, deployment, and operations across the enterprise. This platform serves 500+ developers and handles thousands of deployments monthly.",
         icon: "Cloud",
         tags: ["Platform Engineering", "Leadership", "Integration"],
-        content: `Implemented enterprise-scale GitOps delivery pipeline using ArgoCD and Flux, achieving 99.9% deployment reliability and 70% faster recovery times.
+        content: `Overview:
+A comprehensive DevOps platform integrating modern tools and practices to streamline development, deployment, and operations across the enterprise. This platform serves 500+ developers and handles thousands of deployments monthly.
 
-Key Achievements:
-• Designed and implemented a GitOps-based continuous delivery pipeline that handles over 1000 deployments per month
-• Integrated ArgoCD and Flux for automated synchronization between Git repositories and Kubernetes clusters
-• Implemented drift detection and automatic reconciliation mechanisms
-• Created custom controllers for handling complex deployment scenarios
-• Established monitoring and alerting for the GitOps pipeline using Prometheus and Grafana
-• Developed custom dashboards for visualizing deployment status and history
-• Implemented automated rollback mechanisms for failed deployments
-• Created documentation and conducted training sessions for development teams
-
-Technologies Used:
-• ArgoCD and Flux for GitOps implementation
+Technology Stack:
+• Infrastructure & Provisioning
+• Vagrant for local development environments
+• Docker for containerization
+• Packer for image building
+• Terraform for infrastructure as code
+• AWS & GCP for cloud infrastructure
+• Bare-metal infrastructure for specific workloads
+• Service Discovery & Networking
+• Consul for service discovery and configuration
+• Nomad for workload orchestration
+• Nginx for load balancing and routing
+• Flannel for container networking
+• Container Orchestration
 • Kubernetes for container orchestration
 • Helm for package management
-• Prometheus and Grafana for monitoring
-• Git for version control
-• Jenkins for CI pipeline
-• Custom operators built using the Operator SDK`
+• Istio for service mesh capabilities
+• CI/CD Pipeline
+• GitHub for source control
+• Jenkins for continuous integration
+• Artifactory for artifact management
+• Monitoring & Observability
+• Splunk for log aggregation and analysis
+• Google Cloud Logging for cloud-native logging
+• InfluxDB for time-series metrics
+• Grafana for metrics visualization
+• Dynatrace for application performance monitoring
+
+Architecture Overview
+The platform is built on a microservices architecture, leveraging HashiCorp Nomad and Kubernetes for container orchestration and Istio/Consul for service mesh capabilities. Infrastructure is provisioned using Terraform across multiple cloud providers and internal-cloud environments, with Consul providing service discovery and configuration management.
+
+ 
+Key Features:
+• Automated infrastructure provisioning across multiple cloud providers
+• Containerized application deployment with Kubernetes
+• Service mesh for enhanced security and observability
+• Comprehensive monitoring and logging solution
+• Automated CI/CD pipelines with Jenkins and GitHub
+• Centralized artifact management with Artifactory
+
+Results & Impact:
+• 70% reduction in deployment time
+• 99.9% deployment success rate
+• 60% reduction in incident response time
+• 40% reduction in infrastructure costs
+• Improved developer productivity and satisfaction`
     },
     {
         id: "team-transformation",
