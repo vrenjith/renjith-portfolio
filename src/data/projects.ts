@@ -14,42 +14,47 @@ export const projects: Project[] = [
         description: "A comprehensive DevOps platform integrating modern tools and practices to streamline development, deployment, and operations across the enterprise. This platform serves 500+ developers and handles thousands of deployments monthly.",
         icon: "Cloud",
         tags: ["Platform Engineering", "Leadership", "Integration"],
-        content: `Overview:
+        content: `<h2>Overview</h2>
 A comprehensive DevOps platform integrating modern tools and practices to streamline development, deployment, and operations across the enterprise. This platform serves 500+ developers and handles thousands of deployments monthly.
 
-Technology Stack:
-• Infrastructure & Provisioning
+<h2>Technology Stack</h2>
+
+<h3>Infrastructure & Provisioning</h3>
 • Vagrant for local development environments
 • Docker for containerization
 • Packer for image building
 • Terraform for infrastructure as code
 • AWS & GCP for cloud infrastructure
 • Bare-metal infrastructure for specific workloads
-• Service Discovery & Networking
+
+<h3>Service Discovery & Networking</h3>
 • Consul for service discovery and configuration
 • Nomad for workload orchestration
 • Nginx for load balancing and routing
 • Flannel for container networking
-• Container Orchestration
-• Kubernetes for container orchestration
+
+<h3>Container Orchestration<h3>
+• Kubernetes/Nomad for container orchestration
 • Helm for package management
 • Istio for service mesh capabilities
-• CI/CD Pipeline
+
+<h3>CI/CD Pipeline</h3>
 • GitHub for source control
 • Jenkins for continuous integration
 • Artifactory for artifact management
-• Monitoring & Observability
+
+<h3>Monitoring & Observability</h3>
 • Splunk for log aggregation and analysis
 • Google Cloud Logging for cloud-native logging
 • InfluxDB for time-series metrics
 • Grafana for metrics visualization
 • Dynatrace for application performance monitoring
 
-Architecture Overview
+<h2>Architecture Overview</h2>
 The platform is built on a microservices architecture, leveraging HashiCorp Nomad and Kubernetes for container orchestration and Istio/Consul for service mesh capabilities. Infrastructure is provisioned using Terraform across multiple cloud providers and internal-cloud environments, with Consul providing service discovery and configuration management.
 
  
-Key Features:
+<h2>Key Features</h2>
 • Automated infrastructure provisioning across multiple cloud providers
 • Containerized application deployment with Kubernetes
 • Service mesh for enhanced security and observability
@@ -57,12 +62,13 @@ Key Features:
 • Automated CI/CD pipelines with Jenkins and GitHub
 • Centralized artifact management with Artifactory
 
-Results & Impact:
+<h2>Results & Impact</h2>
 • 70% reduction in deployment time
 • 99.9% deployment success rate
 • 60% reduction in incident response time
 • 40% reduction in infrastructure costs
-• Improved developer productivity and satisfaction`
+• Improved developer productivity and satisfaction
+`
     },
     {
         id: "team-transformation",
