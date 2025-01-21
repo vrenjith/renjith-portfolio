@@ -69,7 +69,7 @@ export const experiences = [
         companyLogo: "https://www.nokia.com/sites/default/files/2023-02/nokia-refreshed-logo-1_1.jpg?height=64&width=128",
         period: "2009 - 2012",
         location: "Bangalore, India",
-        about: "Nokia's Femto Gateway serves as an aggregator for the miniature 3G cells deployed at home and enterprise environments over standardized interfaces. It acts as an RNC towards the core network over Iu interface. The connection between the 3G cells and the Femto Gateway is via nternet and the Femto Gateway facilitates a secure connection between the 3G cells and the gateway.",
+        about: "Nokia's Femto Gateway serves as an aggregator for the miniature 3G cells deployed at home and enterprise environments over standardized interfaces. It acts as an RNC towards the core network over Iu interface. The connection between the 3G cells and the Femto Gateway is via nternet and the Femto Gateway facilitates a secure connection between the 3G cells and the gateway",
         description: "Held diverse leadership, engineering, and technical development roles. Led Agile transformation for 7 scrum teams, managing product backlog and facilitating sprint planning. Also, designed and developed a custom Continuous Integration platform for rapid development and validation of Femto Gateway features. As Performance Architect, was responsible for Linux system capacity and performance specifications, including kernel debugging and adaptation for efficient SCTP packet handling, and developed the System Stats tool for performance analysis.",
         technologies: ["C", "Linux", "C++", "Perl", "WireShark", "SCTP", "IPTables", "Valgrind", "Python"],
         positions: [
@@ -81,8 +81,8 @@ export const experiences = [
                     "Single interface for 7 scrum teams for all the product development items for execution in the sprints",
                     "Facilitation for the refinement of requirements from Product management for breaking down into smaller implementable units and also estimation for aiding release planning",
                     "Providing and updating release projection based on the story point estimates for the backlog items for program & release planning",
-                    "Transformation of the project into true Scrum by acting as an Agile Coach"
-
+                    "Transformation of the project into true Scrum by acting as an Agile Coach",
+                    "Agile development and Scrum transformation in Femto Gateway was envisaged as a key success story with NSN and was part of many forums demonstrating the same. Many projects gained experience and motivation from the success of this project. Agile Presentation in NSN agile days was conducted based on Femto Gateway transformation"
                 ]
             },
             {
@@ -103,7 +103,32 @@ export const experiences = [
                     "Linux System Performance Tuning",
                     "Linux Kernel debugging and adaptation for efficient SCTP packet handling",
                     "Developed the System Stats tool to analyze and plot charts about the difference machine characteristics of Linux systems for performance runs",
-                    "Agile development and Scrum transformation in Femto Gateway was envisaged as a key success story with NSN and was part of many forums demonstrating the same. Many projects gained experience and motivation from the success of this project. Agile Presentation in NSN agile days was conducted based on Femto Gateway transformation"
+                ]
+            }
+        ]
+    },
+    {
+        id: "nokia-siemens",
+        title: "Various Leadership and Engineering Positions",
+        company: "Nokia Siemens",
+        companyLogo: "https://upload.wikimedia.org/wikipedia/commons/3/31/LicerioZamorasNSN.png",
+        period: "2006 - 2009",
+        location: "Bangalore, India",
+        about: "Nokia Siemen's Telco Service Platform forms the base OEM platform for a variety of network elements of NSN including HLR and IMS. It is based on Solaris Cluster Nodes, Distributed Oracle as the key OEM components. It is based on Sun and Fujistu-Siemens hardware. It exposes interfaces towards the application and effectively isolates the system complexity from the application design",
+        description: "As a Technical Architect, led the integration of a high-availability platform based on Solaris, Sun Cluster, and Sun Storage. I established a new team in Bangalore, mentoring and coaching a team of 30+ members. I championed Scrum methodology within NSN, empowering teams through continuous inspection and adaptation",
+        technologies: ["C", "Linux", "C++", "Perl", "WireShark", "SCTP", "IPTables", "Valgrind", "Python"],
+        positions: [
+            {
+                title: "Technical Architect",
+                period: "2006 - 2009",
+                highlights: [
+                    "Key member of the integration activities for the network element platform based on Solaris, Sun Cluster and Sun Storage based on extreme high availability concepts.",
+                    "Key player in setting up a completely new team including recruiting, knowledge buildup and transfer of responsibilities from Germany",
+                    "In depth understanding of Operating System internals was big plus in establishing this project in Bangalore.",
+                    "Directly guiding and technical coaching the sub-project with the team of 30 people and responsible for schedule, quality and overall conception & effort estimation of the sub-project. ",
+                    "Brought in the concept and practices of Scrum based product development and was the pioneers in NSN on this front.",
+                    "Devised methods in truly empowered the teams with continuously inspecting and adapting the practices. ",
+                    "",
                 ]
             }
         ]
