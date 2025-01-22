@@ -199,7 +199,7 @@ export const PDFGenerator = () => (
     document={<PDFDocument />} 
     fileName="portfolio.pdf"
   >
-    {({ loading, blob, url }) => (
+    {({ loading, blob, url }: { loading: boolean; blob: Blob | null; url: string | null }) => (
       <Button 
         variant="outline" 
         disabled={loading} 
