@@ -199,14 +199,15 @@ export const PDFGenerator = () => (
     document={<PDFDocument />} 
     fileName="portfolio.pdf"
   >
-    {({ loading, blob, url }) => React.createElement(Button, {
-      variant: "outline",
-      disabled: loading,
-      className: "bg-accent/10 hover:bg-accent/20",
-      children: [
-        React.createElement(FileDown, { className: "w-4 h-4 mr-2", key: "icon" }),
-        loading ? "Generating PDF..." : "Download PDF"
-      ]
-    })}
+    {({ loading }) => (
+      <Button 
+        variant="outline"
+        disabled={loading}
+        className="bg-accent/10 hover:bg-accent/20"
+      >
+        <FileDown className="w-4 h-4 mr-2" />
+        {loading ? "Generating PDF..." : "Download PDF"}
+      </Button>
+    )}
   </PDFDownloadLink>
 );
