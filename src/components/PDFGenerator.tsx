@@ -195,9 +195,16 @@ const PDFDocument = () => (
 );
 
 export const PDFGenerator = () => (
-  <PDFDownloadLink document={<PDFDocument />} fileName="portfolio.pdf">
+  <PDFDownloadLink 
+    document={<PDFDocument />} 
+    fileName="portfolio.pdf"
+  >
     {({ loading }) => (
-      <Button variant="outline" disabled={loading} className="bg-accent/10 hover:bg-accent/20">
+      <Button 
+        variant="outline" 
+        disabled={loading} 
+        className="bg-accent/10 hover:bg-accent/20"
+      >
         <FileDown className="w-4 h-4 mr-2" />
         {loading ? "Generating PDF..." : "Download PDF"}
       </Button>
