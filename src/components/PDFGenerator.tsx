@@ -1,16 +1,10 @@
 import React from 'react';
-import { PDFDownloadLink, Document, Page, Text, View, StyleSheet, Image, Font } from '@react-pdf/renderer';
+import { PDFDownloadLink, Document, Page, Text, View, StyleSheet, Image, usePDF } from '@react-pdf/renderer';
 import { Button } from '@/components/ui/button';
 import { FileDown } from 'lucide-react';
 import { experiences } from '@/data/experiences';
 import { projects } from '@/data/projects';
 import { blogs } from '@/data/blogs';
-
-// Register the Inter font
-Font.register({
-  family: 'Inter',
-  src: 'https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2',
-});
 
 const styles = StyleSheet.create({
     page: {
@@ -201,21 +195,21 @@ const PDFDocument = () => (
 );
 
 export const PDFGenerator = () => {
+    // this returns {loading,blob,url,error}
+    const [pdf] = usePDF({
+        document: <PDFDocument />,  // pass your document
+    });
+
     return (
-        <PDFDownloadLink 
-            document={<PDFDocument />} 
-            fileName="renjith.pdf"
-        >
-            {({ loading }) => (
-                <Button
-                    variant="outline"
-                    disabled={loading}
-                    className="bg-accent/10 hover:bg-accent/20"
-                >
-                    <FileDown className="w-4 h-4 mr-2" />
-                    {loading ? "Generating PDF..." : "Download PDF"}
-                </Button>
-            )}
+        <PDFDownloadLink document={<PDFDocument />} fileName="renjith.pdf">
+            <Button
+                variant="outline"
+                disabled={pdf.loading}
+                className="bg-accent/10 hover:bg-accent/20"
+            >
+                <FileDown className="w-4 h-4 mr-2" />
+                {pdf.loading ? "Generating PDF..." : "Download PDF"}
+            </Button>
         </PDFDownloadLink>
     );
 };
