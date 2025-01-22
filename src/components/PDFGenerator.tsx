@@ -204,11 +204,11 @@ export const PDFGenerator = () => {
         <PDFDownloadLink document={<PDFDocument />} fileName="renjith.pdf">
             <Button
                 variant="outline"
-                disabled={loading}
+                disabled={pdf.loading}
                 className="bg-accent/10 hover:bg-accent/20"
             >
                 <FileDown className="w-4 h-4 mr-2" />
-                {pdf.blob ? "Download PDF" : "Generating PDF..."}
+                {pdf.loading ? "Generating PDF..." : "Download PDF"}
             </Button>
         </PDFDownloadLink>
     );
