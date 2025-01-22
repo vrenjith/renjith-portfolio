@@ -21,7 +21,7 @@ const AllExperiences = () => {
             >
                 <h1 className="text-4xl font-bold mb-4">Professional Experience</h1>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                    A comprehensive overview of my professional journey in cloud architecture and DevOps
+                    A comprehensive overview of my professional journey starting as a developer and moving on to pick up technical and organizations leadership positions in cloud architecture and DevOps
                 </p>
             </motion.div>
 
