@@ -14,9 +14,8 @@ export const projects: Project[] = [
         description: "A comprehensive DevOps platform integrating modern tools and practices to streamline development, deployment, and operations across the enterprise. This platform serves 500+ developers and handles thousands of deployments monthly.",
         icon: "Cloud",
         tags: ["Platform Engineering", "Leadership", "Integration"],
-        content: `<h2>Overview</h2>
-A comprehensive DevOps platform integrating modern tools and practices to streamline development, deployment, and operations across the enterprise. This platform serves 500+ developers and handles thousands of deployments monthly.
-
+        content: `
+<div>
 <h2>Technology Stack</h2>
 <h3>Infrastructure & Provisioning</h3>
 <ul>
@@ -34,7 +33,7 @@ A comprehensive DevOps platform integrating modern tools and practices to stream
     <li>Nginx for load balancing and routing</li>
     <li>Flannel for container networking</li>
 </ul>
-<h3>Container Orchestration<h3>
+<h3>Container Orchestration</h3>
 <ul>
     <li>Kubernetes/Nomad for container orchestration</li>
     <li>Helm for package management</li>
@@ -56,7 +55,10 @@ A comprehensive DevOps platform integrating modern tools and practices to stream
 </ul>
 
 <h2>Architecture Overview</h2>
+
+<p>
 The platform is built on a microservices architecture, leveraging HashiCorp Nomad and Kubernetes for container orchestration and Istio/Consul for service mesh capabilities. Infrastructure is provisioned using Terraform across multiple cloud providers and internal-cloud environments, with Consul providing service discovery and configuration management.
+</p>
 
 <h2>Key Features</h2>
 <ul>
@@ -76,6 +78,7 @@ The platform is built on a microservices architecture, leveraging HashiCorp Noma
     <li>40% reduction in infrastructure costs</li>
     <li>Improved developer productivity and satisfaction</li>
 </ul>
+<div>
 `
     },
     {

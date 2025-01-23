@@ -5,11 +5,12 @@ import { FileDown } from 'lucide-react';
 import { experiences } from '@/data/experiences';
 import { projects } from '@/data/projects';
 import { blogs } from '@/data/blogs';
+import Html from 'react-pdf-html';
 
 // Register the Inter font
 Font.register({
     family: 'Inter',
-    src: 'https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2',
+    src: 'http://fonts.gstatic.com/s/roboto/v16/zN7GBFwfMP4uA6AR0HCoLQ.ttf',
 });
 
 const styles = StyleSheet.create({
@@ -64,10 +65,30 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontFamily: 'Inter',
     },
+    h1: {
+        fontSize: 16,
+        color: '#1A1F2C',
+        fontWeight: 'bold',
+        fontFamily: 'Inter',
+        marginBottom: 5,
+    },
     subtitle: {
         fontSize: 14,
         color: '#4DB6AC',
         marginBottom: 5,
+        fontFamily: 'Inter',
+    },
+    h2: {
+        fontSize: 14,
+        color: '#4DB6AC',
+        fontFamily: 'Inter',
+        fontWeight: 'bold',
+        marginBottom: 5,
+    },
+    h3: {
+        fontSize: 13,
+        color: '#4DB6AC',
+        marginBottom: 3,
         fontFamily: 'Inter',
     },
     text: {
@@ -75,6 +96,20 @@ const styles = StyleSheet.create({
         color: '#4A4A4A',
         lineHeight: 1.5,
         marginBottom: 8,
+        fontFamily: 'Inter',
+    },
+    div: {
+        fontSize: 12,
+        color: '#4A4A4A',
+        lineHeight: 1,
+        fontFamily: 'Inter',
+        marginBottom: 2,
+    },
+    ul: {
+        fontSize: 12,
+        color: '#4A4A4A',
+        lineHeight: 1.5,
+        marginBottom: 5,
         fontFamily: 'Inter',
     },
     tagsContainer: {
@@ -97,6 +132,13 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         borderLeft: '1 solid #E5DEFF',
     },
+    p: {
+        fontSize: 12,
+        color: '#4A4A4A',
+        lineHeight: 1.5,
+        marginBottom: 5,
+        fontFamily: 'Inter',
+    }
 });
 
 const PDFDocument = () => (
@@ -163,11 +205,10 @@ const PDFDocument = () => (
                                 <Text key={tagIndex} style={styles.tag}>{tag}</Text>
                             ))}
                         </View>
+
                         {project.content && (
                             <View style={styles.detailSection}>
-                                {project.content.split('\n\n').map((paragraph, pIndex) => (
-                                    <Text key={pIndex} style={styles.text}>{paragraph}</Text>
-                                ))}
+                                <Html stylesheet={styles}>{project.content}</Html>
                             </View>
                         )}
                     </View>

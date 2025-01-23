@@ -39,6 +39,9 @@ const ProjectDetail = () => {
                         </span>
                     ))}
                 </div>
+                <div className="text-base mb-4 text-gray-700">
+                    {project.description}
+                </div>
 
                 <div className="prose prose-invert max-w-none">
                     {project.content.split('\n\n').map((paragraph, index) => (
