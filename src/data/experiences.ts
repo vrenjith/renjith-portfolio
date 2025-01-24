@@ -1,11 +1,3 @@
-export const profileSummary = {
-    name: "Renjith Vasavan Pillai",
-    email: "v.renjith@gmail.com",
-    role: "DevOps Platform Development and Architecture",
-    location: "Bangalore, India",
-    summary: "Over 24 years of experience in application development, cloud architecture and DevOps transformation. Specializing in building high-performance teams and implementing enterprise-scale solutions."
-};
-
 export const experiences = [
     {
         id: "sap-ariba",
