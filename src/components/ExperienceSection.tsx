@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Briefcase, Building, ArrowRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import { experiences } from "@/data/experiences";
+import { experiences, profileSummary } from "@/data/experiences";
 import { Button } from "@/components/ui/button";
 
 export const ExperienceSection = () => {
@@ -22,7 +22,7 @@ export const ExperienceSection = () => {
                         </div>
                         <h2 className="text-4xl font-bold mb-4">Professional Journey</h2>
                         <p className="text-gray-700 mb-8">
-                            Over 24 years of experience in application development, cloud architecture and DevOps transformation
+                            {profileSummary.summary}
                         </p>
                     </motion.div>
 
