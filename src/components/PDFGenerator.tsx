@@ -2,7 +2,7 @@ import React from 'react';
 import { PDFDownloadLink, Document, Page, Text, View, StyleSheet, Image, usePDF, Font } from '@react-pdf/renderer';
 import { Button } from '@/components/ui/button';
 import { FileDown } from 'lucide-react';
-import { experiences, profileData } from '@/data/experiences';
+import { experiences } from '@/data/experiences';
 import { projects } from '@/data/projects';
 import { blogs } from '@/data/blogs';
 import Html from 'react-pdf-html';
@@ -150,17 +150,18 @@ const PDFDocument = () => (
                     style={styles.profileImage}
                 />
                 <View style={styles.headerContent}>
-                    <Text style={styles.name}>{profileData.name}</Text>
-                    <Text style={styles.contact}>{profileData.email}</Text>
-                    <Text style={styles.contact}>{profileData.title}</Text>
-                    <Text style={styles.contact}>{profileData.location}</Text>
+                    <Text style={styles.name}>Renjith Vasavan Pillai</Text>
+                    <Text style={styles.contact}>v.renjith@gmail.com</Text>
+                    <Text style={styles.contact}>DevOps Platform Development and Architecture</Text>
+                    <Text style={styles.contact}>Bangalore, India</Text>
                 </View>
             </View>
 
             <View style={styles.section}>
                 <Text style={styles.sectionTitle}>Professional Summary</Text>
                 <Text style={styles.text}>
-                    {profileData.summary}
+                    Over 24 years of experience in application development, cloud architecture and DevOps transformation.
+                    Specializing in building high-performance teams and implementing enterprise-scale solutions.
                 </Text>
             </View>
 
@@ -241,20 +242,21 @@ const PDFDocument = () => (
 );
 
 export const PDFGenerator = () => {
-    const [pdf] = usePDF({ document: <PDFDocument /> });
+    // this returns {loading,blob,url,error}
+    const [pdf] = usePDF({
+        document: <PDFDocument />,  // pass your document
+    });
 
     return (
         <PDFDownloadLink document={<PDFDocument />} fileName="renjith.pdf">
-            {({ loading }) => (
-                <Button
-                    variant="outline"
-                    disabled={loading}
-                    className="bg-accent/10 hover:bg-accent/20"
-                >
-                    <FileDown className="w-4 h-4 mr-2" />
-                    {loading ? "Generating PDF..." : "Download PDF"}
-                </Button>
-            )}
+            <Button
+                variant="outline"
+                disabled={pdf.loading}
+                className="bg-accent/10 hover:bg-accent/20"
+            >
+                <FileDown className="w-4 h-4 mr-2" />
+                {pdf.loading ? "Generating PDF..." : "Download PDF"}
+            </Button>
         </PDFDownloadLink>
     );
 };
