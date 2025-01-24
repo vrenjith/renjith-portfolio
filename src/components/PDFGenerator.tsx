@@ -10,7 +10,7 @@ import Html from 'react-pdf-html';
 // Register the Inter font
 Font.register({
     family: 'Inter',
-    src: 'http://fonts.gstatic.com/s/roboto/v16/zN7GBFwfMP4uA6AR0HCoLQ.ttf',
+    src: 'https://fonts.gstatic.com/s/roboto/v16/zN7GBFwfMP4uA6AR0HCoLQ.ttf',
 });
 
 const styles = StyleSheet.create({
