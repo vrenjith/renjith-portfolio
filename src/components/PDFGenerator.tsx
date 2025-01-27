@@ -2,7 +2,7 @@ import React from 'react';
 import { PDFDownloadLink, Document, Page, Text, View, StyleSheet, Image, usePDF, Font } from '@react-pdf/renderer';
 import { Button } from '@/components/ui/button';
 import { FileDown } from 'lucide-react';
-import { experiences } from '@/data/experiences';
+import { experiences, profileData } from '@/data/experiences';
 import { projects } from '@/data/projects';
 import { blogs } from '@/data/blogs';
 import Html from 'react-pdf-html';
@@ -150,18 +150,17 @@ const PDFDocument = () => (
                     style={styles.profileImage}
                 />
                 <View style={styles.headerContent}>
-                    <Text style={styles.name}>Renjith Vasavan Pillai</Text>
-                    <Text style={styles.contact}>v.renjith@gmail.com</Text>
-                    <Text style={styles.contact}>DevOps Platform Development and Architecture</Text>
-                    <Text style={styles.contact}>Bangalore, India</Text>
+                    <Text style={styles.name}>{profileData.name}</Text>
+                    <Text style={styles.contact}>{profileData.email}</Text>
+                    <Text style={styles.contact}>{profileData.title}</Text>
+                    <Text style={styles.contact}>{profileData.location}</Text>
                 </View>
             </View>
 
             <View style={styles.section}>
                 <Text style={styles.sectionTitle}>Professional Summary</Text>
                 <Text style={styles.text}>
-                    Over 24 years of experience in application development, cloud architecture and DevOps transformation.
-                    Specializing in building high-performance teams and implementing enterprise-scale solutions.
+                    {profileData.summary}
                 </Text>
             </View>
 
