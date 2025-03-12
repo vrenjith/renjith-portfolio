@@ -37,6 +37,11 @@ export const BlogsSection = () => {
                         >
                             <Link to={`/blog/${blog.id}`}>
                                 <Card className="h-full hover:shadow-lg transition-shadow group cursor-pointer bg-glass">
+                                    <img
+                                        src={blog.image}
+                                        alt={blog.title}
+                                        className="w-full h-48 object-cover rounded-t-lg"
+                                    />
                                     <CardHeader>
                                         <CardTitle className="group-hover:text-accent transition-colors">
                                             {blog.title}
