@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Send } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -32,7 +33,11 @@ export const ContactSection = () => {
             <div className="section-container">
                 <div className="max-w-2xl mx-auto">
                     <h2 className="text-4xl font-bold text-center mb-8">Get in Touch</h2>
-                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" netlify>
+                    <form 
+                        onSubmit={handleSubmit(onSubmit)} 
+                        className="space-y-6" 
+                        data-netlify="true"
+                    >
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium mb-2">
                                 Name
