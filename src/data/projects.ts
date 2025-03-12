@@ -5,6 +5,7 @@ export type Project = {
     icon: string;
     tags: string[];
     content: string;
+    image: string;
 };
 
 export const projects: Project[] = [
@@ -14,6 +15,7 @@ export const projects: Project[] = [
         description: "A comprehensive DevOps platform integrating modern tools and practices to streamline development, deployment, and operations across the enterprise. This platform serves 500+ developers and handles thousands of deployments monthly.",
         icon: "Cloud",
         tags: ["Platform Engineering", "Leadership", "Integration"],
+        image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80",
         content: `
 <div>
 <h2>Technology Stack</h2>
@@ -87,6 +89,7 @@ The platform is built on a microservices architecture, leveraging HashiCorp Noma
         description: "Mentored and grew a team of 25 DevOps engineers, implementing structured training programs and career development paths while delivering critical infrastructure projects.",
         icon: "Users",
         tags: ["Leadership", "Mentoring", "Team Building"],
+        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80",
         content: `Led FedRAMP authorization initiative, implementing security controls and compliance measures for government cloud services.
 
 Key Achievements:
@@ -111,6 +114,7 @@ Technologies Used:
         description: "Architected and led the migration of legacy systems to cloud-native infrastructure using Kubernetes, Istio, and modern observability tools.",
         icon: "Cloud",
         tags: ["Architecture", "Cloud-Native", "Strategy"],
+        image: "https://images.unsplash.com/photo-1508830524289-0adcbe822b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80",
         content: `Optimized cloud infrastructure costs while maintaining platform agnosticism, resulting in 40% cost reduction and improved time-to-market.
 
 Key Achievements:
@@ -135,6 +139,7 @@ Technologies Used:
         description: "Designed and implemented a comprehensive automation framework using Terraform, Ansible, and custom tools, reducing deployment time by 70%.",
         icon: "Target",
         tags: ["Automation", "IaC", "DevOps"],
+        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80",
         content: `Pioneered Infrastructure-as-Data approach using CrossPlane, enabling self-service infrastructure provisioning across multiple cloud providers.
 
 Key Achievements:
@@ -160,6 +165,7 @@ Technologies Used:
         description: "Established security best practices and compliance frameworks for cloud-native infrastructure, ensuring regulatory compliance while maintaining agility.",
         icon: "Shield",
         tags: ["Security", "Compliance", "Best Practices"],
+        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80",
         content: `Designed and implemented comprehensive Kubernetes security architecture focusing on workload isolation and least privilege access.
 
 Key Achievements:
@@ -185,6 +191,7 @@ Technologies Used:
         description: "Led the implementation of a comprehensive observability platform using Splunk, Grafana, and custom dashboards, improving incident response time by 60%.",
         icon: "ChartBar",
         tags: ["Monitoring", "Observability", "Platform"],
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80",
         content: `Developed a sophisticated multi-target delivery framework supporting simultaneous deployments across various environments and cloud providers.
 
 Key Achievements:

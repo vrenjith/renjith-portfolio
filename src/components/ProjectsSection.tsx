@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Github, Cloud, Shield, Target, ChartBar, Users, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -42,7 +43,14 @@ export const ProjectsSection = () => {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                             >
                                 <Link to={`/project/${project.id}`}>
-                                    <Card className="h-full hover:shadow-lg transition-shadow bg-glass group cursor-pointer">
+                                    <Card className="h-full hover:shadow-lg transition-shadow bg-glass group cursor-pointer overflow-hidden">
+                                        <div className="h-48 overflow-hidden">
+                                            <img 
+                                                src={project.image} 
+                                                alt={project.title}
+                                                className="w-full h-full object-cover transition-transform group-hover:scale-105" 
+                                            />
+                                        </div>
                                         <CardHeader>
                                             <div className="flex items-center gap-4">
                                                 {Icon && <Icon className="w-6 h-6 text-accent" />}

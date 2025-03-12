@@ -1,3 +1,4 @@
+
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
@@ -39,14 +40,21 @@ const ProjectDetail = () => {
                         </span>
                     ))}
                 </div>
+
+                <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-[400px] object-cover rounded-lg mb-8"
+                />
+
                 <div className="text-base mb-4 text-gray-700">
                     {project.description}
                 </div>
 
                 <div className="prose prose-invert max-w-none">
                     {project.content.split('\n\n').map((paragraph, index) => (
-                        <div className="mb-8">
-                            <p key={index} className="mb-4 text-gray-700">
+                        <div className="mb-8" key={index}>
+                            <p className="mb-4 text-gray-700">
                                 <div dangerouslySetInnerHTML={{ __html: paragraph }} />
                             </p>
                         </div>

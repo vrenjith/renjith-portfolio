@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
@@ -28,19 +29,28 @@ const AllProjects = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="glass rounded-xl p-6 h-full hover:shadow-lg transition-all"
+                                className="glass rounded-xl overflow-hidden h-full hover:shadow-lg transition-all"
                             >
-                                <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
-                                <p className="text-gray-700 mb-4">{project.description}</p>
-                                <div className="flex flex-wrap gap-2">
-                                    {project.tags.map((tag, idx) => (
-                                        <span
-                                            key={idx}
-                                            className="px-3 py-1 rounded-full text-sm bg-accent/10 text-accent"
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
+                                <div className="h-48 overflow-hidden">
+                                    <img 
+                                        src={project.image} 
+                                        alt={project.title}
+                                        className="w-full h-full object-cover" 
+                                    />
+                                </div>
+                                <div className="p-6">
+                                    <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
+                                    <p className="text-gray-700 mb-4">{project.description}</p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {project.tags.map((tag, idx) => (
+                                            <span
+                                                key={idx}
+                                                className="px-3 py-1 rounded-full text-sm bg-accent/10 text-accent"
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
                             </motion.div>
                         </Link>
