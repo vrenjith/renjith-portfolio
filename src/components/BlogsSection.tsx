@@ -35,7 +35,7 @@ export const BlogsSection = () => {
                     <div className="linkedin-embed-container" style={{ minHeight: "600px" }}>
                         {/* LinkedIn Embed */}
                         <iframe
-                            src="https://www.linkedin.com/embed/feed/update/urn:li:share:7152252611069116416"
+                            src="https://www.linkedin.com/embed/feed/update/urn:li:share:7316300868432142336?collapsed=1"
                             height="570"
                             width="100%"
                             frameBorder="0"
@@ -45,13 +45,9 @@ export const BlogsSection = () => {
                         ></iframe>
                     </div>
                     
-                    <p className="text-center mt-6 text-gray-600">
-                        This is an example LinkedIn post. Replace the iframe src with your own LinkedIn post URL.
-                    </p>
-
                     <div className="text-center mt-8">
                         <a 
-                            href="https://www.linkedin.com/in/yourusername/"
+                            href="https://www.linkedin.com/in/renjithv/"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -74,7 +70,7 @@ export const BlogsSection = () => {
                         Want to see more of my professional activity?
                     </p>
                     <a 
-                        href="https://www.linkedin.com/in/yourusername/"
+                        href="https://www.linkedin.com/in/renjithv/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block"
