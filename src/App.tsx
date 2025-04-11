@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,6 +11,7 @@ import ExperienceDetail from "./pages/ExperienceDetail";
 import AllBlogs from "./pages/AllBlogs";
 import AllProjects from "./pages/AllProjects";
 import AllExperiences from "./pages/AllExperiences";
+import AllLinkedinPosts from "./pages/AllLinkedinPosts";
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -34,6 +36,7 @@ const App = () => (
                     <Route path="/blogs" element={<AllBlogs />} />
                     <Route path="/projects" element={<AllProjects />} />
                     <Route path="/experiences" element={<AllExperiences />} />
+                    <Route path="/linkedin" element={<AllLinkedinPosts />} />
                 </Routes>
             </BrowserRouter>
         </TooltipProvider>

@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { HeroSection } from "@/components/HeroSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
-import { BlogsSection } from "@/components/BlogsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { GoToTopButton } from "@/components/GoToTopButton";
+import { LinkedinLinkSection } from "@/components/LinkedinLinkSection";
 
 const Index = () => {
     return (
@@ -17,7 +17,7 @@ const Index = () => {
             <HeroSection />
             <ExperienceSection />
             <ProjectsSection />
-            <BlogsSection />
+            <LinkedinLinkSection />
             <ContactSection />
             <GoToTopButton />
         </motion.div>
