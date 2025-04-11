@@ -1,9 +1,8 @@
+
 import { motion } from "framer-motion";
-import { Book, Clock, ArrowRight, Briefcase } from "lucide-react";
+import { Briefcase, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { blogs } from "@/data/blogs";
 
 export const BlogsSection = () => {
     return (
@@ -17,66 +16,52 @@ export const BlogsSection = () => {
                     className="text-center mb-12"
                 >
                     <div className="inline-flex items-center px-4 py-2 rounded-full glass mb-4">
-                        <Briefcase className="w-4 h-4 mr-2" />
-                        <span className="text-sm font-medium">Blogs</span>
+                        <Linkedin className="w-4 h-4 mr-2" />
+                        <span className="text-sm font-medium">LinkedIn Posts</span>
                     </div>
-                    <h2 className="text-4xl font-bold mb-4">Technical Blog</h2>
+                    <h2 className="text-4xl font-bold mb-4">My LinkedIn Feed</h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Sharing insights and experiences from the world of DevOps and cloud architecture
+                        Stay connected with my latest professional updates and insights
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {blogs.slice(0, 6).map((blog, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="w-full max-w-3xl mx-auto bg-glass rounded-lg p-6 shadow-lg"
+                >
+                    <div className="linkedin-embed-container" style={{ minHeight: "600px" }}>
+                        {/* LinkedIn Embed */}
+                        <iframe
+                            src="https://www.linkedin.com/embed/feed/update/urn:li:share:7152252611069116416"
+                            height="570"
+                            width="100%"
+                            frameBorder="0"
+                            allowFullScreen=""
+                            title="Embedded LinkedIn Post"
+                            className="rounded-lg"
+                        ></iframe>
+                    </div>
+                    
+                    <p className="text-center mt-6 text-gray-600">
+                        This is an example LinkedIn post. Replace the iframe src with your own LinkedIn post URL.
+                    </p>
+
+                    <div className="text-center mt-8">
+                        <a 
+                            href="https://www.linkedin.com/in/yourusername/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
-                            <Link to={`/blog/${blog.id}`}>
-                                <Card className="h-full hover:shadow-lg transition-shadow group cursor-pointer bg-glass">
-                                    <img
-                                        src={blog.image}
-                                        alt={blog.title}
-                                        className="w-full h-48 object-cover rounded-t-lg"
-                                    />
-                                    <CardHeader>
-                                        <CardTitle className="group-hover:text-accent transition-colors">
-                                            {blog.title}
-                                        </CardTitle>
-                                        <div className="flex items-center gap-4 text-sm text-gray-600">
-                                            <span className="flex items-center gap-1">
-                                                <Clock className="w-4 h-4" />
-                                                {blog.readTime}
-                                            </span>
-                                            <span>{blog.date}</span>
-                                        </div>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <CardDescription className="text-base mb-4 text-gray-700">
-                                            {blog.description}
-                                        </CardDescription>
-                                        <div className="flex flex-wrap gap-2 mb-4">
-                                            {blog.tags.map((tag, tagIndex) => (
-                                                <span
-                                                    key={tagIndex}
-                                                    className="px-3 py-1 rounded-full text-sm bg-accent/10 text-accent"
-                                                >
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
-                                        <div className="flex items-center text-accent font-medium group-hover:gap-2 transition-all">
-                                            Read More <ArrowRight className="w-4 h-4 ml-1" />
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            </Link>
-                        </motion.div>
-                    ))}
-                </div>
+                            <Button className="inline-flex items-center group">
+                                <Linkedin className="w-5 h-5 mr-2" />
+                                Connect with me on LinkedIn
+                            </Button>
+                        </a>
+                    </div>
+                </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -85,12 +70,20 @@ export const BlogsSection = () => {
                     transition={{ duration: 0.5 }}
                     className="text-center mt-12"
                 >
-                    <Link to="/blogs">
+                    <p className="text-gray-600 mb-4">
+                        Want to see more of my professional activity?
+                    </p>
+                    <a 
+                        href="https://www.linkedin.com/in/yourusername/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block"
+                    >
                         <Button variant="outline" size="lg" className="group">
-                            View All Blog Posts
-                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                            Visit My LinkedIn Profile
+                            <Linkedin className="w-4 h-4 ml-2 group-hover:text-accent transition-colors" />
                         </Button>
-                    </Link>
+                    </a>
                 </motion.div>
             </div>
         </section>
