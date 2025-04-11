@@ -38,8 +38,8 @@ export const BlogsSection = () => {
                             src="https://www.linkedin.com/embed/feed/update/urn:li:share:7152252611069116416"
                             height="570"
                             width="100%"
-                            frameBorder="0"
-                            allowFullScreen=""
+                            frameBorder={0}
+                            allowFullScreen={true}
                             title="Embedded LinkedIn Post"
                             className="rounded-lg"
                         ></iframe>
