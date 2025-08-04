@@ -1,10 +1,27 @@
 
 import { motion } from "framer-motion";
-import { Briefcase, Linkedin } from "lucide-react";
+import { BookOpen, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useEffect, useState } from "react";
+import { BloggerService, BlogPost } from "@/services/bloggerService";
 
 export const BlogsSection = () => {
+    const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            setLoading(true);
+            const posts = await BloggerService.fetchBlogPosts();
+            setBlogPosts(posts.slice(0, 3)); // Show only first 3 posts
+            setLoading(false);
+        };
+
+        fetchPosts();
+    }, []);
+
     return (
         <section id="blogs" className="py-20">
             <div className="section-container">
@@ -16,48 +33,91 @@ export const BlogsSection = () => {
                     className="text-center mb-12"
                 >
                     <div className="inline-flex items-center px-4 py-2 rounded-full glass mb-4">
-                        <Linkedin className="w-4 h-4 mr-2" />
-                        <span className="text-sm font-medium">LinkedIn Posts</span>
+                        <BookOpen className="w-4 h-4 mr-2" />
+                        <span className="text-sm font-medium">Blog Posts</span>
                     </div>
-                    <h2 className="text-4xl font-bold mb-4">My LinkedIn Feed</h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Stay connected with my latest professional updates and insights
+                    <h2 className="text-4xl font-bold mb-4">Random Revelations</h2>
+                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                        Thoughts, insights, and technical discoveries from my journey in software development
                     </p>
                 </motion.div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="w-full max-w-3xl mx-auto bg-glass rounded-lg p-6 shadow-lg"
-                >
-                    <div className="linkedin-embed-container" style={{ minHeight: "600px" }}>
-                        {/* LinkedIn Embed */}
-                        <iframe
-                            src="https://www.linkedin.com/embed/feed/update/urn:li:share:7316300868432142336?collapsed=1"
-                            height="570"
-                            width="100%"
-                            frameBorder={0}
-                            allowFullScreen={true}
-                            title="Embedded LinkedIn Post"
-                            className="rounded-lg"
-                        ></iframe>
+                {loading ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[1, 2, 3].map((i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: i * 0.1 }}
+                            >
+                                <Card className="h-full bg-glass">
+                                    <CardHeader>
+                                        <div className="h-6 bg-muted rounded animate-pulse mb-2" />
+                                        <div className="h-4 bg-muted rounded animate-pulse w-3/4" />
+                                    </CardHeader>
+                                    <CardContent>
+                                        <div className="space-y-2">
+                                            <div className="h-4 bg-muted rounded animate-pulse" />
+                                            <div className="h-4 bg-muted rounded animate-pulse" />
+                                            <div className="h-4 bg-muted rounded animate-pulse w-2/3" />
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </motion.div>
+                        ))}
                     </div>
-                    
-                    <div className="text-center mt-8">
-                        <a 
-                            href="https://www.linkedin.com/in/renjithv/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <Button className="inline-flex items-center group">
-                                <Linkedin className="w-5 h-5 mr-2" />
-                                Connect with me on LinkedIn
-                            </Button>
-                        </a>
+                ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {blogPosts.map((post, index) => (
+                            <motion.div
+                                key={post.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                            >
+                                <Card className="h-full hover:shadow-lg transition-shadow group cursor-pointer bg-glass">
+                                    <CardHeader>
+                                        <CardTitle className="group-hover:text-accent transition-colors line-clamp-2">
+                                            {post.title}
+                                        </CardTitle>
+                                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                                            <span className="flex items-center gap-1">
+                                                <Clock className="w-4 h-4" />
+                                                {post.readTime}
+                                            </span>
+                                            <span>{post.publishedDate}</span>
+                                        </div>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <CardDescription className="text-base mb-4 line-clamp-3">
+                                            {post.description}
+                                        </CardDescription>
+                                        <div className="flex flex-wrap gap-2 mb-4">
+                                            {post.categories.slice(0, 3).map((category, catIndex) => (
+                                                <span
+                                                    key={catIndex}
+                                                    className="px-3 py-1 rounded-full text-sm bg-accent/10 text-accent"
+                                                >
+                                                    {category}
+                                                </span>
+                                            ))}
+                                        </div>
+                                        <a
+                                            href={post.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center text-accent font-medium group-hover:gap-2 transition-all"
+                                        >
+                                            Read More <ArrowRight className="w-4 h-4 ml-1" />
+                                        </a>
+                                    </CardContent>
+                                </Card>
+                            </motion.div>
+                        ))}
                     </div>
-                </motion.div>
+                )}
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -66,20 +126,27 @@ export const BlogsSection = () => {
                     transition={{ duration: 0.5 }}
                     className="text-center mt-12"
                 >
-                    <p className="text-gray-600 mb-4">
-                        Want to see more of my professional activity?
+                    <p className="text-muted-foreground mb-4">
+                        Want to read more of my technical articles?
                     </p>
-                    <a 
-                        href="https://www.linkedin.com/in/renjithv/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block"
-                    >
-                        <Button variant="outline" size="lg" className="group">
-                            Visit My LinkedIn Profile
-                            <Linkedin className="w-4 h-4 ml-2 group-hover:text-accent transition-colors" />
-                        </Button>
-                    </a>
+                    <div className="flex gap-4 justify-center flex-wrap">
+                        <Link to="/blogs">
+                            <Button variant="outline" size="lg" className="group">
+                                View All Blog Posts
+                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                        </Link>
+                        <a
+                            href="https://random-revelations.blogspot.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Button size="lg" className="group">
+                                <BookOpen className="w-4 h-4 mr-2" />
+                                Visit Blog
+                            </Button>
+                        </a>
+                    </div>
                 </motion.div>
             </div>
         </section>
