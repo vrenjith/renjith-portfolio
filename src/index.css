@@ -10,6 +10,20 @@
     --border: 180 16% 85%;
     --input: 180 16% 85%;
     --ring: 180 40% 50%;
+    --primary: 174 48% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 180 30% 92%;
+    --secondary-foreground: 180 25% 25%;
+    --accent: 174 48% 60%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 180 20% 90%;
+    --muted-foreground: 180 20% 45%;
+    --card: 0 0% 100%;
+    --card-foreground: 180 25% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 180 25% 25%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
   }
 
   * {
