@@ -10,7 +10,7 @@ export interface BlogPost {
 }
 
 export class BloggerService {
-  private static BLOG_RSS_URL = 'https://random-revelations.blogspot.com/feeds/posts/default?alt=rss';
+  private static BLOG_RSS_URL = 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://random-revelations.blogspot.com/feeds/posts/default?alt=rss');
 
   static async fetchBlogPosts(): Promise<BlogPost[]> {
     try {
@@ -19,7 +19,8 @@ export class BloggerService {
         throw new Error(`Failed to fetch blog posts: ${response.statusText}`);
       }
       
-      const xmlText = await response.text();
+      const data = await response.json();
+      const xmlText = data.contents;
       return this.parseRSSFeed(xmlText);
     } catch (error) {
       console.error('Error fetching blog posts:', error);
