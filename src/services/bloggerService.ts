@@ -20,7 +20,14 @@ export class BloggerService {
       }
       
       const data = await response.json();
-      const xmlText = data.contents;
+      let xmlText = data.contents;
+      
+      // Handle base64 encoded data URL
+      if (xmlText.startsWith('data:application/rss+xml; charset=UTF-8;base64,')) {
+        const base64Data = xmlText.split(',')[1];
+        xmlText = atob(base64Data);
+      }
+      
       return this.parseRSSFeed(xmlText);
     } catch (error) {
       console.error('Error fetching blog posts:', error);
