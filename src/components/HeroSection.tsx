@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Send, BookOpen, LayoutGrid, User } from "lucide-react";
+import { Send, BookOpen, LayoutGrid, User, Linkedin } from "lucide-react";
 import { PDFGenerator } from "./PDFGenerator";
 
 export const HeroSection = () => {
@@ -21,6 +21,11 @@ export const HeroSection = () => {
     const scrollToExperience = () => {
         const experienceSection = document.getElementById('experience');
         experienceSection?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const scrollToLinkedin = () => {
+        const linkedinSection = document.getElementById('linkedin');
+        linkedinSection?.scrollIntoView({ behavior: 'smooth' });
     };
 
     return (
@@ -93,6 +98,13 @@ export const HeroSection = () => {
                         >
                             <BookOpen className="w-4 h-4 mr-2" />
                             View Blogs
+                        </button>
+                        <button
+                            onClick={scrollToLinkedin}
+                            className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors flex items-center text-gray-700"
+                        >
+                            <Linkedin className="w-4 h-4 mr-2" />
+                            View LinkedIn
                         </button>
                         <button
                             onClick={scrollToExperience}
