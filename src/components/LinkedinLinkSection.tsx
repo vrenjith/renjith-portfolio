@@ -33,9 +33,9 @@ export const LinkedinLinkSection = () => {
                     className="text-center"
                 >
                     <Link to="/linkedin" className="inline-block">
-                        <Button size="lg" className="group">
+                        <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/90">
                             View My LinkedIn Posts
-                            <Linkedin className="w-4 h-4 ml-2 group-hover:text-accent transition-colors" />
+                            <Linkedin className="w-4 h-4 ml-2 group-hover:text-primary-foreground transition-colors" />
                         </Button>
                     </Link>
                 </motion.div>
