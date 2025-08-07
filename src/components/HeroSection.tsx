@@ -86,6 +86,13 @@ export const HeroSection = () => {
                         className="flex flex-wrap justify-center gap-4"
                     >
                         <button
+                            onClick={scrollToExperience}
+                            className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors flex items-center text-gray-700"
+                        >
+                            <User className="w-4 h-4 mr-2" />
+                            View Experience
+                        </button>
+                        <button
                             onClick={scrollToProjects}
                             className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors flex items-center text-gray-700"
                         >
@@ -104,14 +111,7 @@ export const HeroSection = () => {
                             className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors flex items-center text-gray-700"
                         >
                             <Linkedin className="w-4 h-4 mr-2" />
-                            View LinkedIn
-                        </button>
-                        <button
-                            onClick={scrollToExperience}
-                            className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors flex items-center text-gray-700"
-                        >
-                            <User className="w-4 h-4 mr-2" />
-                            View Experience
+                            View LinkedIn Posts
                         </button>
                         <button
                             onClick={scrollToContact}
