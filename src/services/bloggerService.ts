@@ -10,7 +10,7 @@ export interface BlogPost {
 }
 
 export class BloggerService {
-  private static BLOG_RSS_URL = 'https://corsproxy.io/?' + encodeURIComponent('https://random-revelations.blogspot.com/feeds/posts/default?alt=rss');
+  private static BLOG_RSS_URL = 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent('https://random-revelations.blogspot.com/feeds/posts/default?alt=rss');
 
   static async fetchBlogPosts(): Promise<BlogPost[]> {
     try {
