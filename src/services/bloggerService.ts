@@ -10,7 +10,7 @@ export interface BlogPost {
 }
 
 export class BloggerService {
-  private static BLOG_RSS_URL = 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://random-revelations.blogspot.com/feeds/posts/default?alt=rss');
+  private static BLOG_RSS_URL = 'https://corsproxy.io/?' + encodeURIComponent('https://random-revelations.blogspot.com/feeds/posts/default?alt=rss');
 
   static async fetchBlogPosts(): Promise<BlogPost[]> {
     try {
@@ -19,14 +19,7 @@ export class BloggerService {
         throw new Error(`Failed to fetch blog posts: ${response.statusText}`);
       }
       
-      const data = await response.json();
-      let xmlText = data.contents;
-      
-      // Handle base64 encoded data URL
-      if (xmlText.startsWith('data:application/rss+xml; charset=UTF-8;base64,')) {
-        const base64Data = xmlText.split(',')[1];
-        xmlText = atob(base64Data);
-      }
+      const xmlText = await response.text();
       
       return this.parseRSSFeed(xmlText);
     } catch (error) {
