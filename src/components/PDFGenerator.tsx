@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import { FileDown } from 'lucide-react';
 import { experiences, profileData } from '@/data/experiences';
 import { projects } from '@/data/projects';
-import { blogs } from '@/data/blogs';
 import Html from 'react-pdf-html';
 
 // Register the Inter font
@@ -216,25 +215,12 @@ const PDFDocument = () => (
 
             <View style={styles.section}>
                 <Text style={styles.sectionTitle}>Blog Posts</Text>
-                {blogs.map((blog, index) => (
-                    <View key={index} style={[styles.section, { marginBottom: 20 }]}>
-                        <Text style={styles.itemTitle}>{blog.title}</Text>
-                        <Text style={styles.subtitle}>{blog.date} - {blog.readTime}</Text>
-                        <Text style={styles.text}>{blog.description}</Text>
-                        <View style={styles.tagsContainer}>
-                            {blog.tags.map((tag, tagIndex) => (
-                                <Text key={tagIndex} style={styles.tag}>{tag}</Text>
-                            ))}
-                        </View>
-                        {blog.content && (
-                            <View style={styles.detailSection}>
-                                {blog.content.split('\n\n').map((paragraph, pIndex) => (
-                                    <Text key={pIndex} style={styles.text}>{paragraph}</Text>
-                                ))}
-                            </View>
-                        )}
-                    </View>
-                ))}
+                <Text style={styles.text}>
+                    Visit my blog "Random Revelations" for technical insights and discoveries from my journey in software development.
+                </Text>
+                <Text style={styles.text}>
+                    Blog URL: https://random-revelations.blogspot.com
+                </Text>
             </View>
         </Page>
     </Document>
