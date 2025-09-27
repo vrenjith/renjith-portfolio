@@ -186,13 +186,16 @@ export const projects: Project[] = [
             <li><strong>Vector Database:</strong> Google Cloud PostgreSQL with vector extensions for semantic search and similarity matching</li>
             <li><strong>Similarity Search:</strong> Advanced cosine similarity and approximate nearest neighbor (ANN) algorithms for efficient retrieval</li>
             <li><strong>Reranking Algorithms:</strong> Secondary ranking models to improve relevance of retrieved documents</li>
-        </ul><h3>Backend Infrastructure</h3>
-<ul>
-    <li><strong>API Server:</strong> Python Flask-based REST API deployed on Kubernetes</li>
-    <li><strong>Authentication & Authorization:</strong> Secure access control with enterprise authentication integration</li>
-    <li><strong>Request Processing:</strong> Intelligent query processing with SAP AI Core integration</li>
-    <li><strong>Caching Layer:</strong> Optimized response caching for improved performance</li>
-</ul>
+        </ul>        <h3>Backend Infrastructure</h3>
+        <ul>
+            <li><strong>API Server:</strong> Python Flask-based REST API deployed on Kubernetes with auto-scaling and load balancing</li>
+            <li><strong>Authentication & Authorization:</strong> Secure access control with enterprise authentication integration</li>
+            <li><strong>Request Processing:</strong> Intelligent query processing with SAP AI Core integration</li>
+            <li><strong>Caching Layer:</strong> Optimized response caching for improved performance</li>
+            <li><strong>Google Cloud Integration:</strong> Managed PostgreSQL with pgvector extensions for high-performance vector operations</li>
+            <li><strong>CI/CD Pipelines:</strong> Comprehensive Jenkins pipelines for data processing, model deployment, and system updates</li>
+            <li><strong>Monitoring & Logging:</strong> Real-time observability with performance metrics, error tracking, and usage analytics</li>
+        </ul>
 
         <h3>Jenkins Automation & Workflow Orchestration</h3>
         <ul>
@@ -202,23 +205,9 @@ export const projects: Project[] = [
             <li><strong>Scheduled Processing:</strong> Configurable cron-based jobs for regular data refresh, model retraining, and system maintenance</li>
             <li><strong>Error Handling & Recovery:</strong> Robust error handling with automatic retry mechanisms and failure notifications</li>
             <li><strong>Performance Monitoring:</strong> Built-in monitoring of pipeline performance, data quality metrics, and system health</li>
-        </ul><h2>Data Sources Integration</h2>
+        </ul>
 
-<h3>Documentation Sources</h3>
-<ul>
-    <li><strong>GitHub Pages:</strong> Automated parsing and indexing of technical documentation</li>
-    <li><strong>Confluence Spaces:</strong> CQL-based crawling and content extraction</li>
-    <li><strong>API Documentation:</strong> Technical specifications and developer guides</li>
-</ul>
-
-<h3>Operational Data</h3>
-<ul>
-    <li><strong>JIRA Integration:</strong> JQL-based ticket analysis and historical data processing</li>
-    <li><strong>Support Tickets:</strong> Historical resolution patterns and knowledge extraction</li>
-    <li><strong>User Stories:</strong> Product requirements and enhancement tracking</li>
-</ul>
-
-<h2>Access Methods</h2>
+        <h2>Access Methods</h2>
 
 <h3>User Interface</h3>
 <ul>
@@ -274,7 +263,7 @@ export const projects: Project[] = [
             <li><strong>Monitoring & Logging:</strong> Real-time observability with performance metrics, error tracking, and usage analytics</li>
         </ul>
 
-<h3>Security & Compliance</h3>
+        <h3>Security & Compliance</h3>
 <ul>
     <li><strong>Enterprise Authentication:</strong> Integration with corporate identity systems</li>
     <li><strong>Data Privacy:</strong> Secure handling of sensitive organizational information</li>
