@@ -106,13 +106,13 @@ export const HeroSection = () => {
                             <BookOpen className="w-4 h-4 mr-2" />
                             View Blogs
                         </button>
-                        <button
+                        {/* <button
                             onClick={scrollToLinkedin}
                             className="px-6 py-3 rounded-lg glass hover:bg-glass/40 transition-colors flex items-center text-gray-700"
                         >
                             <Linkedin className="w-4 h-4 mr-2" />
                             View LinkedIn Posts
-                        </button>
+                        </button> */}
                         <button
                             onClick={scrollToContact}
                             className="px-6 py-3 rounded-lg bg-accent text-white font-medium hover:bg-accent/90 transition-colors flex items-center"

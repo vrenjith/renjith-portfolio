@@ -19,7 +19,7 @@ const Index = () => {
             <ExperienceSection />
             <ProjectsSection />
             <BlogsSection />
-            <LinkedinLinkSection />
+            {/* <LinkedinLinkSection /> */}
             <ContactSection />
             <GoToTopButton />
         </motion.div>
