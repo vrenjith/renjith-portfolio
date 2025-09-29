@@ -6,11 +6,7 @@ import { experiences, profileData } from '@/data/experiences';
 import { projects } from '@/data/projects';
 import Html from 'react-pdf-html';
 
-// Register the Inter font
-Font.register({
-    family: 'Inter',
-    src: 'https://fonts.gstatic.com/s/roboto/v16/zN7GBFwfMP4uA6AR0HCoLQ.ttf',
-});
+// Use built-in fonts to avoid font resolution errors
 
 const styles = StyleSheet.create({
     page: {
@@ -26,7 +22,7 @@ const styles = StyleSheet.create({
     profileImage: {
         width: 100,
         height: 100,
-        borderRadius: '50%',
+        borderRadius: 50,
         marginRight: 20,
     },
     headerContent: {
@@ -35,15 +31,32 @@ const styles = StyleSheet.create({
     name: {
         fontSize: 28,
         color: '#1A1F2C',
-        fontWeight: 'bold',
-        fontFamily: 'Inter',
+        fontFamily: 'Helvetica-Bold',
         marginBottom: 5,
     },
     contact: {
         fontSize: 12,
         color: '#4DB6AC',
         marginBottom: 3,
-        fontFamily: 'Inter',
+        fontFamily: 'Helvetica',
+    },
+    contactRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 4,
+    },
+    contactIcon: {
+        fontSize: 10,
+        color: '#4DB6AC',
+        marginRight: 8,
+        fontFamily: 'Helvetica-Bold',
+        width: 20,
+    },
+    contactInfo: {
+        fontSize: 11,
+        color: '#4A4A4A',
+        fontFamily: 'Helvetica',
+        flex: 1,
     },
     section: {
         marginBottom: 25,
@@ -52,8 +65,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#4DB6AC',
         marginBottom: 15,
-        fontWeight: 'bold',
-        fontFamily: 'Inter',
+        fontFamily: 'Helvetica-Bold',
         borderBottom: '1 solid #E5DEFF',
         paddingBottom: 5,
     },
@@ -61,47 +73,44 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#1A1F2C',
         marginBottom: 5,
-        fontWeight: 'bold',
-        fontFamily: 'Inter',
+        fontFamily: 'Helvetica-Bold',
     },
     h1: {
         fontSize: 16,
         color: '#1A1F2C',
-        fontWeight: 'bold',
-        fontFamily: 'Inter',
+        fontFamily: 'Helvetica-Bold',
         marginBottom: 5,
     },
     subtitle: {
         fontSize: 14,
         color: '#4DB6AC',
         marginBottom: 5,
-        fontFamily: 'Inter',
+        fontFamily: 'Helvetica',
     },
     h2: {
         fontSize: 14,
         color: '#4DB6AC',
-        fontFamily: 'Inter',
-        fontWeight: 'bold',
+        fontFamily: 'Helvetica-Bold',
         marginBottom: 5,
     },
     h3: {
         fontSize: 13,
         color: '#4DB6AC',
         marginBottom: 3,
-        fontFamily: 'Inter',
+        fontFamily: 'Helvetica',
     },
     text: {
         fontSize: 12,
         color: '#4A4A4A',
         lineHeight: 1.5,
         marginBottom: 8,
-        fontFamily: 'Inter',
+        fontFamily: 'Helvetica',
     },
     div: {
         fontSize: 12,
         color: '#4A4A4A',
         lineHeight: 1,
-        fontFamily: 'Inter',
+        fontFamily: 'Helvetica',
         marginBottom: 2,
     },
     ul: {
@@ -109,7 +118,7 @@ const styles = StyleSheet.create({
         color: '#4A4A4A',
         lineHeight: 1.5,
         marginBottom: 5,
-        fontFamily: 'Inter',
+        fontFamily: 'Helvetica',
     },
     tagsContainer: {
         flexDirection: 'row',
@@ -123,7 +132,7 @@ const styles = StyleSheet.create({
         color: '#4DB6AC',
         padding: '4 8',
         borderRadius: 4,
-        fontFamily: 'Inter',
+        fontFamily: 'Helvetica',
     },
     detailSection: {
         marginLeft: 15,
@@ -136,7 +145,7 @@ const styles = StyleSheet.create({
         color: '#4A4A4A',
         lineHeight: 1.5,
         marginBottom: 5,
-        fontFamily: 'Inter',
+        fontFamily: 'Helvetica',
     }
 });
 
@@ -219,7 +228,7 @@ const PDFDocument = () => (
                     Visit my blog "Random Revelations" for technical insights and discoveries from my journey in software development.
                 </Text>
                 <Text style={styles.text}>
-                    Blog URL: https://random-revelations.blogspot.com
+                    Blog URL: https://renjithpillai.com
                 </Text>
             </View>
         </Page>
