@@ -52,7 +52,9 @@ export default {
           foreground: "hsl(var(--destructive-foreground))",
         },
         glass: {
-          DEFAULT: "rgba(255, 255, 255, 0.9)",
+          DEFAULT: "rgba(255, 255, 255, 0.92)",
+          light: "rgba(255, 255, 255, 0.95)", 
+          medium: "rgba(255, 255, 255, 0.88)",
           dark: "rgba(0, 0, 0, 0.05)",
         },
       },

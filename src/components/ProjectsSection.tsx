@@ -43,7 +43,7 @@ export const ProjectsSection = () => {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                             >
                                 <Link to={`/project/${project.id}`}>
-                                    <Card className="h-full hover:shadow-lg transition-shadow bg-glass group cursor-pointer overflow-hidden">
+                                    <Card className="h-full hover:shadow-lg transition-shadow glass-light group cursor-pointer overflow-hidden">
                                         <div className="h-48 overflow-hidden">
                                             <img 
                                                 src={project.image} 

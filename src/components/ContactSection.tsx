@@ -45,7 +45,7 @@ export const ContactSection = () => {
                             <input
                                 {...register("name", { required: "Name is required" })}
                                 type="text"
-                                className="w-full p-3 rounded-lg bg-glass border border-border"
+                                className="w-full p-3 rounded-lg glass-light border border-border"
                                 placeholder="Your name"
                             />
                             {errors.name && (
@@ -65,7 +65,7 @@ export const ContactSection = () => {
                                     },
                                 })}
                                 type="email"
-                                className="w-full p-3 rounded-lg bg-glass border border-border"
+                                className="w-full p-3 rounded-lg glass-light border border-border"
                                 placeholder="your@email.com"
                             />
                             {errors.email && (
@@ -79,7 +79,7 @@ export const ContactSection = () => {
                             <textarea
                                 {...register("message", { required: "Message is required" })}
                                 rows={5}
-                                className="w-full p-3 rounded-lg bg-glass border border-border"
+                                className="w-full p-3 rounded-lg glass-light border border-border"
                                 placeholder="Your message"
                             />
                             {errors.message && (
