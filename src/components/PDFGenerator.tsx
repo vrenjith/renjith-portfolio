@@ -273,22 +273,125 @@ const PDFDocument = () => (
     </Document>
 );
 
+// Short version - condensed to 1-2 pages
+const PDFDocumentShort = () => (
+    <Document>
+        <Page size="A4" style={styles.page}>
+            <View style={styles.header}>
+                <Image
+                    src="/placeholder.svg"
+                    style={styles.profileImage}
+                />
+                <View style={styles.headerContent}>
+                    <Text style={styles.name}>{profileData.name}</Text>
+                    <Text style={[styles.contact, { fontSize: 14, marginBottom: 8, fontFamily: 'Open Sans', fontWeight: 'bold' }]}>{profileData.title}</Text>
+                    
+                    <View style={styles.contactRow}>
+                        <Text style={styles.contactIcon}>Email:</Text>
+                        <Text style={styles.contactInfo}>{profileData.email}</Text>
+                    </View>
+                    
+                    <View style={styles.contactRow}>
+                        <Text style={styles.contactIcon}>Phone:</Text>
+                        <Text style={styles.contactInfo}>+91 9845258299</Text>
+                    </View>
+                    
+                    <View style={styles.contactRow}>
+                        <Text style={styles.contactIcon}>LinkedIn:</Text>
+                        <Text style={styles.contactInfo}>https://www.linkedin.com/in/renjithv/</Text>
+                    </View>
+                    
+                    <View style={styles.contactRow}>
+                        <Text style={styles.contactIcon}>Location:</Text>
+                        <Text style={styles.contactInfo}>{profileData.location}</Text>
+                    </View>
+                </View>
+            </View>
+
+            <View style={styles.section}>
+                <Text style={styles.sectionTitle}>Professional Summary</Text>
+                <Text style={styles.text}>
+                    {profileData.summary}
+                </Text>
+            </View>
+
+            <View style={styles.section}>
+                <Text style={styles.sectionTitle}>Experience</Text>
+                {experiences.slice(0, 2).map((exp, index) => (
+                    <View key={index} style={[styles.section, { marginBottom: 15 }]}>
+                        <Text style={styles.itemTitle}>{exp.title}</Text>
+                        <Text style={styles.subtitle}>{exp.company} - {exp.period}</Text>
+                        <Text style={styles.text}>{exp.description}</Text>
+                        <View style={styles.tagsContainer}>
+                            {exp.technologies.slice(0, 8).map((tech, techIndex) => (
+                                <Text key={techIndex} style={styles.tag}>{tech}</Text>
+                            ))}
+                        </View>
+                    </View>
+                ))}
+            </View>
+
+            <View style={styles.section}>
+                <Text style={styles.sectionTitle}>Key Projects</Text>
+                {projects.slice(0, 3).map((project, index) => (
+                    <View key={index} style={[styles.section, { marginBottom: 12 }]}>
+                        <Text style={styles.itemTitle}>{project.title}</Text>
+                        <Text style={styles.text}>{project.description}</Text>
+                        <View style={styles.tagsContainer}>
+                            {project.tags.slice(0, 6).map((tag, tagIndex) => (
+                                <Text key={tagIndex} style={styles.tag}>{tag}</Text>
+                            ))}
+                        </View>
+                    </View>
+                ))}
+            </View>
+
+            <View style={styles.section}>
+                <Text style={styles.sectionTitle}>Contact & Links</Text>
+                <Text style={styles.text}>
+                    Blog: https://renjithpillai.com
+                </Text>
+                <Text style={styles.text}>
+                    Portfolio: Available upon request for detailed project documentation and case studies.
+                </Text>
+            </View>
+        </Page>
+    </Document>
+);
+
 export const PDFGenerator = () => {
-    // this returns {loading,blob,url,error}
-    const [pdf] = usePDF({
-        document: <PDFDocument />,  // pass your document
+    // PDFs for both versions
+    const [pdfDetailed] = usePDF({
+        document: <PDFDocument />,
+    });
+    
+    const [pdfShort] = usePDF({
+        document: <PDFDocumentShort />,
     });
 
     return (
-        <PDFDownloadLink document={<PDFDocument />} fileName="renjith.pdf">
-            <Button
-                variant="outline"
-                disabled={pdf.loading}
-                className="bg-accent/10 hover:bg-accent/20"
-            >
-                <FileDown className="w-4 h-4 mr-2" />
-                {pdf.loading ? "Generating PDF..." : "Download PDF"}
-            </Button>
-        </PDFDownloadLink>
+        <div className="flex gap-3 flex-wrap">
+            <PDFDownloadLink document={<PDFDocumentShort />} fileName="renjith-resume-short.pdf">
+                <Button
+                    variant="outline"
+                    disabled={pdfShort.loading}
+                    className="bg-accent/10 hover:bg-accent/20"
+                >
+                    <FileDown className="w-4 h-4 mr-2" />
+                    {pdfShort.loading ? "Generating..." : "Download Short Resume"}
+                </Button>
+            </PDFDownloadLink>
+            
+            <PDFDownloadLink document={<PDFDocument />} fileName="renjith-resume-detailed.pdf">
+                <Button
+                    variant="outline"
+                    disabled={pdfDetailed.loading}
+                    className="bg-accent/10 hover:bg-accent/20"
+                >
+                    <FileDown className="w-4 h-4 mr-2" />
+                    {pdfDetailed.loading ? "Generating..." : "Download Detailed Resume"}
+                </Button>
+            </PDFDownloadLink>
+        </div>
     );
 };
