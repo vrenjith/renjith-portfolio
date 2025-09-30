@@ -1,7 +1,8 @@
 import React from 'react';
-import { PDFDownloadLink, Document, Page, Text, View, StyleSheet, Image, usePDF, Font } from '@react-pdf/renderer';
+import { PDFDownloadLink, Document, Page, Text, View, StyleSheet, Image, usePDF, Font, pdf } from '@react-pdf/renderer';
 import { Button } from '@/components/ui/button';
-import { FileDown } from 'lucide-react';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { FileDown, ChevronDown } from 'lucide-react';
 import { experiences, profileData } from '@/data/experiences';
 import { projects } from '@/data/projects';
 import Html from 'react-pdf-html';
@@ -360,38 +361,86 @@ const PDFDocumentShort = () => (
 );
 
 export const PDFGenerator = () => {
-    // PDFs for both versions
-    const [pdfDetailed] = usePDF({
-        document: <PDFDocument />,
-    });
-    
-    const [pdfShort] = usePDF({
-        document: <PDFDocumentShort />,
-    });
+    const [isLoading, setIsLoading] = React.useState(true);
+    const [pdfBlobs, setPdfBlobs] = React.useState<{
+        short: Blob | null;
+        detailed: Blob | null;
+    }>({ short: null, detailed: null });
+
+    // Pre-generate PDFs on component mount
+    React.useEffect(() => {
+        const generatePDFs = async () => {
+            try {
+                setIsLoading(true);
+                
+                // Generate both PDFs concurrently
+                const [shortBlob, detailedBlob] = await Promise.all([
+                    pdf(<PDFDocumentShort />).toBlob(),
+                    pdf(<PDFDocument />).toBlob()
+                ]);
+
+                setPdfBlobs({ short: shortBlob, detailed: detailedBlob });
+            } catch (error) {
+                console.error('Error generating PDFs:', error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        generatePDFs();
+    }, []);
+
+    const downloadPDF = (blob: Blob | null, filename: string) => {
+        if (!blob) return;
+        
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+    };
 
     return (
-        <div className="flex gap-3 flex-wrap">
-            <PDFDownloadLink document={<PDFDocumentShort />} fileName="renjith-resume-short.pdf">
-                <Button
-                    variant="outline"
-                    disabled={pdfShort.loading}
-                    className="bg-accent/10 hover:bg-accent/20"
-                >
-                    <FileDown className="w-4 h-4 mr-2" />
-                    {pdfShort.loading ? "Generating..." : "Download Short Resume"}
-                </Button>
-            </PDFDownloadLink>
-            
-            <PDFDownloadLink document={<PDFDocument />} fileName="renjith-resume-detailed.pdf">
-                <Button
-                    variant="outline"
-                    disabled={pdfDetailed.loading}
-                    className="bg-accent/10 hover:bg-accent/20"
-                >
-                    <FileDown className="w-4 h-4 mr-2" />
-                    {pdfDetailed.loading ? "Generating..." : "Download Detailed Resume"}
-                </Button>
-            </PDFDownloadLink>
+        <div className="space-y-2">
+            {isLoading && (
+                <div className="text-sm text-muted-foreground">
+                    Preparing resume files...
+                </div>
+            )}
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                    <Button
+                        variant="outline"
+                        disabled={isLoading}
+                        className="bg-accent/10 hover:bg-accent/20"
+                    >
+                        <FileDown className="w-4 h-4 mr-2" />
+                        {isLoading ? "Preparing Resume..." : "Download Resume"}
+                        <ChevronDown className="w-4 h-4 ml-2" />
+                    </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                    <DropdownMenuItem 
+                        onClick={() => downloadPDF(pdfBlobs.short, 'renjith-resume-short.pdf')}
+                        disabled={!pdfBlobs.short}
+                        className="cursor-pointer"
+                    >
+                        <FileDown className="w-4 h-4 mr-2" />
+                        Short Resume (1-2 pages)
+                    </DropdownMenuItem>
+                    <DropdownMenuItem 
+                        onClick={() => downloadPDF(pdfBlobs.detailed, 'renjith-resume-detailed.pdf')}
+                        disabled={!pdfBlobs.detailed}
+                        className="cursor-pointer"
+                    >
+                        <FileDown className="w-4 h-4 mr-2" />
+                        Detailed Resume (Multiple pages)
+                    </DropdownMenuItem>
+                </DropdownMenuContent>
+            </DropdownMenu>
         </div>
     );
 };
