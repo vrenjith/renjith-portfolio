@@ -180,7 +180,7 @@ const PDFDocument = () => (
                 />
                 <View style={styles.headerContent}>
                     <Text style={styles.name}>{profileData.name}</Text>
-                    <Text style={[styles.contact, { fontSize: 14, marginBottom: 8, fontFamily: 'Helvetica-Bold' }]}>{profileData.title}</Text>
+                    <Text style={[styles.contact, { fontSize: 14, marginBottom: 8, fontFamily: 'Open Sans', fontWeight: 'bold' }]}>{profileData.title}</Text>
                     
                     <View style={styles.contactRow}>
                         <Text style={styles.contactIcon}>Email:</Text>
@@ -418,7 +418,7 @@ export const PDFGenerator = () => {
                         className="bg-accent/10 hover:bg-accent/20"
                     >
                         <FileDown className="w-4 h-4 mr-2" />
-                        {isLoading ? "Preparing Resume..." : "Download Resume"}
+                        {isLoading ? "Preparing PDF..." : "Download PDF"}
                         <ChevronDown className="w-4 h-4 ml-2" />
                     </Button>
                 </DropdownMenuTrigger>
