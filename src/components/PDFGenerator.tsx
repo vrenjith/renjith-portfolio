@@ -6,7 +6,20 @@ import { experiences, profileData } from '@/data/experiences';
 import { projects } from '@/data/projects';
 import Html from 'react-pdf-html';
 
-// Use built-in fonts to avoid font resolution errors
+// Register Open Sans font family with reliable TTF sources
+Font.register({
+    family: 'Open Sans',
+    fonts: [
+        {
+            src: 'https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-regular.ttf',
+            fontWeight: 'normal',
+        },
+        {
+            src: 'https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-700.ttf',
+            fontWeight: 'bold',
+        },
+    ],
+});
 
 const styles = StyleSheet.create({
     page: {
@@ -18,6 +31,7 @@ const styles = StyleSheet.create({
         marginBottom: 30,
         borderBottom: '2 solid #4DB6AC',
         paddingBottom: 20,
+        minHeight: 120,
     },
     profileImage: {
         width: 100,
@@ -31,31 +45,33 @@ const styles = StyleSheet.create({
     name: {
         fontSize: 28,
         color: '#1A1F2C',
-        fontFamily: 'Helvetica-Bold',
+        fontFamily: 'Open Sans',
+        fontWeight: 'bold',
         marginBottom: 5,
     },
     contact: {
         fontSize: 12,
         color: '#4DB6AC',
         marginBottom: 3,
-        fontFamily: 'Helvetica',
+        fontFamily: 'Open Sans',
     },
     contactRow: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 4,
+        marginBottom: 6,
     },
     contactIcon: {
         fontSize: 10,
         color: '#4DB6AC',
         marginRight: 8,
-        fontFamily: 'Helvetica-Bold',
-        width: 20,
+        fontFamily: 'Open Sans',
+        fontWeight: 'bold',
+        width: 60,
     },
     contactInfo: {
         fontSize: 11,
         color: '#4A4A4A',
-        fontFamily: 'Helvetica',
+        fontFamily: 'Open Sans',
         flex: 1,
     },
     section: {
@@ -65,7 +81,8 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#4DB6AC',
         marginBottom: 15,
-        fontFamily: 'Helvetica-Bold',
+        fontFamily: 'Open Sans',
+        fontWeight: 'bold',
         borderBottom: '1 solid #E5DEFF',
         paddingBottom: 5,
     },
@@ -73,44 +90,47 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#1A1F2C',
         marginBottom: 5,
-        fontFamily: 'Helvetica-Bold',
+        fontFamily: 'Open Sans',
+        fontWeight: 'bold',
     },
     h1: {
         fontSize: 16,
         color: '#1A1F2C',
-        fontFamily: 'Helvetica-Bold',
+        fontFamily: 'Open Sans',
+        fontWeight: 'bold',
         marginBottom: 5,
     },
     subtitle: {
         fontSize: 14,
         color: '#4DB6AC',
         marginBottom: 5,
-        fontFamily: 'Helvetica',
+        fontFamily: 'Open Sans',
     },
     h2: {
         fontSize: 14,
         color: '#4DB6AC',
-        fontFamily: 'Helvetica-Bold',
+        fontFamily: 'Open Sans',
+        fontWeight: 'bold',
         marginBottom: 5,
     },
     h3: {
         fontSize: 13,
         color: '#4DB6AC',
         marginBottom: 3,
-        fontFamily: 'Helvetica',
+        fontFamily: 'Open Sans',
     },
     text: {
         fontSize: 12,
         color: '#4A4A4A',
         lineHeight: 1.5,
         marginBottom: 8,
-        fontFamily: 'Helvetica',
+        fontFamily: 'Open Sans',
     },
     div: {
         fontSize: 12,
         color: '#4A4A4A',
         lineHeight: 1,
-        fontFamily: 'Helvetica',
+        fontFamily: 'Open Sans',
         marginBottom: 2,
     },
     ul: {
@@ -118,7 +138,7 @@ const styles = StyleSheet.create({
         color: '#4A4A4A',
         lineHeight: 1.5,
         marginBottom: 5,
-        fontFamily: 'Helvetica',
+        fontFamily: 'Open Sans',
     },
     tagsContainer: {
         flexDirection: 'row',
@@ -132,7 +152,7 @@ const styles = StyleSheet.create({
         color: '#4DB6AC',
         padding: '4 8',
         borderRadius: 4,
-        fontFamily: 'Helvetica',
+        fontFamily: 'Open Sans',
     },
     detailSection: {
         marginLeft: 15,
@@ -145,7 +165,7 @@ const styles = StyleSheet.create({
         color: '#4A4A4A',
         lineHeight: 1.5,
         marginBottom: 5,
-        fontFamily: 'Helvetica',
+        fontFamily: 'Open Sans',
     }
 });
 
@@ -159,9 +179,27 @@ const PDFDocument = () => (
                 />
                 <View style={styles.headerContent}>
                     <Text style={styles.name}>{profileData.name}</Text>
-                    <Text style={styles.contact}>{profileData.email}</Text>
-                    <Text style={styles.contact}>{profileData.title}</Text>
-                    <Text style={styles.contact}>{profileData.location}</Text>
+                    <Text style={[styles.contact, { fontSize: 14, marginBottom: 8, fontFamily: 'Helvetica-Bold' }]}>{profileData.title}</Text>
+                    
+                    <View style={styles.contactRow}>
+                        <Text style={styles.contactIcon}>Email:</Text>
+                        <Text style={styles.contactInfo}>{profileData.email}</Text>
+                    </View>
+                    
+                    <View style={styles.contactRow}>
+                        <Text style={styles.contactIcon}>Phone:</Text>
+                        <Text style={styles.contactInfo}>+91 9845258299</Text>
+                    </View>
+                    
+                    <View style={styles.contactRow}>
+                        <Text style={styles.contactIcon}>LinkedIn:</Text>
+                        <Text style={styles.contactInfo}>https://www.linkedin.com/in/renjithv/</Text>
+                    </View>
+                    
+                    <View style={styles.contactRow}>
+                        <Text style={styles.contactIcon}>Location:</Text>
+                        <Text style={styles.contactInfo}>{profileData.location}</Text>
+                    </View>
                 </View>
             </View>
 

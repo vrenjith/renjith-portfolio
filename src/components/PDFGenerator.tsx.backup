@@ -1,0 +1,886 @@
+import React from 'react';import React from 'react';import React from 'react';import React from 'react';import React from 'react';
+
+import { Button } from '@/components/ui/button';
+
+import { FileDown } from 'lucide-react';import { Button } from '@/components/ui/button';
+
+
+
+export const PDFGenerator = () => {import { FileDown } from 'lucide-react';import { Button } from '@/components/ui/button';
+
+    const generatePDF = () => {
+
+        // Simply use window.print() on the current page with proper CSSimport { experiences, profileData } from '@/data/experiences';
+
+        const originalTitle = document.title;
+
+        document.title = 'Renjith Pillai - Resume';import { projects } from '@/data/projects';import { FileDown } from 'lucide-react';import { Button } from '@/components/ui/button';import { Button } from '@/components/ui/button';
+
+        
+
+        // Add print-specific styles
+
+        const style = document.createElement('style');
+
+        style.id = 'print-styles';export const PDFGenerator = () => {import { experiences, profileData } from '@/data/experiences';
+
+        style.textContent = `
+
+            @media print {    const generatePDF = () => {
+
+                body * {
+
+                    visibility: hidden;        const printWindow = window.open('', '_blank');import { projects } from '@/data/projects';import { FileDown } from 'lucide-react';import { FileDown } from 'lucide-react';
+
+                }
+
+                        
+
+                #experience, #experience *,
+
+                #projects, #projects *,        if (!printWindow) {
+
+                #blogs, #blogs *,
+
+                #contact, #contact * {            alert('Please allow popups for PDF generation');
+
+                    visibility: visible;
+
+                }            return;export const PDFGenerator = () => {import { experiences, profileData } from '@/data/experiences';import { experiences, profileData } from '@/data/experiences';
+
+                
+
+                #experience, #projects, #blogs, #contact {        }
+
+                    position: static !important;
+
+                    left: 0 !important;    const generatePDF = () => {
+
+                    top: 0 !important;
+
+                }        // Build HTML content using string concatenation to avoid template literal issues
+
+                
+
+                /* Hide interactive elements */        let htmlContent = '<!DOCTYPE html>';        const printWindow = window.open('', '_blank');import { projects } from '@/data/projects';import { projects } from '@/data/projects';
+
+                button, .cursor-pointer, .hover\\:bg-accent\\/20,
+
+                .go-to-top, nav, header[role="banner"], footer,        htmlContent += '<html lang="en">';
+
+                a[href^="mailto"], a[href^="tel"] {
+
+                    display: none !important;        htmlContent += '<head>';        
+
+                }
+
+                        htmlContent += '<meta charset="UTF-8">';
+
+                /* Optimize text */
+
+                * {        htmlContent += '<meta name="viewport" content="width=device-width, initial-scale=1.0">';        if (!printWindow) {
+
+                    font-size: 12px !important;
+
+                    line-height: 1.3 !important;        htmlContent += '<title>Renjith Pillai - Portfolio Resume</title>';
+
+                }
+
+                        htmlContent += '<style>';            alert('Please allow popups for PDF generation');
+
+                h1 { font-size: 18px !important; }
+
+                h2 { font-size: 16px !important; }        htmlContent += '* { margin: 0; padding: 0; box-sizing: border-box; }';
+
+                h3 { font-size: 14px !important; }
+
+                        htmlContent += 'body { font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1.4; color: #333; background: white; padding: 20px; }';            return;export const PDFGenerator = () => {export const PDFGenerator = () => {
+
+                /* Remove margins and padding for print */
+
+                .section-container, .container, .max-w-4xl, .max-w-6xl {        htmlContent += '.header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #333; padding-bottom: 20px; }';
+
+                    max-width: 100% !important;
+
+                    padding: 0 !important;        htmlContent += '.header h1 { font-size: 28px; font-weight: bold; margin-bottom: 10px; color: #1a1a1a; }';        }
+
+                    margin: 0 !important;
+
+                }        htmlContent += '.header p { font-size: 14px; color: #666; margin-bottom: 5px; }';
+
+                
+
+                section {        htmlContent += '.section { margin-bottom: 25px; break-inside: avoid; }';    const generatePDF = () => {    const generatePDF = () => {
+
+                    margin-bottom: 20px !important;
+
+                    break-inside: avoid;        htmlContent += '.section-title { font-size: 18px; font-weight: bold; color: #1a1a1a; margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }';
+
+                }
+
+                        htmlContent += '.experience-item, .project-item { margin-bottom: 20px; break-inside: avoid; page-break-inside: avoid; }';        const experiencesHtml = experiences.map(exp => {
+
+                .glass, .bg-accent\\/10 {
+
+                    background: rgba(0,0,0,0.1) !important;        htmlContent += '.experience-header, .project-header { margin-bottom: 8px; }';
+
+                    border: 1px solid #ccc !important;
+
+                    padding: 10px !important;        htmlContent += '.job-title, .project-title { font-size: 14px; font-weight: bold; color: #1a1a1a; }';            const achievementsHtml = exp.achievements ?         // Create a new window for PDF generation        // Apply print styles to current page
+
+                    margin: 5px 0 !important;
+
+                }        htmlContent += '.company, .project-tech { font-size: 13px; color: #666; margin-bottom: 3px; }';
+
+                
+
+                @page {        htmlContent += '.duration { font-size: 11px; color: #888; margin-bottom: 8px; }';                `<ul>${exp.achievements.map(achievement => `<li>${achievement}</li>`).join('')}</ul>` : '';
+
+                    size: A4;
+
+                    margin: 0.5in;        htmlContent += '.description { font-size: 11px; line-height: 1.5; margin-bottom: 5px; }';
+
+                }
+
+            }        htmlContent += '.skills { margin-top: 8px; }';            const technologiesHtml = exp.technologies ?         const printWindow = window.open('', '_blank');        const printStyles = document.createElement('style');
+
+        `;
+
+                htmlContent += '.skills-list { font-size: 10px; color: #666; line-height: 1.3; }';
+
+        document.head.appendChild(style);
+
+                htmlContent += 'ul { margin-left: 15px; margin-bottom: 8px; }';                `<div class="skills"><strong>Technologies:</strong><div class="skills-list">${exp.technologies.join(', ')}</div></div>` : '';
+
+        // Print after a short delay
+
+        setTimeout(() => {        htmlContent += 'li { margin-bottom: 3px; font-size: 11px; }';
+
+            window.print();
+
+                    htmlContent += '.contact-info { font-size: 12px; text-align: center; margin-top: 10px; }';                            printStyles.id = 'pdf-print-styles';
+
+            // Clean up
+
+            setTimeout(() => {        htmlContent += '@page { size: A4; margin: 0.5in; }';
+
+                document.title = originalTitle;
+
+                const printStyles = document.getElementById('print-styles');        htmlContent += '@media print { body { padding: 0; } .section { page-break-inside: avoid; } .experience-item, .project-item { page-break-inside: avoid; } }';            return `
+
+                if (printStyles) {
+
+                    printStyles.remove();        htmlContent += '</style>';
+
+                }
+
+            }, 1000);        htmlContent += '</head>';                <div class="experience-item">        if (!printWindow) {        printStyles.innerHTML = `
+
+        }, 100);
+
+    };        htmlContent += '<body>';
+
+
+
+    return (                            <div class="experience-header">
+
+        <Button
+
+            variant="outline"        // Header
+
+            onClick={generatePDF}
+
+            className="bg-accent/10 hover:bg-accent/20 pdf-generator"        htmlContent += '<div class="header">';                        <div class="job-title">${exp.title}</div>            alert('Please allow popups for PDF generation');            @media print {
+
+        >
+
+            <FileDown className="w-4 h-4 mr-2" />        htmlContent += '<h1>Renjith Pillai</h1>';
+
+            Download PDF
+
+        </Button>        htmlContent += '<p>Senior Technical Manager & Enterprise Architect</p>';                        <div class="company">${exp.company} | ${exp.location}</div>
+
+    );
+
+};        htmlContent += '<div class="contact-info">';
+
+        htmlContent += '<p>Email: renjith.pillai@example.com | LinkedIn: linkedin.com/in/renjithpillai</p>';                        <div class="duration">${exp.duration}</div>            return;                * {
+
+        htmlContent += '</div>';
+
+        htmlContent += '</div>';                    </div>
+
+        
+
+        // Summary                    <p class="description">${exp.description}</p>        }                    -webkit-print-color-adjust: exact !important;
+
+        htmlContent += '<div class="section">';
+
+        htmlContent += '<h2 class="section-title">Professional Summary</h2>';                    ${achievementsHtml}
+
+        htmlContent += '<p class="description">' + profileData.summary + '</p>';
+
+        htmlContent += '</div>';                    ${technologiesHtml}                    color-adjust: exact !important;
+
+        
+
+        // Experience                </div>
+
+        htmlContent += '<div class="section">';
+
+        htmlContent += '<h2 class="section-title">Professional Experience</h2>';            `;        // Generate static HTML content                    print-color-adjust: exact !important;
+
+        
+
+        experiences.forEach(exp => {        }).join('');
+
+            htmlContent += '<div class="experience-item">';
+
+            htmlContent += '<div class="experience-header">';        const htmlContent = `                }
+
+            htmlContent += '<div class="job-title">' + exp.title + '</div>';
+
+            htmlContent += '<div class="company">' + exp.company + ' | ' + exp.location + '</div>';        const projectsHtml = projects.slice(0, 6).map(project => {
+
+            htmlContent += '<div class="duration">' + exp.duration + '</div>';
+
+            htmlContent += '</div>';            const featuresHtml = project.features ?             <!DOCTYPE html>                
+
+            htmlContent += '<p class="description">' + exp.description + '</p>';
+
+                            `<ul>${project.features.slice(0, 4).map(feature => `<li>${feature}</li>`).join('')}</ul>` : '';
+
+            if (exp.achievements) {
+
+                htmlContent += '<ul>';                        <html lang="en">                body {
+
+                exp.achievements.forEach(achievement => {
+
+                    htmlContent += '<li>' + achievement + '</li>';            return `
+
+                });
+
+                htmlContent += '</ul>';                <div class="project-item">            <head>                    margin: 0 !important;
+
+            }
+
+                                <div class="project-header">
+
+            if (exp.technologies) {
+
+                htmlContent += '<div class="skills">';                        <div class="project-title">${project.title}</div>                <meta charset="UTF-8">                    padding: 0 !important;
+
+                htmlContent += '<strong>Technologies:</strong>';
+
+                htmlContent += '<div class="skills-list">' + exp.technologies.join(', ') + '</div>';                        <div class="project-tech">${project.technologies.join(', ')}</div>
+
+                htmlContent += '</div>';
+
+            }                    </div>                <meta name="viewport" content="width=device-width, initial-scale=1.0">                    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+
+            
+
+            htmlContent += '</div>';                    <p class="description">${project.description}</p>
+
+        });
+
+                            ${featuresHtml}                <title>Renjith Pillai - Portfolio Resume</title>                    font-size: 11px !important;
+
+        htmlContent += '</div>';
+
+                        </div>
+
+        // Projects
+
+        htmlContent += '<div class="section">';            `;                <style>                    line-height: 1.4 !important;
+
+        htmlContent += '<h2 class="section-title">Key Projects</h2>';
+
+                }).join('');
+
+        projects.slice(0, 6).forEach(project => {
+
+            htmlContent += '<div class="project-item">';                    * {                    color: #333 !important;
+
+            htmlContent += '<div class="project-header">';
+
+            htmlContent += '<div class="project-title">' + project.title + '</div>';        const htmlContent = '<!DOCTYPE html>' +
+
+            htmlContent += '<div class="project-tech">' + project.technologies.join(', ') + '</div>';
+
+            htmlContent += '</div>';            '<html lang="en">' +                        margin: 0;                    background: white !important;
+
+            htmlContent += '<p class="description">' + project.description + '</p>';
+
+                        '<head>' +
+
+            if (project.features) {
+
+                htmlContent += '<ul>';            '<meta charset="UTF-8">' +                        padding: 0;                }
+
+                project.features.slice(0, 4).forEach(feature => {
+
+                    htmlContent += '<li>' + feature + '</li>';            '<meta name="viewport" content="width=device-width, initial-scale=1.0">' +
+
+                });
+
+                htmlContent += '</ul>';            '<title>Renjith Pillai - Portfolio Resume</title>' +                        box-sizing: border-box;                
+
+            }
+
+                        '<style>' +
+
+            htmlContent += '</div>';
+
+        });            '* { margin: 0; padding: 0; box-sizing: border-box; }' +                    }                /* Hide interactive elements and navigation */
+
+        
+
+        htmlContent += '</div>';            'body { font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1.4; color: #333; background: white; padding: 20px; }' +
+
+        
+
+        // Skills            '.header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #333; padding-bottom: 20px; }' +                                    button, 
+
+        htmlContent += '<div class="section">';
+
+        htmlContent += '<h2 class="section-title">Core Competencies</h2>';            '.header h1 { font-size: 28px; font-weight: bold; margin-bottom: 10px; color: #1a1a1a; }' +
+
+        htmlContent += '<div class="skills-list">';
+
+        htmlContent += '<strong>Leadership & Management:</strong> Team Leadership, Strategic Planning, Agile Methodologies, Project Management<br><br>';            '.header p { font-size: 14px; color: #666; margin-bottom: 5px; }' +                    body {                .cursor-pointer,
+
+        htmlContent += '<strong>Architecture & Design:</strong> Enterprise Architecture, Microservices, System Design, Cloud Architecture<br><br>';
+
+        htmlContent += '<strong>Technologies:</strong> Java, Spring Boot, Python, JavaScript, React, Node.js, Docker, Kubernetes<br><br>';            '.section { margin-bottom: 25px; break-inside: avoid; }' +
+
+        htmlContent += '<strong>Cloud Platforms:</strong> AWS, Azure, Google Cloud Platform<br><br>';
+
+        htmlContent += '<strong>Databases:</strong> PostgreSQL, MySQL, MongoDB, Redis<br><br>';            '.section-title { font-size: 18px; font-weight: bold; color: #1a1a1a; margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }' +                        font-family: 'Arial', 'Helvetica', sans-serif;                [role="button"],
+
+        htmlContent += '<strong>DevOps:</strong> CI/CD, Jenkins, GitLab, Docker, Kubernetes, Terraform';
+
+        htmlContent += '</div>';            '.experience-item, .project-item { margin-bottom: 20px; break-inside: avoid; page-break-inside: avoid; }' +
+
+        htmlContent += '</div>';
+
+                    '.experience-header, .project-header { margin-bottom: 8px; }' +                        font-size: 12px;                nav,
+
+        htmlContent += '</body>';
+
+        htmlContent += '</html>';            '.job-title, .project-title { font-size: 14px; font-weight: bold; color: #1a1a1a; }' +
+
+
+
+        printWindow.document.open();            '.company, .project-tech { font-size: 13px; color: #666; margin-bottom: 3px; }' +                        line-height: 1.4;                header[role="banner"],
+
+        printWindow.document.write(htmlContent);
+
+        printWindow.document.close();            '.duration { font-size: 11px; color: #888; margin-bottom: 8px; }' +
+
+
+
+        printWindow.onload = () => {            '.description { font-size: 11px; line-height: 1.5; margin-bottom: 5px; }' +                        color: #333;                footer,
+
+            setTimeout(() => {
+
+                printWindow.print();            '.skills { margin-top: 8px; }' +
+
+                printWindow.onafterprint = () => {
+
+                    printWindow.close();            '.skills-list { font-size: 10px; color: #666; line-height: 1.3; }' +                        background: white;                .go-to-top,
+
+                };
+
+            }, 500);            'ul { margin-left: 15px; margin-bottom: 8px; }' +
+
+        };
+
+    };            'li { margin-bottom: 3px; font-size: 11px; }' +                        padding: 20px;                [data-testid="go-to-top"],
+
+
+
+    return (            '.contact-info { font-size: 12px; text-align: center; margin-top: 10px; }' +
+
+        <Button
+
+            variant="outline"            '@page { size: A4; margin: 0.5in; }' +                    }                .pdf-generator,
+
+            onClick={generatePDF}
+
+            className="bg-accent/10 hover:bg-accent/20 pdf-generator"            '@media print { body { padding: 0; } .section { page-break-inside: avoid; } .experience-item, .project-item { page-break-inside: avoid; } }' +
+
+        >
+
+            <FileDown className="w-4 h-4 mr-2" />            '</style>' +                                    a[href*="mailto"],
+
+            Download PDF
+
+        </Button>            '</head>' +
+
+    );
+
+};            '<body>' +                    .header {                a[href*="tel"],
+
+            '<div class="header">' +
+
+            '<h1>Renjith Pillai</h1>' +                        text-align: center;                .hover\\:bg-accent\\/20,
+
+            '<p>Senior Technical Manager & Enterprise Architect</p>' +
+
+            '<div class="contact-info">' +                        margin-bottom: 30px;                .hover\\:shadow-lg {
+
+            '<p>Email: renjith.pillai@example.com | LinkedIn: linkedin.com/in/renjithpillai</p>' +
+
+            '</div>' +                        border-bottom: 2px solid #333;                    display: none !important;
+
+            '</div>' +
+
+            '<div class="section">' +                        padding-bottom: 20px;                }
+
+            '<h2 class="section-title">Professional Summary</h2>' +
+
+            '<p class="description">' + profileData.summary + '</p>' +                    }                
+
+            '</div>' +
+
+            '<div class="section">' +                                    /* Remove all margins and padding from containers */
+
+            '<h2 class="section-title">Professional Experience</h2>' +
+
+            experiencesHtml +                    .header h1 {                .section-container,
+
+            '</div>' +
+
+            '<div class="section">' +                        font-size: 28px;                .container,
+
+            '<h2 class="section-title">Key Projects</h2>' +
+
+            projectsHtml +                        font-weight: bold;                .max-w-4xl,
+
+            '</div>' +
+
+            '<div class="section">' +                        margin-bottom: 10px;                .max-w-6xl,
+
+            '<h2 class="section-title">Core Competencies</h2>' +
+
+            '<div class="skills-list">' +                        color: #1a1a1a;                .mx-auto {
+
+            '<strong>Leadership & Management:</strong> Team Leadership, Strategic Planning, Agile Methodologies, Project Management<br><br>' +
+
+            '<strong>Architecture & Design:</strong> Enterprise Architecture, Microservices, System Design, Cloud Architecture<br><br>' +                    }                    max-width: 100% !important;
+
+            '<strong>Technologies:</strong> Java, Spring Boot, Python, JavaScript, React, Node.js, Docker, Kubernetes<br><br>' +
+
+            '<strong>Cloud Platforms:</strong> AWS, Azure, Google Cloud Platform<br><br>' +                                        padding: 0 !important;
+
+            '<strong>Databases:</strong> PostgreSQL, MySQL, MongoDB, Redis<br><br>' +
+
+            '<strong>DevOps:</strong> CI/CD, Jenkins, GitLab, Docker, Kubernetes, Terraform' +                    .header p {                    margin: 0 !important;
+
+            '</div>' +
+
+            '</div>' +                        font-size: 14px;                }
+
+            '</body>' +
+
+            '</html>';                        color: #666;                
+
+
+
+        printWindow.document.open();                        margin-bottom: 5px;                /* Section spacing for print */
+
+        printWindow.document.write(htmlContent);
+
+        printWindow.document.close();                    }                section {
+
+
+
+        printWindow.onload = () => {                                        margin-bottom: 20px !important;
+
+            setTimeout(() => {
+
+                printWindow.print();                    .section {                    padding: 10px 0 !important;
+
+                printWindow.onafterprint = () => {
+
+                    printWindow.close();                        margin-bottom: 25px;                    break-inside: avoid;
+
+                };
+
+            }, 500);                        break-inside: avoid;                }
+
+        };
+
+    };                    }                
+
+
+
+    return (                                    /* Typography optimizations */
+
+        <Button
+
+            variant="outline"                    .section-title {                h1 {
+
+            onClick={generatePDF}
+
+            className="bg-accent/10 hover:bg-accent/20 pdf-generator"                        font-size: 18px;                    font-size: 24px !important;
+
+        >
+
+            <FileDown className="w-4 h-4 mr-2" />                        font-weight: bold;                    margin: 10px 0 !important;
+
+            Download PDF
+
+        </Button>                        color: #1a1a1a;                    break-after: avoid;
+
+    );
+
+};                        margin-bottom: 15px;                }
+
+                        border-bottom: 1px solid #ddd;                
+
+                        padding-bottom: 5px;                h2 {
+
+                    }                    font-size: 20px !important;
+
+                                        margin: 15px 0 8px 0 !important;
+
+                    .experience-item, .project-item {                    break-after: avoid;
+
+                        margin-bottom: 20px;                }
+
+                        break-inside: avoid;                
+
+                        page-break-inside: avoid;                h3 {
+
+                    }                    font-size: 16px !important;
+
+                                        margin: 10px 0 5px 0 !important;
+
+                    .experience-header, .project-header {                    break-after: avoid;
+
+                        margin-bottom: 8px;                }
+
+                    }                
+
+                                    h4, h5, h6 {
+
+                    .job-title, .project-title {                    font-size: 14px !important;
+
+                        font-size: 14px;                    margin: 8px 0 4px 0 !important;
+
+                        font-weight: bold;                    break-after: avoid;
+
+                        color: #1a1a1a;                }
+
+                    }                
+
+                                    p {
+
+                    .company, .project-tech {                    margin: 4px 0 !important;
+
+                        font-size: 13px;                    orphans: 3;
+
+                        color: #666;                    widows: 3;
+
+                        margin-bottom: 3px;                }
+
+                    }                
+
+                                    /* Lists */
+
+                    .duration, .project-links {                ul, ol {
+
+                        font-size: 11px;                    margin: 5px 0 !important;
+
+                        color: #888;                    padding-left: 20px !important;
+
+                        margin-bottom: 8px;                }
+
+                    }                
+
+                                    li {
+
+                    .description {                    margin: 2px 0 !important;
+
+                        font-size: 11px;                    break-inside: avoid;
+
+                        line-height: 1.5;                }
+
+                        margin-bottom: 5px;                
+
+                    }                /* Cards and containers */
+
+                                    .glass,
+
+                    .skills {                .bg-accent\\/10,
+
+                        margin-top: 8px;                .rounded-xl,
+
+                    }                .rounded-lg {
+
+                                        background: rgba(0,0,0,0.05) !important;
+
+                    .skills-list {                    border: 1px solid #ddd !important;
+
+                        font-size: 10px;                    padding: 8px !important;
+
+                        color: #666;                    margin: 5px 0 !important;
+
+                        line-height: 1.3;                    border-radius: 4px !important;
+
+                    }                    break-inside: avoid;
+
+                                    }
+
+                    ul {                
+
+                        margin-left: 15px;                /* Grid layouts */
+
+                        margin-bottom: 8px;                .grid {
+
+                    }                    display: block !important;
+
+                                    }
+
+                    li {                
+
+                        margin-bottom: 3px;                .grid > div {
+
+                        font-size: 11px;                    display: block !important;
+
+                    }                    margin-bottom: 10px !important;
+
+                                        break-inside: avoid;
+
+                    .contact-info {                }
+
+                        font-size: 12px;                
+
+                        text-align: center;                /* Images */
+
+                        margin-top: 10px;                img {
+
+                    }                    max-width: 100% !important;
+
+                                        height: auto !important;
+
+                    @page {                    break-inside: avoid;
+
+                        size: A4;                }
+
+                        margin: 0.5in;                
+
+                    }                /* SVG icons - make them smaller */
+
+                                    svg {
+
+                    @media print {                    width: 12px !important;
+
+                        body {                    height: 12px !important;
+
+                            padding: 0;                }
+
+                        }                
+
+                                        /* Flex layouts */
+
+                        .section {                .flex {
+
+                            page-break-inside: avoid;                    display: block !important;
+
+                        }                }
+
+                                        
+
+                        .experience-item, .project-item {                .flex > * {
+
+                            page-break-inside: avoid;                    display: block !important;
+
+                        }                    margin-bottom: 3px !important;
+
+                    }                }
+
+                </style>                
+
+            </head>                /* Text colors for print */
+
+            <body>                .text-muted-foreground {
+
+                <!-- Header Section -->                    color: #666 !important;
+
+                <div class="header">                }
+
+                    <h1>Renjith Pillai</h1>                
+
+                    <p>Senior Technical Manager & Enterprise Architect</p>                .text-gray-700 {
+
+                    <div class="contact-info">                    color: #555 !important;
+
+                        <p>Email: renjith.pillai@example.com | LinkedIn: linkedin.com/in/renjithpillai</p>                }
+
+                    </div>                
+
+                </div>                .text-gray-900 {
+
+                    color: #222 !important;
+
+                <!-- Summary Section -->                }
+
+                <div class="section">                
+
+                    <h2 class="section-title">Professional Summary</h2>                /* Motion div - remove transforms */
+
+                    <p class="description">${profileData.summary}</p>                [style*="transform"] {
+
+                </div>                    transform: none !important;
+
+                }
+
+                <!-- Experience Section -->                
+
+                <div class="section">                /* Force content to show */
+
+                    <h2 class="section-title">Professional Experience</h2>                .opacity-0 {
+
+                    ${experiences.map(exp => `                    opacity: 1 !important;
+
+                        <div class="experience-item">                }
+
+                            <div class="experience-header">                
+
+                                <div class="job-title">${exp.title}</div>                /* Page setup */
+
+                                <div class="company">${exp.company} | ${exp.location}</div>                @page {
+
+                                <div class="duration">${exp.duration}</div>                    size: A4;
+
+                            </div>                    margin: 0.5in;
+
+                            <p class="description">${exp.description}</p>                }
+
+                            ${exp.achievements ? `                
+
+                                <ul>                /* Ensure all sections are visible */
+
+                                    ${exp.achievements.map(achievement => `<li>${achievement}</li>`).join('')}                section[style*="opacity: 0"] {
+
+                                </ul>                    opacity: 1 !important;
+
+                            ` : ''}                }
+
+                            ${exp.technologies ? `                
+
+                                <div class="skills">                /* Remove any hidden content */
+
+                                    <strong>Technologies:</strong>                .hidden,
+
+                                    <div class="skills-list">${exp.technologies.join(', ')}</div>                [style*="display: none"] {
+
+                                </div>                    display: block !important;
+
+                            ` : ''}                }
+
+                        </div>                
+
+                    `).join('')}                /* Make sure framer-motion content is visible */
+
+                </div>                [data-projection-id] {
+
+                    transform: none !important;
+
+                <!-- Projects Section -->                    opacity: 1 !important;
+
+                <div class="section">                }
+
+                    <h2 class="section-title">Key Projects</h2>            }
+
+                    ${projects.slice(0, 6).map(project => `        `;
+
+                        <div class="project-item">        
+
+                            <div class="project-header">        document.head.appendChild(printStyles);
+
+                                <div class="project-title">${project.title}</div>        
+
+                                <div class="project-tech">${project.technologies.join(', ')}</div>        // Small delay to ensure styles are applied
+
+                            </div>        setTimeout(() => {
+
+                            <p class="description">${project.description}</p>            window.print();
+
+                            ${project.features ? `            
+
+                                <ul>            // Remove print styles after printing
+
+                                    ${project.features.slice(0, 4).map(feature => `<li>${feature}</li>`).join('')}            setTimeout(() => {
+
+                                </ul>                const stylesToRemove = document.getElementById('pdf-print-styles');
+
+                            ` : ''}                if (stylesToRemove) {
+
+                        </div>                    stylesToRemove.remove();
+
+                    `).join('')}                }
+
+                </div>            }, 1000);
+
+        }, 100);
+
+                <!-- Skills Section -->    };
+
+                <div class="section">
+
+                    <h2 class="section-title">Core Competencies</h2>    return (
+
+                    <div class="skills-list">        <Button
+
+                        <strong>Leadership & Management:</strong> Team Leadership, Strategic Planning, Agile Methodologies, Project Management<br><br>            variant="outline"
+
+                        <strong>Architecture & Design:</strong> Enterprise Architecture, Microservices, System Design, Cloud Architecture<br><br>            onClick={generatePDF}
+
+                        <strong>Technologies:</strong> Java, Spring Boot, Python, JavaScript, React, Node.js, Docker, Kubernetes<br><br>            className="bg-accent/10 hover:bg-accent/20 pdf-generator"
+
+                        <strong>Cloud Platforms:</strong> AWS, Azure, Google Cloud Platform<br><br>        >
+
+                        <strong>Databases:</strong> PostgreSQL, MySQL, MongoDB, Redis<br><br>            <FileDown className="w-4 h-4 mr-2" />
+
+                        <strong>DevOps:</strong> CI/CD, Jenkins, GitLab, Docker, Kubernetes, Terraform            Download PDF
+
+                    </div>        </Button>
+
+                </div>    );
+
+            </body>};
+            </html>
+        `;
+
+        // Write content to new window
+        printWindow.document.open();
+        printWindow.document.write(htmlContent);
+        printWindow.document.close();
+
+        // Wait for content to load, then trigger print
+        printWindow.onload = () => {
+            setTimeout(() => {
+                printWindow.print();
+                // Close the window after printing
+                printWindow.onafterprint = () => {
+                    printWindow.close();
+                };
+            }, 500);
+        };
+    };
+
+    return (
+        <Button
+            variant="outline"
+            onClick={generatePDF}
+            className="bg-accent/10 hover:bg-accent/20 pdf-generator"
+        >
+            <FileDown className="w-4 h-4 mr-2" />
+            Download PDF
+        </Button>
+    );
+};
