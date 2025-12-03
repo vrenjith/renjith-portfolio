@@ -189,12 +189,12 @@ const PDFDocument = () => (
                     
                     <View style={styles.contactRow}>
                         <Text style={styles.contactIcon}>Phone:</Text>
-                        <Text style={styles.contactInfo}>+91 9845258299</Text>
+                        <Text style={styles.contactInfo}>{profileData.phone}</Text>
                     </View>
                     
                     <View style={styles.contactRow}>
                         <Text style={styles.contactIcon}>LinkedIn:</Text>
-                        <Text style={styles.contactInfo}>https://www.linkedin.com/in/renjithv/</Text>
+                        <Text style={styles.contactInfo}>{profileData.linkedin}</Text>
                     </View>
                     
                     <View style={styles.contactRow}>
@@ -219,11 +219,9 @@ const PDFDocument = () => (
                         <Text style={styles.subtitle}>{exp.company} - {exp.period}</Text>
                         <Text style={styles.text}>{exp.location}</Text>
                         <Text style={styles.text}>{exp.description}</Text>
-                        <View style={styles.tagsContainer}>
-                            {exp.technologies.map((tech, techIndex) => (
-                                <Text key={techIndex} style={styles.tag}>{tech}</Text>
-                            ))}
-                        </View>
+                        <Text style={styles.text}>
+                            Technologies: {exp.technologies.join(', ')}
+                        </Text>
                         {exp.positions && (
                             <View style={styles.detailSection}>
                                 {exp.positions.map((position, posIndex) => (
@@ -246,17 +244,9 @@ const PDFDocument = () => (
                     <View key={index} style={[styles.section, { marginBottom: 20 }]}>
                         <Text style={styles.itemTitle}>{project.title}</Text>
                         <Text style={styles.text}>{project.description}</Text>
-                        <View style={styles.tagsContainer}>
-                            {project.tags.map((tag, tagIndex) => (
-                                <Text key={tagIndex} style={styles.tag}>{tag}</Text>
-                            ))}
-                        </View>
-
-                        {project.content && (
-                            <View style={styles.detailSection}>
-                                <Html stylesheet={styles}>{project.content}</Html>
-                            </View>
-                        )}
+                        <Text style={styles.text}>
+                            Technologies: {project.tags.join(', ')}
+                        </Text>
                     </View>
                 ))}
             </View>
@@ -267,45 +257,27 @@ const PDFDocument = () => (
                     Visit my blog "Random Revelations" for technical insights and discoveries from my journey in software development.
                 </Text>
                 <Text style={styles.text}>
-                    Blog URL: https://renjithpillai.com
+                    Blog URL: {profileData.blog}
                 </Text>
             </View>
         </Page>
     </Document>
 );
 
+
 // Short version - condensed to 1-2 pages
 const PDFDocumentShort = () => (
     <Document>
         <Page size="A4" style={styles.page}>
-            <View style={styles.header}>
-                <Image
-                    src="/placeholder.svg"
-                    style={styles.profileImage}
-                />
+            <View style={[styles.header, { flexDirection: 'column', alignItems: 'flex-start' }]}>
+                {/* Profile image removed for ATS compatibility */}
                 <View style={styles.headerContent}>
                     <Text style={styles.name}>{profileData.name}</Text>
                     <Text style={[styles.contact, { fontSize: 14, marginBottom: 8, fontFamily: 'Open Sans', fontWeight: 'bold' }]}>{profileData.title}</Text>
                     
-                    <View style={styles.contactRow}>
-                        <Text style={styles.contactIcon}>Email:</Text>
-                        <Text style={styles.contactInfo}>{profileData.email}</Text>
-                    </View>
-                    
-                    <View style={styles.contactRow}>
-                        <Text style={styles.contactIcon}>Phone:</Text>
-                        <Text style={styles.contactInfo}>+91 9845258299</Text>
-                    </View>
-                    
-                    <View style={styles.contactRow}>
-                        <Text style={styles.contactIcon}>LinkedIn:</Text>
-                        <Text style={styles.contactInfo}>https://www.linkedin.com/in/renjithv/</Text>
-                    </View>
-                    
-                    <View style={styles.contactRow}>
-                        <Text style={styles.contactIcon}>Location:</Text>
-                        <Text style={styles.contactInfo}>{profileData.location}</Text>
-                    </View>
+                    <Text style={styles.contactInfo}>Email: {profileData.email} | Phone: {profileData.phone}</Text>
+                    <Text style={styles.contactInfo}>LinkedIn: {profileData.linkedin}</Text>
+                    <Text style={styles.contactInfo}>Location: {profileData.location}</Text>
                 </View>
             </View>
 
@@ -323,11 +295,9 @@ const PDFDocumentShort = () => (
                         <Text style={styles.itemTitle}>{exp.title}</Text>
                         <Text style={styles.subtitle}>{exp.company} - {exp.period}</Text>
                         <Text style={styles.text}>{exp.description}</Text>
-                        <View style={styles.tagsContainer}>
-                            {exp.technologies.slice(0, 8).map((tech, techIndex) => (
-                                <Text key={techIndex} style={styles.tag}>{tech}</Text>
-                            ))}
-                        </View>
+                        <Text style={styles.text}>
+                            Technologies: {exp.technologies.slice(0, 8).join(', ')}
+                        </Text>
                     </View>
                 ))}
             </View>
@@ -338,11 +308,9 @@ const PDFDocumentShort = () => (
                     <View key={index} style={[styles.section, { marginBottom: 12 }]}>
                         <Text style={styles.itemTitle}>{project.title}</Text>
                         <Text style={styles.text}>{project.description}</Text>
-                        <View style={styles.tagsContainer}>
-                            {project.tags.slice(0, 6).map((tag, tagIndex) => (
-                                <Text key={tagIndex} style={styles.tag}>{tag}</Text>
-                            ))}
-                        </View>
+                        <Text style={styles.text}>
+                            Technologies: {project.tags.slice(0, 6).join(', ')}
+                        </Text>
                     </View>
                 ))}
             </View>
@@ -350,7 +318,7 @@ const PDFDocumentShort = () => (
             <View style={styles.section}>
                 <Text style={styles.sectionTitle}>Contact & Links</Text>
                 <Text style={styles.text}>
-                    Blog: https://renjithpillai.com
+                    Blog: {profileData.blog}
                 </Text>
                 <Text style={styles.text}>
                     Portfolio: Available upon request for detailed project documentation and case studies.

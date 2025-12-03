@@ -9,9 +9,9 @@ export interface LinkedinPost {
 export const linkedinPosts: LinkedinPost[] = [
   {
     id: "devops-evolution",
-    embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:share:7316300868432142336",
-    title: "The Evolution of DevOps: From Infrastructure as Code to AI-Ops",
-    date: "2024-09-05",
+        embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:share:7393212058479022080",
+        title: "The Real Heroes Were the People: Our RAG System Meets Onyx",
+    date: "2025-11-09",
   },
   
   // I cannot directly access real LinkedIn posts due to authentication requirements.

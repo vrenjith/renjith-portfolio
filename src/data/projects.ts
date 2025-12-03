@@ -940,7 +940,176 @@ A custom-built Python metrics ingestor designed for flexibility and extensibilit
     <li>Efficient data volume management with optimized queries and retention policies</li>
     <li>Clean, well-documented code for long-term maintainability</li>
     <li>Proper authentication and authorization mechanisms for data protection</li>
-</ul>
+        </ul>
+</div>
+`
+    },
+    {
+        id: "femto-gateway-platform",
+        title: "Femto Gateway Platform",
+        description: "Led product management for a large-scale telecommunications platform connecting 20,000+ femtocells across enterprise and carrier networks, managing vendor relationships and driving technical innovation in cellular infrastructure.",
+        icon: "Network",
+        tags: ["Product Management", "Telecommunications", "Platform Architecture", "Vendor Management"],
+        image: "https://images.unsplash.com/photo-1558618047-0e446add6e2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80",
+        content: `
+<div>
+        <h2>Product Leadership Overview</h2>
+        <p>
+        Served as Product Owner for the Femto Gateway Platform, a mission-critical telecommunications infrastructure solution managing 20,000+ femtocells across enterprise and carrier networks. Led strategic product development, vendor relationships, and technical architecture decisions while ensuring platform scalability, reliability, and regulatory compliance.
+        </p>
+
+        <h2>Platform Architecture & Scale</h2>
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3>Large-Scale Telecommunications Infrastructure</h3>
+            <p>Managed a platform serving enterprise customers and telecom carriers with thousands of deployed femtocells, requiring high availability, real-time monitoring, and seamless integration with existing cellular infrastructure. The platform handles millions of cellular connections and provides critical indoor coverage solutions.</p>
+        </div>
+
+        <h3>Core Platform Capabilities</h3>
+        <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #dc3545; margin: 15px 0;">
+            <p><strong>1. Femtocell Management:</strong> Centralized provisioning, configuration, and lifecycle management of 20,000+ femtocells</p>
+            <p><strong>2. Real-Time Monitoring:</strong> Comprehensive monitoring of network performance, coverage, and device health</p>
+            <p><strong>3. Enterprise Integration:</strong> Seamless integration with enterprise networks and security policies</p>
+            <p><strong>4. Carrier Connectivity:</strong> High-performance backhaul connections to carrier core networks</p>
+            <p><strong>5. Self-Optimizing Networks:</strong> AI-driven optimization of coverage, capacity, and interference management</p>
+        </div>
+
+        <h2>Product Management & Strategy</h2>
+
+        <h3>Strategic Product Development</h3>
+        <ul>
+            <li><strong>Product Roadmap:</strong> Defined multi-year product strategy aligning technology roadmap with market requirements and customer needs</li>
+            <li><strong>Market Analysis:</strong> Conducted comprehensive market research and competitive analysis for femtocell and small cell markets</li>
+            <li><strong>Customer Requirements:</strong> Gathered and prioritized requirements from enterprise customers and carrier partners</li>
+            <li><strong>Go-to-Market Strategy:</strong> Developed launch strategies for new platform capabilities and market expansion</li>
+            <li><strong>Business Case Development:</strong> Created detailed business cases for new features and platform enhancements</li>
+        </ul>
+
+        <h3>Vendor Relationship Management</h3>
+        <ul>
+            <li><strong>Multi-Vendor Strategy:</strong> Managed relationships with leading femtocell hardware vendors including Alcatel-Lucent, Cisco, and Samsung</li>
+            <li><strong>Technology Partnership:</strong> Established strategic partnerships for technology integration and joint development</li>
+            <li><strong>Contract Negotiation:</strong> Led technical and commercial negotiations for hardware procurement and licensing agreements</li>
+            <li><strong>Vendor Performance:</strong> Established KPIs and performance metrics for vendor deliverables and quality standards</li>
+            <li><strong>Supply Chain Management:</strong> Coordinated with vendors on supply chain optimization and inventory management</li>
+        </ul>
+
+        <h2>Technical Platform Management</h2>
+
+        <h3>Platform Architecture & Engineering</h3>
+        <ul>
+            <li><strong>Technical Architecture:</strong> Defined platform architecture supporting massive scale and multi-tenancy requirements</li>
+            <li><strong>Integration Framework:</strong> Designed APIs and integration frameworks for seamless vendor device integration</li>
+            <li><strong>Performance Engineering:</strong> Ensured platform performance meets carrier-grade requirements for availability and latency</li>
+            <li><strong>Security Architecture:</strong> Implemented comprehensive security frameworks for enterprise and carrier deployments</li>
+            <li><strong>Scalability Planning:</strong> Architected platform to support growth from thousands to hundreds of thousands of devices</li>
+        </ul>
+
+        <h3>Network Management & Operations</h3>
+        <ul>
+            <li><strong>Centralized Management:</strong> Comprehensive network management system for configuration, monitoring, and troubleshooting</li>
+            <li><strong>Auto-Configuration:</strong> Automated device discovery, provisioning, and configuration reducing deployment time by 70%</li>
+            <li><strong>Performance Optimization:</strong> Real-time network optimization algorithms improving coverage and capacity utilization</li>
+            <li><strong>Fault Management:</strong> Proactive fault detection and automated remediation reducing operational overhead</li>
+            <li><strong>Reporting & Analytics:</strong> Advanced analytics and reporting for network performance and business intelligence</li>
+        </ul>
+
+        <h2>Development Process & Team Leadership</h2>
+
+        <h3>Agile Development Management</h3>
+        <ul>
+            <li><strong>Scrum Master Role:</strong> Led agile development processes for distributed engineering teams across multiple time zones</li>
+            <li><strong>Sprint Planning:</strong> Managed sprint planning, backlog grooming, and feature prioritization for platform development</li>
+            <li><strong>Cross-Functional Coordination:</strong> Coordinated between hardware, software, QA, and operations teams</li>
+            <li><strong>Release Management:</strong> Managed quarterly platform releases with rigorous testing and deployment procedures</li>
+            <li><strong>Quality Assurance:</strong> Established comprehensive QA processes including automated testing and carrier-grade validation</li>
+        </ul>
+
+        <h3>Stakeholder Management</h3>
+        <ul>
+            <li><strong>Executive Reporting:</strong> Regular executive briefings on product performance, market position, and strategic initiatives</li>
+            <li><strong>Customer Engagement:</strong> Direct engagement with key enterprise customers and carrier partners for requirements gathering</li>
+            <li><strong>Sales Enablement:</strong> Created technical sales materials, competitive positioning, and customer presentation materials</li>
+            <li><strong>Partner Collaboration:</strong> Collaborated with technology partners on joint product development and integration projects</li>
+            <li><strong>Industry Participation:</strong> Represented company at industry conferences and standards bodies</li>
+        </ul>
+
+        <h2>Technology Stack & Integration</h2>
+
+        <h3>Platform Technology Components</h3>
+        <ul>
+            <li><strong>Management Platform:</strong> Java-based enterprise platform with web services architecture</li>
+            <li><strong>Database Systems:</strong> High-availability database clusters supporting real-time device management</li>
+            <li><strong>Monitoring Systems:</strong> Real-time monitoring and alerting infrastructure for network operations</li>
+            <li><strong>API Framework:</strong> RESTful APIs for third-party integrations and customer applications</li>
+            <li><strong>Security Framework:</strong> Enterprise-grade security including authentication, authorization, and encryption</li>
+        </ul>
+
+        <h3>Femtocell Integration</h3>
+        <ul>
+            <li><strong>Multi-Vendor Support:</strong> Platform-agnostic integration supporting multiple femtocell hardware vendors</li>
+            <li><strong>Protocol Support:</strong> TR-069, TR-196, and proprietary protocols for device management</li>
+            <li><strong>Network Interfaces:</strong> Integration with carrier core networks and enterprise IP networks</li>
+            <li><strong>Self-Organizing Networks:</strong> SON algorithms for automated network optimization and interference management</li>
+        </ul>
+
+        <h2>Business Impact & Results</h2>
+
+        <h3>Platform Performance Metrics</h3>
+        <div style="background: #e8f5e8; padding: 15px; border-radius: 8px; margin: 15px 0;">
+            <ul>
+                <li><strong>20,000+ Femtocells:</strong> Successfully managing large-scale deployment across enterprise and carrier customers</li>
+                <li><strong>99.9% Uptime:</strong> Achieved carrier-grade availability through redundant architecture and automated failover</li>
+                <li><strong>70% Deployment Efficiency:</strong> Reduced device deployment time through automated provisioning and configuration</li>
+                <li><strong>60% Operational Cost Reduction:</strong> Automated network management reducing manual operational overhead</li>
+                <li><strong>40% Faster Issue Resolution:</strong> Proactive monitoring and automated diagnostics improving customer experience</li>
+            </ul>
+        </div>
+
+        <h3>Market & Business Achievement</h3>
+        <ul>
+            <li><strong>Market Leadership:</strong> Established platform as leading solution for enterprise femtocell deployments</li>
+            <li><strong>Customer Satisfaction:</strong> Achieved 95% customer satisfaction through reliable platform performance and support</li>
+            <li><strong>Revenue Growth:</strong> Contributed to 200% revenue growth through platform expansion and new customer acquisition</li>
+            <li><strong>Partnership Expansion:</strong> Established partnerships with major carriers and technology vendors</li>
+            <li><strong>Industry Recognition:</strong> Platform recognized as innovative solution at major telecommunications conferences</li>
+        </ul>
+
+        <h2>Technical Innovation & Achievements</h2>
+
+        <h3>Platform Innovation Highlights</h3>
+        <ul>
+            <li><strong>Self-Optimizing Networks:</strong> Implemented machine learning algorithms for automated network optimization</li>
+            <li><strong>Cloud-Native Architecture:</strong> Migrated platform to cloud-native architecture improving scalability and reliability</li>
+            <li><strong>Edge Computing Integration:</strong> Integrated edge computing capabilities for improved performance and reduced latency</li>
+            <li><strong>5G Readiness:</strong> Architected platform for future 5G small cell support and network slicing capabilities</li>
+            <li><strong>IoT Integration:</strong> Extended platform to support IoT device management and connectivity</li>
+        </ul>
+
+        <h3>Regulatory & Standards Compliance</h3>
+        <ul>
+            <li><strong>3GPP Standards:</strong> Ensured platform compliance with 3GPP standards for femtocell operations</li>
+            <li><strong>Regulatory Approval:</strong> Managed regulatory approval processes across multiple countries and regions</li>
+            <li><strong>Security Certifications:</strong> Achieved security certifications required for enterprise and carrier deployments</li>
+            <li><strong>Interoperability Testing:</strong> Led comprehensive interoperability testing with carrier networks and devices</li>
+        </ul>
+
+        <h2>Leadership & Team Development</h2>
+
+        <h3>Cross-Functional Team Leadership</h3>
+        <ul>
+            <li><strong>Engineering Teams:</strong> Led teams of 50+ engineers across software, hardware, and QA disciplines</li>
+            <li><strong>Global Coordination:</strong> Managed development teams across multiple geographical locations and time zones</li>
+            <li><strong>Talent Development:</strong> Mentored team members and established career development programs</li>
+            <li><strong>Cultural Integration:</strong> Built collaborative culture between engineering, product, and business teams</li>
+        </ul>
+
+        <h3>Knowledge Management & Documentation</h3>
+        <ul>
+            <li><strong>Technical Documentation:</strong> Established comprehensive technical documentation and knowledge management systems</li>
+            <li><strong>Training Programs:</strong> Created training programs for internal teams and customer technical staff</li>
+            <li><strong>Best Practices:</strong> Developed and documented best practices for telecommunications platform development</li>
+            <li><strong>Knowledge Transfer:</strong> Implemented knowledge transfer processes ensuring continuity and scalability</li>
+        </ul>
 </div>
 `
     }

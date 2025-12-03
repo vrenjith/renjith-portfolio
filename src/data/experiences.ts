@@ -1,6 +1,9 @@
 export const profileData = {
     name: "Renjith Vasavan Pillai",
     email: "v.renjith@gmail.com",
+    phone: "+91 9845258299",
+    linkedin: "https://www.linkedin.com/in/renjithv/",
+    blog: "https://renjithpillai.com",
     title: "DevOps Platform Development and Architecture",
     location: "Bangalore, India",
     summary: "Over 24 years of experience in application development, cloud architecture and DevOps transformation. Specializing in building high-performance teams and implementing enterprise-scale solutions."
