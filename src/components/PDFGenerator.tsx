@@ -5,6 +5,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { FileDown, ChevronDown } from 'lucide-react';
 import { experiences, profileData } from '@/data/experiences';
 import { projects } from '@/data/projects';
+import { skills } from '@/data/skills';
 import Html from 'react-pdf-html';
 
 // Register Open Sans font family with reliable TTF sources
@@ -251,6 +252,82 @@ const PDFDocument = () => (
                 ))}
             </View>
 
+            {/* Skills Section - detailed */}
+            <View style={styles.section}>
+                <Text style={styles.sectionTitle}>Skills</Text>
+                <View style={{ marginBottom: 8 }}>
+                    <Text style={styles.h2}>Cloud</Text>
+                    <View style={styles.tagsContainer}>
+                        {skills.cloud.map((s, i) => (
+                            <Text key={i} style={styles.tag}>{s}</Text>
+                        ))}
+                    </View>
+                </View>
+
+                <View style={{ marginBottom: 8 }}>
+                    <Text style={styles.h2}>Technology / Tool Stack</Text>
+                    <View style={styles.tagsContainer}>
+                        {skills.technologyStack.map((s, i) => (
+                            <Text key={i} style={styles.tag}>{s}</Text>
+                        ))}
+                    </View>
+                </View>
+
+                <View style={{ marginBottom: 8 }}>
+                    <Text style={styles.h2}>Languages</Text>
+                    <View style={styles.tagsContainer}>
+                        {skills.languages.map((s, i) => (
+                            <Text key={i} style={styles.tag}>{s}</Text>
+                        ))}
+                    </View>
+                </View>
+
+                <View style={{ marginBottom: 8 }}>
+                    <Text style={styles.h2}>Databases</Text>
+                    <View style={styles.tagsContainer}>
+                        {skills.databases.map((s, i) => (
+                            <Text key={i} style={styles.tag}>{s}</Text>
+                        ))}
+                    </View>
+                </View>
+
+                <View style={{ marginBottom: 8 }}>
+                    <Text style={styles.h2}>Concepts</Text>
+                    <View style={styles.tagsContainer}>
+                        {skills.concepts.map((s, i) => (
+                            <Text key={i} style={styles.tag}>{s}</Text>
+                        ))}
+                    </View>
+                </View>
+
+                <View style={{ marginBottom: 8 }}>
+                    <Text style={styles.h2}>Operating Systems</Text>
+                    <View style={styles.tagsContainer}>
+                        {skills.operatingSystems.map((s, i) => (
+                            <Text key={i} style={styles.tag}>{s}</Text>
+                        ))}
+                    </View>
+                </View>
+
+                <View style={{ marginBottom: 8 }}>
+                    <Text style={styles.h2}>Dev Environments</Text>
+                    <View style={styles.tagsContainer}>
+                        {skills.devEnvironments.map((s, i) => (
+                            <Text key={i} style={styles.tag}>{s}</Text>
+                        ))}
+                    </View>
+                </View>
+
+                <View style={{ marginBottom: 8 }}>
+                    <Text style={styles.h2}>Hardware</Text>
+                    <View style={styles.tagsContainer}>
+                        {skills.hardware.map((s, i) => (
+                            <Text key={i} style={styles.tag}>{s}</Text>
+                        ))}
+                    </View>
+                </View>
+            </View>
+
             <View style={styles.section}>
                 <Text style={styles.sectionTitle}>Blog Posts</Text>
                 <Text style={styles.text}>
@@ -313,6 +390,19 @@ const PDFDocumentShort = () => (
                         </Text>
                     </View>
                 ))}
+            </View>
+
+            {/* Condensed Skills for short PDF */}
+            <View style={styles.section}>
+                <Text style={styles.sectionTitle}>Skills (Condensed)</Text>
+                <Text style={styles.h3}>Cloud:</Text>
+                <Text style={styles.ul}>{skills.cloud.join(', ')}</Text>
+
+                <Text style={styles.h3}>Tech / Tools:</Text>
+                <Text style={styles.ul}>{skills.technologyStack.slice(0, 8).join(', ')}</Text>
+
+                <Text style={styles.h3}>Languages:</Text>
+                <Text style={styles.ul}>{skills.languages.slice(0, 6).join(', ')}</Text>
             </View>
 
             <View style={styles.section}>
