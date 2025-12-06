@@ -2,7 +2,7 @@ export const profileData = {
     name: "Renjith Vasavan Pillai",
     email: "v.renjith@gmail.com",
     phone: "+91 9845258299",
-    linkedin: "https://www.linkedin.com/in/renjithv/",
+    linkedin: "https://www.linkedin.com/in/renjithvpillai/",
     blog: "https://renjithpillai.com",
     title: "DevOps Platform Development and Architecture",
     location: "Bangalore, India",

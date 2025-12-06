@@ -23,6 +23,9 @@ Font.register({
     ],
 });
 
+// Note: Using Open Sans for all variants to ensure reliable font loading.
+// Custom fonts (Inter, Lora, Roboto) have CORS/CDN issues with react-pdf.
+// Open Sans is already registered above and works reliably.
 const styles = StyleSheet.create({
     page: {
         padding: 40,
@@ -171,14 +174,46 @@ const styles = StyleSheet.create({
     }
 });
 
+// Additional layout styles for two-column professional variant
+const proStyles = StyleSheet.create({
+    twoColumn: {
+        flexDirection: 'row',
+        gap: 12,
+    },
+    leftColumn: {
+        width: '32%',
+        paddingRight: 12,
+        borderRight: '2 solid #0B3D91'
+    },
+    rightColumn: {
+        width: '68%',
+        paddingLeft: 12,
+    },
+    smallTag: {
+        fontSize: 9,
+        backgroundColor: '#E8F1FF',
+        color: '#0B3D91',
+        padding: '2 5',
+        borderRadius: 2,
+        fontFamily: 'Open Sans',
+        marginRight: 3,
+        marginBottom: 3,
+    },
+    skillsGridContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        gap: 4,
+    }
+});
+
 const PDFDocument = () => (
     <Document>
         <Page size="A4" style={styles.page}>
             <View style={styles.header}>
-                <Image
-                    src="/placeholder.svg"
-                    style={styles.profileImage}
-                />
+                {/* Placeholder profile circle (SVGs not supported by react-pdf for images) */}
+                <View style={[styles.profileImage, { backgroundColor: '#F0F0F0', alignItems: 'center', justifyContent: 'center' }]}>
+                    <Text style={{ fontSize: 28, color: '#777', fontFamily: 'Open Sans' }}>{profileData.name.split(' ').map(n=>n[0]).slice(0,2).join('')}</Text>
+                </View>
                 <View style={styles.headerContent}>
                     <Text style={styles.name}>{profileData.name}</Text>
                     <Text style={[styles.contact, { fontSize: 14, marginBottom: 8, fontFamily: 'Open Sans', fontWeight: 'bold' }]}>{profileData.title}</Text>
@@ -418,12 +453,189 @@ const PDFDocumentShort = () => (
     </Document>
 );
 
+// Professional two-column resume
+const PDFDocumentProfessional = () => (
+    <Document>
+        <Page size="A4" style={[styles.page, { fontFamily: 'Open Sans' }]}> 
+            <View style={styles.header}>
+                <View style={styles.headerContent}>
+                    <Text style={[styles.name, { fontFamily: 'Open Sans' }]}>{profileData.name}</Text>
+                    <Text style={[styles.contact, { fontSize: 14, marginBottom: 8, fontFamily: 'Open Sans', fontWeight: 'bold' }]}>{profileData.title}</Text>
+                    <Text style={styles.contactInfo}>{profileData.email} | {profileData.phone}</Text>
+                    <Text style={styles.contactInfo}>{profileData.linkedin}</Text>
+                </View>
+            </View>
+
+            <View style={proStyles.twoColumn}>
+                <View style={proStyles.leftColumn}>
+                    <View style={{ marginBottom: 12 }}>
+                        <Text style={[styles.sectionTitle, { fontSize: 14 }]}>Contact</Text>
+                        <Text style={[styles.text, { fontSize: 11 }]}>{profileData.location}</Text>
+                    </View>
+
+                    <View style={{ marginBottom: 12 }}>
+                        <Text style={[styles.sectionTitle, { fontSize: 14 }]}>Tech Stack</Text>
+                        <View style={proStyles.skillsGridContainer}>
+                            {skills.technologyStack.map((s, i) => (
+                                <Text key={i} style={proStyles.smallTag}>{s}</Text>
+                            ))}
+                        </View>
+                    </View>
+
+                    <View style={{ marginBottom: 12 }}>
+                        <Text style={[styles.sectionTitle, { fontSize: 14 }]}>Languages</Text>
+                        <View style={proStyles.skillsGridContainer}>
+                            {skills.languages.map((s, i) => (
+                                <Text key={i} style={proStyles.smallTag}>{s}</Text>
+                            ))}
+                        </View>
+                    </View>
+
+                    <View style={{ marginBottom: 12 }}>
+                        <Text style={[styles.sectionTitle, { fontSize: 14 }]}>Databases</Text>
+                        <View style={proStyles.skillsGridContainer}>
+                            {skills.databases.map((s, i) => (
+                                <Text key={i} style={proStyles.smallTag}>{s}</Text>
+                            ))}
+                        </View>
+                    </View>
+
+                    <View style={{ marginBottom: 12 }}>
+                        <Text style={[styles.sectionTitle, { fontSize: 14 }]}>Cloud</Text>
+                        <View style={proStyles.skillsGridContainer}>
+                            {skills.cloud.map((s, i) => (
+                                <Text key={i} style={proStyles.smallTag}>{s}</Text>
+                            ))}
+                        </View>
+                    </View>
+                </View>
+
+                <View style={proStyles.rightColumn}>
+                    <View style={styles.section}>
+                        <Text style={styles.sectionTitle}>Professional Summary</Text>
+                        <Text style={[styles.text, { fontSize: 11 }]}>{profileData.summary}</Text>
+                    </View>
+
+                    <View style={styles.section}>
+                        <Text style={styles.sectionTitle}>Experience</Text>
+                        {experiences.map((exp, index) => (
+                            <View key={index} style={[styles.section, { marginBottom: 10 }]}> 
+                                <Text style={[styles.itemTitle, { fontSize: 12 }]}>{exp.title}</Text>
+                                <Text style={[styles.subtitle, { fontSize: 11 }]}>{exp.company} - {exp.period}</Text>
+                                <Text style={[styles.text, { fontSize: 10 }]}>{exp.description}</Text>
+                            </View>
+                        ))}
+                    </View>
+                </View>
+            </View>
+        </Page>
+    </Document>
+);
+
+// Elegant single-column resume (with Open Sans)
+const PDFDocumentElegant = () => (
+    <Document>
+        <Page size="A4" style={[styles.page, { fontFamily: 'Open Sans', paddingTop: 35, paddingBottom: 35 }]}> 
+            <View style={[styles.header, { marginBottom: 20 }]}>
+                <View style={styles.headerContent}>
+                    <Text style={[styles.name, { fontFamily: 'Open Sans', fontSize: 26, fontWeight: 'bold' }]}>{profileData.name}</Text>
+                    <Text style={[styles.contact, { fontSize: 13, marginBottom: 6, fontFamily: 'Open Sans', fontWeight: 'bold' }]}>{profileData.title}</Text>
+                    <Text style={[styles.contactInfo, { fontSize: 10 }]}>{profileData.email} | {profileData.phone} | {profileData.linkedin} | {profileData.location}</Text>
+                </View>
+            </View>
+
+            <View style={[styles.section, { marginBottom: 16 }]}>
+                <Text style={styles.sectionTitle}>Professional Summary</Text>
+                <Text style={[styles.text, { fontFamily: 'Open Sans', fontSize: 11 }]}>{profileData.summary}</Text>
+            </View>
+
+            <View style={[styles.section, { marginBottom: 16 }]}>
+                <Text style={styles.sectionTitle}>Experience</Text>
+                {experiences.slice(0, 3).map((exp, index) => (
+                    <View key={index} style={[styles.section, { marginBottom: 10 }]}> 
+                        <Text style={[styles.itemTitle, { fontFamily: 'Open Sans', fontSize: 12, fontWeight: 'bold' }]}>{exp.title}</Text>
+                        <Text style={[styles.subtitle, { fontSize: 11 }]}>{exp.company} - {exp.period}</Text>
+                        <Text style={[styles.text, { fontSize: 10 }]}>{exp.description}</Text>
+                    </View>
+                ))}
+            </View>
+
+            <View style={styles.section}>
+                <Text style={styles.sectionTitle}>Skills & Expertise</Text>
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
+                    {['cloud', 'technologyStack', 'languages', 'databases'].map((category) => (
+                        <View key={category} style={{ width: '48%' }}>
+                            <Text style={[styles.h2, { fontFamily: 'Open Sans', fontSize: 12, fontWeight: 'bold' }]}>
+                                {category === 'cloud' && 'Cloud'}
+                                {category === 'technologyStack' && 'Tech Stack'}
+                                {category === 'languages' && 'Languages'}
+                                {category === 'databases' && 'Databases'}
+                            </Text>
+                            <Text style={[styles.ul, { fontSize: 10 }]}>
+                                {(skills[category as keyof typeof skills] as readonly string[]).slice(0, 4).join(', ')}
+                            </Text>
+                        </View>
+                    ))}
+                </View>
+            </View>
+        </Page>
+    </Document>
+);
+
+// ATS friendly minimal resume (with Open Sans)
+const PDFDocumentATS = () => (
+    <Document>
+        <Page size="A4" style={[styles.page, { fontFamily: 'Open Sans', paddingTop: 30, paddingBottom: 30 }]}> 
+            <View style={{ marginBottom: 6 }}>
+                <Text style={[styles.name, { fontFamily: 'Open Sans', fontSize: 18, marginBottom: 3, fontWeight: 'bold' }]}>{profileData.name}</Text>
+                <Text style={[styles.contactInfo, { fontFamily: 'Open Sans', fontSize: 11, marginBottom: 2 }]}>{profileData.title}</Text>
+                <Text style={[styles.div, { fontFamily: 'Open Sans', fontSize: 10 }]}>{profileData.email} | {profileData.phone} | {profileData.linkedin}</Text>
+            </View>
+
+            <View style={{ marginBottom: 8 }}>
+                <Text style={[styles.sectionTitle, { fontSize: 13 }]}>Professional Summary</Text>
+                <Text style={[styles.text, { fontSize: 11 }]}>{profileData.summary}</Text>
+            </View>
+
+            <View style={{ marginBottom: 8 }}>
+                <Text style={[styles.sectionTitle, { fontSize: 13 }]}>Experience</Text>
+                {experiences.slice(0, 2).map((exp, index) => (
+                    <View key={index} style={{ marginBottom: 6 }}>
+                        <Text style={[styles.itemTitle, { fontSize: 11, fontWeight: 'bold' }]}>{exp.title}</Text>
+                        <Text style={[styles.div, { fontSize: 10 }]}>{exp.company}, {exp.period}</Text>
+                        <Text style={[styles.text, { fontSize: 10 }]}>{exp.description}</Text>
+                    </View>
+                ))}
+            </View>
+
+            <View>
+                <Text style={[styles.sectionTitle, { fontSize: 13 }]}>Skills</Text>
+                {['cloud', 'technologyStack', 'languages', 'databases', 'concepts'].map((category) => (
+                    <View key={category} style={{ marginBottom: 3 }}>
+                        <Text style={[styles.div, { fontFamily: 'Open Sans', fontWeight: 'bold', fontSize: 10 }]}>
+                            {category === 'cloud' && 'Cloud: '}
+                            {category === 'technologyStack' && 'Technology Stack: '}
+                            {category === 'languages' && 'Languages: '}
+                            {category === 'databases' && 'Databases: '}
+                            {category === 'concepts' && 'Concepts: '}
+                            {(skills[category as keyof typeof skills] as readonly string[]).slice(0, 6).join(', ')}
+                        </Text>
+                    </View>
+                ))}
+            </View>
+        </Page>
+    </Document>
+);
+
 export const PDFGenerator = () => {
     const [isLoading, setIsLoading] = React.useState(true);
     const [pdfBlobs, setPdfBlobs] = React.useState<{
         short: Blob | null;
         detailed: Blob | null;
-    }>({ short: null, detailed: null });
+        professional: Blob | null;
+        elegant: Blob | null;
+        ats: Blob | null;
+    }>({ short: null, detailed: null, professional: null, elegant: null, ats: null });
 
     // Pre-generate PDFs on component mount
     React.useEffect(() => {
@@ -431,13 +643,22 @@ export const PDFGenerator = () => {
             try {
                 setIsLoading(true);
                 
-                // Generate both PDFs concurrently
-                const [shortBlob, detailedBlob] = await Promise.all([
+                // Generate all PDFs concurrently
+                const [shortBlob, detailedBlob, professionalBlob, elegantBlob, atsBlob] = await Promise.all([
                     pdf(<PDFDocumentShort />).toBlob(),
-                    pdf(<PDFDocument />).toBlob()
+                    pdf(<PDFDocument />).toBlob(),
+                    pdf(<PDFDocumentProfessional />).toBlob(),
+                    pdf(<PDFDocumentElegant />).toBlob(),
+                    pdf(<PDFDocumentATS />).toBlob()
                 ]);
 
-                setPdfBlobs({ short: shortBlob, detailed: detailedBlob });
+                setPdfBlobs({ 
+                    short: shortBlob, 
+                    detailed: detailedBlob,
+                    professional: professionalBlob,
+                    elegant: elegantBlob,
+                    ats: atsBlob
+                });
             } catch (error) {
                 console.error('Error generating PDFs:', error);
             } finally {
@@ -482,20 +703,47 @@ export const PDFGenerator = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
                     <DropdownMenuItem 
-                        onClick={() => downloadPDF(pdfBlobs.short, 'renjith-resume-short.pdf')}
-                        disabled={!pdfBlobs.short}
+                        onClick={() => downloadPDF(pdfBlobs.professional, 'renjith-resume-professional.pdf')}
+                        disabled={!pdfBlobs.professional}
                         className="cursor-pointer"
                     >
                         <FileDown className="w-4 h-4 mr-2" />
-                        Short Resume (1-2 pages)
+                        Two Column
+                    </DropdownMenuItem>
+                    <DropdownMenuItem 
+                        onClick={() => downloadPDF(pdfBlobs.elegant, 'renjith-resume-elegant.pdf')}
+                        disabled={!pdfBlobs.elegant}
+                        className="cursor-pointer"
+                    >
+                        <FileDown className="w-4 h-4 mr-2" />
+                        Single Column
+                    </DropdownMenuItem>
+                    <DropdownMenuItem 
+                        onClick={() => downloadPDF(pdfBlobs.ats, 'renjith-resume-ats.pdf')}
+                        disabled={!pdfBlobs.ats}
+                        className="cursor-pointer"
+                    >
+                        <FileDown className="w-4 h-4 mr-2" />
+                        Minimalist
+                    </DropdownMenuItem>
+                    <DropdownMenuItem disabled className="text-xs text-gray-400 cursor-default">
+                        — Legacy Formats —
+                    </DropdownMenuItem>
+                    <DropdownMenuItem 
+                        onClick={() => downloadPDF(pdfBlobs.short, 'renjith-resume-short.pdf')}
+                        disabled={!pdfBlobs.short}
+                        className="cursor-pointer text-sm"
+                    >
+                        <FileDown className="w-4 h-4 mr-2" />
+                        Classic
                     </DropdownMenuItem>
                     <DropdownMenuItem 
                         onClick={() => downloadPDF(pdfBlobs.detailed, 'renjith-resume-detailed.pdf')}
                         disabled={!pdfBlobs.detailed}
-                        className="cursor-pointer"
+                        className="cursor-pointer text-sm"
                     >
                         <FileDown className="w-4 h-4 mr-2" />
-                        Detailed Resume (Multiple pages)
+                        Detailed
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
