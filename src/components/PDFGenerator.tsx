@@ -23,6 +23,25 @@ Font.register({
     ],
 });
 
+// Register Roboto from local public/fonts for PDF rendering (Apache-2.0 licensed)
+// Files are expected at: public/fonts/Roboto-Regular.ttf and public/fonts/Roboto-Bold.ttf
+try {
+    Font.register({
+        family: 'Roboto',
+        fonts: [
+            { src: '/fonts/Roboto-Regular.ttf', fontWeight: 'normal' },
+            { src: '/fonts/Roboto-Bold.ttf', fontWeight: 'bold' },
+        ],
+    });
+    // eslint-disable-next-line no-console
+    console.log('Roboto registration attempted');
+} catch (e) {
+    // eslint-disable-next-line no-console
+    console.warn('Roboto registration failed (will fallback to Open Sans):', e);
+}
+
+// Using Open Sans for PDF rendering.
+
 // Note: Using Open Sans for all variants to ensure reliable font loading.
 // Custom fonts (Inter, Lora, Roboto) have CORS/CDN issues with react-pdf.
 // Open Sans is already registered above and works reliably.
@@ -50,7 +69,7 @@ const styles = StyleSheet.create({
     name: {
         fontSize: 28,
         color: '#1A1F2C',
-        fontFamily: 'Open Sans',
+        fontFamily: 'Roboto',
         fontWeight: 'bold',
         marginBottom: 5,
     },
@@ -58,7 +77,7 @@ const styles = StyleSheet.create({
         fontSize: 12,
         color: '#4DB6AC',
         marginBottom: 3,
-        fontFamily: 'Open Sans',
+        fontFamily: 'Roboto',
     },
     contactRow: {
         flexDirection: 'row',
@@ -69,14 +88,14 @@ const styles = StyleSheet.create({
         fontSize: 10,
         color: '#4DB6AC',
         marginRight: 8,
-        fontFamily: 'Open Sans',
+        fontFamily: 'Roboto',
         fontWeight: 'bold',
         width: 60,
     },
     contactInfo: {
         fontSize: 11,
         color: '#4A4A4A',
-        fontFamily: 'Open Sans',
+        fontFamily: 'Roboto',
         flex: 1,
     },
     section: {
@@ -86,7 +105,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#4DB6AC',
         marginBottom: 15,
-        fontFamily: 'Open Sans',
+        fontFamily: 'Roboto',
         fontWeight: 'bold',
         borderBottom: '1 solid #E5DEFF',
         paddingBottom: 5,
@@ -95,13 +114,13 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#1A1F2C',
         marginBottom: 5,
-        fontFamily: 'Open Sans',
+        fontFamily: 'Roboto',
         fontWeight: 'bold',
     },
     h1: {
         fontSize: 16,
         color: '#1A1F2C',
-        fontFamily: 'Open Sans',
+        fontFamily: 'Roboto',
         fontWeight: 'bold',
         marginBottom: 5,
     },
@@ -109,12 +128,12 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: '#4DB6AC',
         marginBottom: 5,
-        fontFamily: 'Open Sans',
+        fontFamily: 'Roboto',
     },
     h2: {
         fontSize: 14,
         color: '#4DB6AC',
-        fontFamily: 'Open Sans',
+        fontFamily: 'Roboto',
         fontWeight: 'bold',
         marginBottom: 5,
     },
@@ -122,7 +141,7 @@ const styles = StyleSheet.create({
         fontSize: 13,
         color: '#4DB6AC',
         marginBottom: 3,
-        fontFamily: 'Open Sans',
+        fontFamily: 'Roboto',
     },
     text: {
         fontSize: 12,
@@ -211,12 +230,12 @@ const PDFDocument = () => (
         <Page size="A4" style={styles.page}>
             <View style={styles.header}>
                 {/* Placeholder profile circle (SVGs not supported by react-pdf for images) */}
-                <View style={[styles.profileImage, { backgroundColor: '#F0F0F0', alignItems: 'center', justifyContent: 'center' }]}>
-                    <Text style={{ fontSize: 28, color: '#777', fontFamily: 'Open Sans' }}>{profileData.name.split(' ').map(n=>n[0]).slice(0,2).join('')}</Text>
+                    <View style={[styles.profileImage, { backgroundColor: '#F0F0F0', alignItems: 'center', justifyContent: 'center' }]}>
+                    <Text style={{ fontSize: 28, color: '#777', fontFamily: 'Roboto' }}>{profileData.name.split(' ').map(n=>n[0]).slice(0,2).join('')}</Text>
                 </View>
                 <View style={styles.headerContent}>
                     <Text style={styles.name}>{profileData.name}</Text>
-                    <Text style={[styles.contact, { fontSize: 14, marginBottom: 8, fontFamily: 'Open Sans', fontWeight: 'bold' }]}>{profileData.title}</Text>
+                    <Text style={[styles.contact, { fontSize: 14, marginBottom: 8, fontFamily: 'Roboto', fontWeight: 'bold' }]}>{profileData.title}</Text>
                     
                     <View style={styles.contactRow}>
                         <Text style={styles.contactIcon}>Email:</Text>
@@ -456,11 +475,11 @@ const PDFDocumentShort = () => (
 // Professional two-column resume
 const PDFDocumentProfessional = () => (
     <Document>
-        <Page size="A4" style={[styles.page, { fontFamily: 'Open Sans' }]}> 
+    <Page size="A4" style={[styles.page, { fontFamily: 'Roboto' }]}> 
             <View style={styles.header}>
                 <View style={styles.headerContent}>
-                    <Text style={[styles.name, { fontFamily: 'Open Sans' }]}>{profileData.name}</Text>
-                    <Text style={[styles.contact, { fontSize: 14, marginBottom: 8, fontFamily: 'Open Sans', fontWeight: 'bold' }]}>{profileData.title}</Text>
+                    <Text style={[styles.name, { fontFamily: 'Roboto' }]}>{profileData.name}</Text>
+                    <Text style={[styles.contact, { fontSize: 14, marginBottom: 8, fontFamily: 'Roboto', fontWeight: 'bold' }]}>{profileData.title}</Text>
                     <Text style={styles.contactInfo}>{profileData.email} | {profileData.phone}</Text>
                     <Text style={styles.contactInfo}>{profileData.linkedin}</Text>
                 </View>
@@ -532,28 +551,28 @@ const PDFDocumentProfessional = () => (
     </Document>
 );
 
-// Elegant single-column resume (with Open Sans)
+// Elegant single-column resume
 const PDFDocumentElegant = () => (
     <Document>
-        <Page size="A4" style={[styles.page, { fontFamily: 'Open Sans', paddingTop: 35, paddingBottom: 35 }]}> 
+    <Page size="A4" style={[styles.page, { fontFamily: 'Roboto', paddingTop: 35, paddingBottom: 35 }]}> 
             <View style={[styles.header, { marginBottom: 20 }]}>
                 <View style={styles.headerContent}>
-                    <Text style={[styles.name, { fontFamily: 'Open Sans', fontSize: 26, fontWeight: 'bold' }]}>{profileData.name}</Text>
-                    <Text style={[styles.contact, { fontSize: 13, marginBottom: 6, fontFamily: 'Open Sans', fontWeight: 'bold' }]}>{profileData.title}</Text>
+                    <Text style={[styles.name, { fontFamily: 'Roboto', fontSize: 26, fontWeight: 'bold' }]}>{profileData.name}</Text>
+                    <Text style={[styles.contact, { fontSize: 13, marginBottom: 6, fontFamily: 'Roboto', fontWeight: 'bold' }]}>{profileData.title}</Text>
                     <Text style={[styles.contactInfo, { fontSize: 10 }]}>{profileData.email} | {profileData.phone} | {profileData.linkedin} | {profileData.location}</Text>
                 </View>
             </View>
 
             <View style={[styles.section, { marginBottom: 16 }]}>
                 <Text style={styles.sectionTitle}>Professional Summary</Text>
-                <Text style={[styles.text, { fontFamily: 'Open Sans', fontSize: 11 }]}>{profileData.summary}</Text>
+                <Text style={[styles.text, { fontFamily: 'Roboto', fontSize: 11 }]}>{profileData.summary}</Text>
             </View>
 
             <View style={[styles.section, { marginBottom: 16 }]}>
                 <Text style={styles.sectionTitle}>Experience</Text>
                 {experiences.slice(0, 3).map((exp, index) => (
                     <View key={index} style={[styles.section, { marginBottom: 10 }]}> 
-                        <Text style={[styles.itemTitle, { fontFamily: 'Open Sans', fontSize: 12, fontWeight: 'bold' }]}>{exp.title}</Text>
+                        <Text style={[styles.itemTitle, { fontFamily: 'Roboto', fontSize: 12, fontWeight: 'bold' }]}>{exp.title}</Text>
                         <Text style={[styles.subtitle, { fontSize: 11 }]}>{exp.company} - {exp.period}</Text>
                         <Text style={[styles.text, { fontSize: 10 }]}>{exp.description}</Text>
                     </View>
@@ -565,7 +584,7 @@ const PDFDocumentElegant = () => (
                 <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
                     {['cloud', 'technologyStack', 'languages', 'databases'].map((category) => (
                         <View key={category} style={{ width: '48%' }}>
-                            <Text style={[styles.h2, { fontFamily: 'Open Sans', fontSize: 12, fontWeight: 'bold' }]}>
+                            <Text style={[styles.h2, { fontFamily: 'Roboto', fontSize: 12, fontWeight: 'bold' }]}> 
                                 {category === 'cloud' && 'Cloud'}
                                 {category === 'technologyStack' && 'Tech Stack'}
                                 {category === 'languages' && 'Languages'}
@@ -582,14 +601,14 @@ const PDFDocumentElegant = () => (
     </Document>
 );
 
-// ATS friendly minimal resume (with Open Sans)
+// ATS friendly minimal resume
 const PDFDocumentATS = () => (
     <Document>
-        <Page size="A4" style={[styles.page, { fontFamily: 'Open Sans', paddingTop: 30, paddingBottom: 30 }]}> 
+        <Page size="A4" style={[styles.page, { fontFamily: 'Roboto', paddingTop: 30, paddingBottom: 30 }]}> 
             <View style={{ marginBottom: 6 }}>
-                <Text style={[styles.name, { fontFamily: 'Open Sans', fontSize: 18, marginBottom: 3, fontWeight: 'bold' }]}>{profileData.name}</Text>
-                <Text style={[styles.contactInfo, { fontFamily: 'Open Sans', fontSize: 11, marginBottom: 2 }]}>{profileData.title}</Text>
-                <Text style={[styles.div, { fontFamily: 'Open Sans', fontSize: 10 }]}>{profileData.email} | {profileData.phone} | {profileData.linkedin}</Text>
+                <Text style={[styles.name, { fontFamily: 'Roboto', fontSize: 18, marginBottom: 3, fontWeight: 'bold' }]}>{profileData.name}</Text>
+                <Text style={[styles.contactInfo, { fontFamily: 'Roboto', fontSize: 11, marginBottom: 2 }]}>{profileData.title}</Text>
+                <Text style={[styles.div, { fontFamily: 'Roboto', fontSize: 10 }]}>{profileData.email} | {profileData.phone} | {profileData.linkedin}</Text>
             </View>
 
             <View style={{ marginBottom: 8 }}>
@@ -610,9 +629,9 @@ const PDFDocumentATS = () => (
 
             <View>
                 <Text style={[styles.sectionTitle, { fontSize: 13 }]}>Skills</Text>
-                {['cloud', 'technologyStack', 'languages', 'databases', 'concepts'].map((category) => (
+                        {['cloud', 'technologyStack', 'languages', 'databases', 'concepts'].map((category) => (
                     <View key={category} style={{ marginBottom: 3 }}>
-                        <Text style={[styles.div, { fontFamily: 'Open Sans', fontWeight: 'bold', fontSize: 10 }]}>
+                        <Text style={[styles.div, { fontFamily: 'Roboto', fontWeight: 'bold', fontSize: 10 }]}> 
                             {category === 'cloud' && 'Cloud: '}
                             {category === 'technologyStack' && 'Technology Stack: '}
                             {category === 'languages' && 'Languages: '}
@@ -642,7 +661,44 @@ export const PDFGenerator = () => {
         const generatePDFs = async () => {
             try {
                 setIsLoading(true);
-                
+
+                // Attempt to register Open Sans from CDN if the files are reachable.
+                // We check each URL with a HEAD request before calling Font.register
+                // to avoid react-pdf fetching non-font responses which cause
+                // "Unknown font format" errors.
+                try {
+                    const regularHead = await fetch('https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-regular.ttf', { method: 'HEAD' });
+                    const boldHead = await fetch('https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-700.ttf', { method: 'HEAD' });
+                    const regCT = regularHead.headers.get('content-type') || '';
+                    const boldCT = boldHead.headers.get('content-type') || '';
+                    const regLooksLikeFont = regularHead.ok && !regCT.includes('html') && (regCT.includes('font') || regCT.includes('ttf') || regCT.includes('octet'));
+                    const boldLooksLikeFont = boldHead.ok && !boldCT.includes('html') && (boldCT.includes('font') || boldCT.includes('ttf') || boldCT.includes('octet'));
+                    if (regLooksLikeFont && boldLooksLikeFont) {
+                        try {
+                            Font.register({
+                                family: 'Open Sans',
+                                fonts: [
+                                    { src: 'https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-regular.ttf', fontWeight: 'normal' },
+                                    { src: 'https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-700.ttf', fontWeight: 'bold' },
+                                ],
+                            });
+                            // eslint-disable-next-line no-console
+                            console.log('Open Sans registered for PDF generation');
+                        } catch (regErr) {
+                            // eslint-disable-next-line no-console
+                            console.warn('Failed to register Open Sans:', regErr);
+                        }
+                    } else {
+                        // eslint-disable-next-line no-console
+                        console.log('Open Sans CDN files not reachable or not font content; skipping registration', { regCT, boldCT });
+                    }
+                } catch (err) {
+                    // eslint-disable-next-line no-console
+                    console.warn('Could not verify Open Sans CDN presence:', err);
+                }
+
+                // Generating PDFs using Open Sans (registered above).
+
                 // Generate all PDFs concurrently
                 const [shortBlob, detailedBlob, professionalBlob, elegantBlob, atsBlob] = await Promise.all([
                     pdf(<PDFDocumentShort />).toBlob(),
