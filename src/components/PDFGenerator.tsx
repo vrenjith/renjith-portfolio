@@ -703,7 +703,7 @@ export const PDFGenerator = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
                     <DropdownMenuItem 
-                        onClick={() => downloadPDF(pdfBlobs.professional, 'renjith-resume-professional.pdf')}
+                        onClick={() => downloadPDF(pdfBlobs.professional, 'renjith-resume-two-column.pdf')}
                         disabled={!pdfBlobs.professional}
                         className="cursor-pointer"
                     >
@@ -711,7 +711,7 @@ export const PDFGenerator = () => {
                         Two Column
                     </DropdownMenuItem>
                     <DropdownMenuItem 
-                        onClick={() => downloadPDF(pdfBlobs.elegant, 'renjith-resume-elegant.pdf')}
+                        onClick={() => downloadPDF(pdfBlobs.elegant, 'renjith-resume-single-column.pdf')}
                         disabled={!pdfBlobs.elegant}
                         className="cursor-pointer"
                     >
@@ -719,7 +719,7 @@ export const PDFGenerator = () => {
                         Single Column
                     </DropdownMenuItem>
                     <DropdownMenuItem 
-                        onClick={() => downloadPDF(pdfBlobs.ats, 'renjith-resume-ats.pdf')}
+                        onClick={() => downloadPDF(pdfBlobs.ats, 'renjith-resume-minimalist.pdf')}
                         disabled={!pdfBlobs.ats}
                         className="cursor-pointer"
                     >
@@ -730,7 +730,7 @@ export const PDFGenerator = () => {
                         — Legacy Formats —
                     </DropdownMenuItem>
                     <DropdownMenuItem 
-                        onClick={() => downloadPDF(pdfBlobs.short, 'renjith-resume-short.pdf')}
+                        onClick={() => downloadPDF(pdfBlobs.short, 'renjith-resume-classic.pdf')}
                         disabled={!pdfBlobs.short}
                         className="cursor-pointer text-sm"
                     >
