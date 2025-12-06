@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     header: {
         flexDirection: 'row',
         marginBottom: 30,
-        borderBottom: '2 solid #4DB6AC',
+        borderBottom: '2 solid #0B3D91',
         paddingBottom: 20,
         minHeight: 120,
     },
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     },
     contact: {
         fontSize: 12,
-        color: '#4DB6AC',
+        color: '#0B3D91',
         marginBottom: 3,
         fontFamily: 'Roboto',
     },
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     },
     contactIcon: {
         fontSize: 10,
-        color: '#4DB6AC',
+        color: '#0B3D91',
         marginRight: 8,
         fontFamily: 'Roboto',
         fontWeight: 'bold',
@@ -103,11 +103,11 @@ const styles = StyleSheet.create({
     },
     sectionTitle: {
         fontSize: 20,
-        color: '#4DB6AC',
+        color: '#0B3D91',
         marginBottom: 15,
         fontFamily: 'Roboto',
         fontWeight: 'bold',
-        borderBottom: '1 solid #E5DEFF',
+        borderBottom: '1 solid #E0E7FF',
         paddingBottom: 5,
     },
     itemTitle: {
@@ -126,20 +126,20 @@ const styles = StyleSheet.create({
     },
     subtitle: {
         fontSize: 14,
-        color: '#4DB6AC',
+        color: '#0B3D91',
         marginBottom: 5,
         fontFamily: 'Roboto',
     },
     h2: {
         fontSize: 14,
-        color: '#4DB6AC',
+        color: '#0B3D91',
         fontFamily: 'Roboto',
         fontWeight: 'bold',
         marginBottom: 5,
     },
     h3: {
         fontSize: 13,
-        color: '#4DB6AC',
+        color: '#0B3D91',
         marginBottom: 3,
         fontFamily: 'Roboto',
     },
@@ -148,13 +148,13 @@ const styles = StyleSheet.create({
         color: '#4A4A4A',
         lineHeight: 1.5,
         marginBottom: 8,
-        fontFamily: 'Open Sans',
+        fontFamily: 'Roboto',
     },
     div: {
         fontSize: 12,
         color: '#4A4A4A',
         lineHeight: 1,
-        fontFamily: 'Open Sans',
+        fontFamily: 'Roboto',
         marginBottom: 2,
     },
     ul: {
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
         color: '#4A4A4A',
         lineHeight: 1.5,
         marginBottom: 5,
-        fontFamily: 'Open Sans',
+        fontFamily: 'Roboto',
     },
     tagsContainer: {
         flexDirection: 'row',
@@ -172,24 +172,24 @@ const styles = StyleSheet.create({
     },
     tag: {
         fontSize: 10,
-        backgroundColor: '#E5DEFF',
-        color: '#4DB6AC',
+        backgroundColor: '#0B3D91',
+        color: '#ffffff',
         padding: '4 8',
         borderRadius: 4,
-        fontFamily: 'Open Sans',
+        fontFamily: 'Roboto',
     },
     detailSection: {
         marginLeft: 15,
         marginTop: 10,
         paddingLeft: 10,
-        borderLeft: '1 solid #E5DEFF',
+        borderLeft: '1 solid #E0E7FF',
     },
     p: {
         fontSize: 12,
         color: '#4A4A4A',
         lineHeight: 1.5,
         marginBottom: 5,
-        fontFamily: 'Open Sans',
+        fontFamily: 'Roboto',
     }
 });
 
@@ -214,7 +214,7 @@ const proStyles = StyleSheet.create({
         color: '#0B3D91',
         padding: '2 5',
         borderRadius: 2,
-        fontFamily: 'Open Sans',
+        fontFamily: 'Roboto',
         marginRight: 3,
         marginBottom: 3,
     },
@@ -404,7 +404,7 @@ const PDFDocumentShort = () => (
                 {/* Profile image removed for ATS compatibility */}
                 <View style={styles.headerContent}>
                     <Text style={styles.name}>{profileData.name}</Text>
-                    <Text style={[styles.contact, { fontSize: 14, marginBottom: 8, fontFamily: 'Open Sans', fontWeight: 'bold' }]}>{profileData.title}</Text>
+                    <Text style={[styles.contact, { fontSize: 14, marginBottom: 8, fontFamily: 'Roboto', fontWeight: 'bold' }]}>{profileData.title}</Text>
                     
                     <Text style={styles.contactInfo}>Email: {profileData.email} | Phone: {profileData.phone}</Text>
                     <Text style={styles.contactInfo}>LinkedIn: {profileData.linkedin}</Text>
@@ -488,7 +488,7 @@ const PDFDocumentProfessional = () => (
             <View style={proStyles.twoColumn}>
                 <View style={proStyles.leftColumn}>
                     <View style={{ marginBottom: 12 }}>
-                        <Text style={[styles.sectionTitle, { fontSize: 14 }]}>Contact</Text>
+                        <Text style={[styles.sectionTitle, { fontSize: 14 }]}>Location</Text>
                         <Text style={[styles.text, { fontSize: 11 }]}>{profileData.location}</Text>
                     </View>
 
