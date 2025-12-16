@@ -138,7 +138,7 @@ export const ContactSection = () => {
                         className="mt-8 flex justify-center gap-4"
                     >
                         <a
-                            href="https://www.linkedin.com/in/renjithpillai/"
+                            href="https://www.linkedin.com/in/renjithvpillai/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-3 glass rounded-full hover:bg-primary/10 hover:border-primary/50 transition-all border border-border/50 group"

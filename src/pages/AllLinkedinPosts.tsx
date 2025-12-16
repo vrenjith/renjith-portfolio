@@ -60,7 +60,7 @@ const AllLinkedinPosts = () => {
         className="text-center mt-12"
       >
         <a 
-          href="https://www.linkedin.com/in/renjithv/"
+          href="https://www.linkedin.com/in/renjithvpillai/"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block"
