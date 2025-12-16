@@ -23,20 +23,30 @@ export const BlogsSection = () => {
     }, []);
 
     return (
-        <section id="blogs" className="py-20">
-            <div className="section-container">
+        <section id="blogs" className="py-24 bg-gradient-to-b from-background to-accent/5 dark:from-background dark:to-accent/10 relative overflow-hidden">
+            {/* Decorative gradient orb */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-3xl" />
+            
+            <div className="section-container relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="text-center mb-12"
+                    className="text-center mb-16"
                 >
-                    <div className="inline-flex items-center px-4 py-2 rounded-full glass mb-4">
-                        <BookOpen className="w-4 h-4 mr-2" />
-                        <span className="text-sm font-medium">Blog Posts</span>
-                    </div>
-                    <h2 className="text-4xl font-bold mb-4">Random Revelations</h2>
+                    <motion.div
+                        className="inline-block mb-4"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                    >
+                        <span className="px-4 py-2 rounded-full glass text-sm font-medium text-primary">
+                            <BookOpen className="w-4 h-4 mr-2 inline" />
+                            Insights & Articles
+                        </span>
+                    </motion.div>
+                    <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">Random Revelations</h2>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                         Thoughts, insights, and technical discoveries from my journey in software development
                     </p>
@@ -76,10 +86,11 @@ export const BlogsSection = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                                whileHover={{ y: -6 }}
                             >
-                                <Card className="h-full hover:shadow-lg transition-shadow group cursor-pointer bg-glass">
+                                <Card className="h-full glass-light group cursor-pointer border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10">
                                     <CardHeader>
-                                        <CardTitle className="group-hover:text-accent transition-colors line-clamp-2">
+                                        <CardTitle className="group-hover:text-primary transition-colors line-clamp-2">
                                             {post.title}
                                         </CardTitle>
                                         <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -98,7 +109,7 @@ export const BlogsSection = () => {
                                             {post.categories.slice(0, 3).map((category, catIndex) => (
                                                 <span
                                                     key={catIndex}
-                                                    className="px-3 py-1 rounded-full text-sm bg-accent/10 text-accent"
+                                                    className="px-3 py-1 rounded-full text-xs bg-gradient-to-r from-primary/10 to-accent/10 text-primary border border-primary/20"
                                                 >
                                                     {category}
                                                 </span>
@@ -108,9 +119,9 @@ export const BlogsSection = () => {
                                             href={post.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-center text-accent font-medium group-hover:gap-2 transition-all"
+                                            className="flex items-center text-primary font-medium group-hover:gap-2 transition-all"
                                         >
-                                            Read More <ArrowRight className="w-4 h-4 ml-1" />
+                                            Read More <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                                         </a>
                                     </CardContent>
                                 </Card>
@@ -131,7 +142,7 @@ export const BlogsSection = () => {
                     </p>
                     <div className="flex gap-4 justify-center flex-wrap">
                         <Link to="/blogs">
-                            <Button variant="outline" size="lg" className="group">
+                            <Button variant="outline" size="lg" className="glass hover:bg-primary/10 hover:border-primary/50 group">
                                 View All Blog Posts
                                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                             </Button>
@@ -141,7 +152,7 @@ export const BlogsSection = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <Button size="lg" className="group">
+                            <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 group shadow-lg shadow-primary/25">
                                 <BookOpen className="w-4 h-4 mr-2" />
                                 Visit Blog
                             </Button>

@@ -15,7 +15,7 @@ export const projects: Project[] = [
         description: "Built a comprehensive AI solution leveraging SAP AI Core, RAG architecture, and vector databases to provide intelligent knowledge discovery and automated support capabilities across multiple enterprise teams.",
         icon: "Brain",
         tags: ["AI/ML", "RAG", "Python", "SAP AI Core", "Vector Database"],
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80",
+        image: "/images/projects/cloud-platform.jpg",
         content: `
 <div>
         <h2>Project Overview</h2>
@@ -297,7 +297,7 @@ export const projects: Project[] = [
         description: "A comprehensive DevOps platform integrating modern tools and practices to streamline development, deployment, and operations across the enterprise. This platform serves 500+ developers and handles thousands of deployments monthly.",
         icon: "Cloud",
         tags: ["Platform Engineering", "Leadership", "Integration"],
-        image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80",
+        image: "/images/projects/kubernetes.jpg",
         content: `
 <div>
         <h2>Project Overview</h2>
@@ -435,7 +435,7 @@ export const projects: Project[] = [
         description: "Mentored and grew a team of 25 DevOps engineers, implementing structured training programs and career development paths while delivering critical infrastructure projects.",
         icon: "Users",
         tags: ["Leadership", "Mentoring", "Team Building"],
-        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80",
+        image: "/images/projects/team-collaboration.jpg",
         content: `
 <div>
         <h2>Leadership Initiative Overview</h2>
@@ -566,7 +566,7 @@ export const projects: Project[] = [
         description: "Architected and led the migration of legacy systems to cloud-native infrastructure using Kubernetes, Istio, and modern observability tools.",
         icon: "Cloud",
         tags: ["Architecture", "Cloud-Native", "Strategy"],
-        image: "https://images.unsplash.com/photo-1508830524289-0adcbe822b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80",
+        image: "/images/projects/monitoring.jpg",
         content: `
 <div>
         <h2>Migration Strategy Overview</h2>
@@ -724,7 +724,7 @@ export const projects: Project[] = [
         description: "Designed and implemented a comprehensive automation framework leveraging Jenkins, Vault, Terraform, and CrossPlane to create Infrastructure-as-Data solutions with intelligent state management and developer-friendly abstractions.",
         icon: "Target",
         tags: ["Automation", "IaC", "Jenkins", "CrossPlane", "Terraform"],
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80",
+        image: "/images/projects/security.jpg",
         content: `
 <div>
 <h2>Architecture Overview</h2>
@@ -864,7 +864,7 @@ Pioneered an advanced Infrastructure-as-Data approach that combines traditional 
         description: "Designed and built a Python-based custom metrics ingestor that bridges observability silos between Kubernetes and HashiCorp environments, centralizing metrics in InfluxDB for unified monitoring.",
         icon: "ChartBar",
         tags: ["Observability", "Python", "Kubernetes", "HashiCorp", "InfluxDB"],
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80",
+        image: "/images/projects/analytics.jpg",
         content: `
 <div>
 <h2>Problem Statement</h2>
@@ -950,7 +950,7 @@ A custom-built Python metrics ingestor designed for flexibility and extensibilit
         description: "Led product management for a large-scale telecommunications platform connecting 20,000+ femtocells across enterprise and carrier networks, managing vendor relationships and driving technical innovation in cellular infrastructure.",
         icon: "Network",
         tags: ["Product Management", "Telecommunications", "Platform Architecture", "Vendor Management"],
-        image: "https://images.unsplash.com/photo-1558618047-0e446add6e2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80",
+        image: "/images/projects/agile.jpg",
         content: `
 <div>
         <h2>Product Leadership Overview</h2>

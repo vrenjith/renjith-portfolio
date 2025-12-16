@@ -20,7 +20,7 @@ export const LinkedinLinkSection = () => {
                         <span className="text-sm font-medium">LinkedIn Updates</span>
                     </div>
                     <h2 className="text-4xl font-bold mb-4">My Professional Journey</h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                         Check out my latest professional updates and insights on LinkedIn
                     </p>
                 </motion.div>

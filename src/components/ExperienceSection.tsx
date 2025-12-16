@@ -6,8 +6,11 @@ import { Button } from "@/components/ui/button";
 
 export const ExperienceSection = () => {
     return (
-        <section id="experience" className="py-24 bg-background/50">
-            <div className="section-container">
+        <section id="experience" className="py-24 bg-gradient-to-b from-background to-primary/5 dark:from-background dark:to-primary/10 relative overflow-hidden">
+            {/* Decorative gradient orb */}
+            <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-3xl" />
+            
+            <div className="section-container relative z-10">
                 <div className="max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -16,12 +19,19 @@ export const ExperienceSection = () => {
                         transition={{ duration: 0.5 }}
                         className="text-center mb-16"
                     >
-                        <div className="inline-flex items-center px-4 py-2 rounded-full glass mb-4">
-                            <Briefcase className="w-4 h-4 mr-2" />
-                            <span className="text-sm font-medium">Experience</span>
-                        </div>
-                        <h2 className="text-4xl font-bold mb-4">Professional Journey</h2>
-                        <p className="text-gray-700 mb-8">
+                        <motion.div
+                            className="inline-block mb-4"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                        >
+                            <span className="px-4 py-2 rounded-full glass text-sm font-medium text-primary">
+                                <Briefcase className="w-4 h-4 mr-2 inline" />
+                                Professional Journey
+                            </span>
+                        </motion.div>
+                        <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">Experience</h2>
+                        <p className="text-muted-foreground mb-8 leading-relaxed">
                             {profileData.summary}
                         </p>
                     </motion.div>
@@ -34,7 +44,8 @@ export const ExperienceSection = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    className="glass rounded-xl p-6 hover:shadow-lg transition-all"
+                                    whileHover={{ y: -4 }}
+                                    className="glass rounded-xl p-6 hover:shadow-2xl hover:shadow-primary/10 transition-all border border-border/50 hover:border-primary/50 group"
                                 >
                                     <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
                                         <div className="flex items-center">
@@ -48,33 +59,33 @@ export const ExperienceSection = () => {
                                                 </div>
                                             )}
                                             <div>
-                                                <h3 className="text-xl font-semibold text-gray-900">{exp.title}</h3>
+                                                <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">{exp.title}</h3>
                                                 <div className="flex items-center gap-4">
                                                     <span className="flex items-center text-accent">
                                                         <Building className="w-4 h-4 mr-2" />
                                                         <p>{exp.company}</p>
                                                     </span>
-                                                    <span className="flex items-center text-gray-600">
+                                                    <span className="flex items-center text-muted-foreground">
                                                         <MapPin className="w-4 h-4 mr-2" />
                                                         <p>{exp.location}</p>
                                                     </span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <span className="text-gray-700 mt-2 sm:mt-0">{exp.period}</span>
+                                        <span className="text-muted-foreground mt-2 sm:mt-0">{exp.period}</span>
                                     </div>
-                                    <p className="text-gray-800 mb-4">{exp.description}</p>
+                                    <p className="text-muted-foreground mb-4 leading-relaxed">{exp.description}</p>
                                     <div className="flex flex-wrap gap-2">
                                         {exp.technologies.slice(0, 5).map((tech, techIndex) => (
                                             <span
                                                 key={techIndex}
-                                                className="px-3 py-1 rounded-full text-sm bg-accent/10 text-accent"
+                                                className="px-3 py-1 rounded-full text-sm bg-gradient-to-r from-primary/10 to-accent/10 text-primary border border-primary/20"
                                             >
                                                 {tech}
                                             </span>
                                         ))}
                                         {exp.technologies.length > 5 && (
-                                            <span className="px-3 py-1 rounded-full text-sm bg-accent/10 text-accent">
+                                            <span className="px-3 py-1 rounded-full text-sm bg-muted text-muted-foreground">
                                                 +{exp.technologies.length - 5} more
                                             </span>
                                         )}
@@ -92,7 +103,7 @@ export const ExperienceSection = () => {
                         className="text-center"
                     >
                         <Link to="/experiences">
-                            <Button variant="outline" size="lg" className="bg-accent/10 hover:bg-accent/20 group">
+                            <Button variant="outline" size="lg" className="glass hover:bg-primary/10 hover:border-primary/50 group">
                                 View All Experience
                                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                             </Button>
