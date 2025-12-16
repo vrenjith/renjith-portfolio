@@ -75,6 +75,11 @@ export const HeroSection = () => {
                 />
             </div>
 
+            {/* Background Name */}
+            <div className="fixed -left-32 top-1/2 -translate-y-1/2 -rotate-90 text-[12vh] font-bold text-foreground/5 dark:text-foreground/10 whitespace-nowrap pointer-events-none select-none z-0">
+                Renjith Pillai
+            </div>
+
             {/* Floating orbs */}
             <motion.div
                 className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-3xl"
