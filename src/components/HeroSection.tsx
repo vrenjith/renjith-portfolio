@@ -153,7 +153,7 @@ export const HeroSection = () => {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6"
                     >
-                        <span className="bg-gradient-to-r from-gray-900 via-primary to-accent dark:from-white dark:via-primary dark:to-accent bg-clip-text text-transparent">
+                        <span className="text-foreground">
                             Building High-Performance
                         </span>
                         <br />
